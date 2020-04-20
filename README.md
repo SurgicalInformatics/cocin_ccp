@@ -77,14 +77,12 @@ Participant Identification Number (PIN) specify CPMS Site code (hypen) four digi
 
 ```r
 install.packages("tidyverse")
-install.packages("lubridate"
+install.packages("RCurl")
 install.packages("finalfit")
+install.packages("knitr")
+install.packages("flextable")
+install.packages("usethis")
 ```
-
-### Clone to RStudio in the normal way
-
-See here if you are unfamiliar with how to do this:
-https://www.datasurg.net/2015/07/13/rstudio-and-github/
 
 ### Set environment variable with REDCap API token
 
@@ -95,6 +93,12 @@ usethis::edit_r_environ()
 # this opens up .Renviron, add your token, e.g. ccp_token = 2F3xxxxxxxxxxxxE0111
 # Restart R
 ```
+
+### Get scripts into a new RStudio project:
+
+`New Project - Version Control - Git -` https://github.com/SurgicalInformatics/cocin_ccp as `Repository URL`
+
+(Our use your preferred way of cloning/downloading from GitHub.)
 
 ## Scripts: purpose and output/return
 
