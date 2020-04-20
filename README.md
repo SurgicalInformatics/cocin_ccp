@@ -81,6 +81,7 @@ install.packages("RCurl")
 install.packages("finalfit")
 install.packages("knitr")
 install.packages("flextable")
+install.packages("kableExtra")
 install.packages("usethis")
 ```
 
