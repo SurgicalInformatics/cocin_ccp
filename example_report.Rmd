@@ -12,8 +12,8 @@ library(finalfit)
 library(kableExtra)
 
 # Save image to spare the API:
-# source(00_source_all.R)
-#save.image(file = "00_source_all.RData")
+# source("00_source_all.R")
+# save.image(file = "00_source_all.RData")
 load("00_source_all.RData")
 ```
 
@@ -37,7 +37,7 @@ topline %>%
   labs(x = "Admission date", y = "Number of patients") +
   theme(legend.position = c(0.05, 1),
         legend.justification = c(0, 1)) +
-  #facet_wrap(.~sex) +
+  # facet_wrap(.~sex) +
   coord_cartesian(xlim = c(ymd(20200201,NA))) +
   ggtitle("Hospital admission with COVID-19 by sex",
           "Figure 1A")
