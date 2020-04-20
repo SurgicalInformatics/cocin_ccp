@@ -9,7 +9,7 @@ These are scripts to pull and prepare data from the above REDCap database. This 
 ## Caution
 ### Data security
 
-These are patient level data that contain disclosive information. Only use in a secure environment and do not hold data on a removable device including laptops. 
+These are patient-level data that contain disclosive information. Only use in a secure environment and do not hold data on a removable device including laptops. 
 
 ### Always check the data
 
@@ -22,18 +22,18 @@ Obtain a copy of the REDCap CCP data dictionary for variable names and descripti
 ### Arms
 There are three arms: 
 
-* Arm 1: Tier 0;
-* Arm 2: Tier 1;
-* Arm 3: Tier .
+* Arm 1: Tier 0
+* Arm 2: Tier 1
+* Arm 3: Tier
 
 If a patient ID occurs in more than one arm, then that is an error. 
 
 ### Events
 Within arms are events.
 
-* Tier 0: Day 1 hospital admission, Day 3, Day 6, Day 9, Additional days, Discharge/Death;
-* Tier 1: Day 1 hospital&ICU admission, Day 3, Day 6, Day 9, Additional days, Discharge/Death;
-* Tier 2: Day 1, Day 2 ... Day 14, Additional days, Discharge/Death.
+* Tier 0: Day 1 hospital admission, Day 3, Day 6, Day 9, Additional days, Discharge/Death
+* Tier 1: Day 1 hospital&ICU admission, Day 3, Day 6, Day 9, Additional days, Discharge/Death
+* Tier 2: Day 1, Day 2 ... Day 14, Additional days, Discharge/Death
 
 ### Forms/instruments
 Within each event are different forms. The most important are marked bold. 
@@ -114,8 +114,8 @@ These are all run with the single command above. They can be run separately if d
 
 **Use**: `source("01_data_pull.R")` 
 
-1. API pull
-2. Try-catch x5 for API server errors
+1. API pull.
+2. Try-catch x5 for API server errors.
 3. Apply REDCap R formatitng, file edited.
 
 **Output**: 
@@ -128,9 +128,9 @@ These are all run with the single command above. They can be run separately if d
 
 **Use**: `source("02_functions.R")` 
 
-1. ggplot templates / extraction functions
-2. Table defaults
-3. Prognostic score functions
+1. ggplot templates / extraction functions.
+2. Table defaults.
+3. Prognostic score functions.
 
 **Output**: various functions.
 
@@ -140,8 +140,8 @@ These are all run with the single command above. They can be run separately if d
 
 **Use**: `source("03_prep.R")` 
 
-1. Labels extract
-2. Fix tier 1 day 1 repeating `daily form` error
+1. Labels extract.
+2. Fix tier 1 day 1 repeating `daily form` error.
 3. Remove patients with COVID-19 "no" in discharge event.
 4. Clean continuous and discrete variables.
 5. Demonstrate aggregation across events. 
@@ -150,12 +150,12 @@ These are all run with the single command above. They can be run separately if d
 
 **Output**:
 
-* `ccp_data` (data frame/tibble): cleaned stage 1.
-* `topline`(data frame/tibble): day 1, One patient per row. 
-* definite_nosubjid (vector of `subjid`): Marked "no" for COVID-19. 
-* keep_14 (vector of `subjid`): Patients admitted >=14 days from when function run. Use `filter(subjid %in% keep_14)` to filter for these patients only. 
-* keep_14_28 (vector of `subjid`): Patients admitted >=14 days <=28 days from when function run.
-* vlabels: Variable label look-up table. Apply `finalfit::ff_relabel(vlabels)` to any tibble. 
+* `ccp_data` (data frame/tibble): cleaned stage 1
+* `topline`(data frame/tibble): day 1, One patient per row
+* definite_nosubjid (vector of `subjid`): Marked "no" for COVID-19
+* keep_14 (vector of `subjid`): Patients admitted >=14 days from when function run. Use `filter(subjid %in% keep_14)` to filter for these patients only
+* keep_14_28 (vector of `subjid`): Patients admitted >=14 days <=28 days from when function run
+* vlabels: Variable label look-up table. Apply `finalfit::ff_relabel(vlabels)` to any tibble
 
 ### `04_prep_in_progress.R`
 
@@ -170,10 +170,9 @@ These are all run with the single command above. They can be run separately if d
 
 **Output**: 
 
-* `outcome` (data frame/tibble): Discharge/death data. One patient per row. 
-* `topline` (data frame/tibble): Outcome data added. One patient per row. 
-* `treatment` (data frame/tibble): Various treatment variables which are aggregated across events. One patient per row. 
-* `surv_data` (data frame/tibble): `status` for death and `time` is symptom onset to event or censored time. 
- 
- 
+* `outcome` (data frame/tibble): Discharge/death data. One patient per row
+* `topline` (data frame/tibble): Outcome data added. One patient per row
+* `treatment` (data frame/tibble): Various treatment variables which are aggregated across events. One patient per row
+* `surv_data` (data frame/tibble): `status` for death and `time` is symptom onset to event or censored time
+
 
