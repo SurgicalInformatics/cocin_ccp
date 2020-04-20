@@ -47,4 +47,4 @@ source("CCPUKSARI_R_2020-03-04_1532.R")
 
 # Out object and clean
 ccp_data = data
-rm(data)
+rm(data, tries)
