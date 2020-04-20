@@ -1,0 +1,62 @@
+---
+title: "ISARIC-4C data example report"
+date: "`r Sys.time()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(lubridate)
+library(finalfit)
+library(kableExtra)
+
+# Save image to spare the API:
+# source(00_source_all.R)
+#save.image(file = "00_source_all.RData")
+load("00_source_all.RData")
+```
+
+
+## Admissions plot
+
+
+```{r admissions_plot, message=FALSE, warning=FALSE}
+topline %>%
+  filter(sex != "Not specified") %>% 
+  filter(hostdat < Sys.Date()) %>% 
+  arrange(hostdat) %>% 
+  group_by(sex) %>% 
+  mutate(
+    cum = seq_along(hostdat)
+  ) %>%  
+  drop_na(sex) %>% 
+  ggplot_lancet(aes(x = hostdat, y = cum, colour = sex)) +
+  geom_line() +
+  scale_colour_brewer(palette = "Set1") +
+  labs(x = "Admission date", y = "Number of patients") +
+  theme(legend.position = c(0.05, 1),
+        legend.justification = c(0, 1)) +
+  #facet_wrap(.~sex) +
+  coord_cartesian(xlim = c(ymd(20200201,NA))) +
+  ggtitle("Hospital admission with COVID-19 by sex",
+          "Figure 1A")
+```
+
+## Demographics table
+
+```{r dem_table, warning=FALSE}
+topline %>% 
+  mutate_if(is.factor, fct_explicit_na) %>% 
+  summary_factorlist(
+    explanatory = c(
+      "age", "sex",
+      "healthwork_erterm", "labwork_erterm",  
+      "onset2admission",
+      "hooccur", 
+      "travel_erterm"), 
+    na_include = TRUE, 
+    add_col_totals = TRUE
+  ) %>% 
+  mytable(longtable = FALSE)
+```

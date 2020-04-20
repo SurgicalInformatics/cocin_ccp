@@ -6,3 +6,8 @@ source("01_data_pull.R")
 source("02_functions.R")
 source("03_prep.R")
 source("04_prep_in_progress.R")
+
+
+
+# Suggestion for sparing the API:
+# save.image(file = "00_source_all.RData")

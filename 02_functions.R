@@ -61,7 +61,7 @@ get_ymax <- function(plot) {
 mytable = function(x, caption = "", longtable = TRUE, ...){
   
   # if not latex or html then else is Word
-  if (is_latex_output() | is_html_output()){
+  if (knitr::is_latex_output() | knitr::is_html_output()){
     knitr::kable(x, row.names = FALSE, align = c("l", "l", "r", "r", "r", "r", "r", "r", "r"), 
                  booktabs = TRUE, caption = caption, longtable = longtable,
                  linesep = "", ...) %>%
