@@ -83,6 +83,7 @@ install.packages("knitr")
 install.packages("flextable")
 install.packages("kableExtra")
 install.packages("usethis")
+install.packages("Hmisc")
 ```
 
 ### Set environment variable with REDCap API token
