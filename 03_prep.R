@@ -97,9 +97,8 @@ ccp_data = ccp_data %>%
       !is.na(cestdat) ~ cestdat,    # onset
       !is.na(dsstdat) ~ dsstdat),   # enrolment
     
-    age = interval(agedat, anydat) %>%
-      as.period() %>% # if need exact stop here
-      year(),
+    age = (anydat - agedat) %>%
+      as.numeric()/365, # Changed to deal with children, need fractions
     
     # Add infants to age variable by making months a fraction of year
     age_estimateyears = as.numeric(age_estimateyears),
