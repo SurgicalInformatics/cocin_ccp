@@ -108,6 +108,14 @@ ccp_data = ccp_data %>%
     age = ifelse(is.na(agedat), age_estimateyears, age) %>%  # Note age_estimateyears is float
       ff_label("Age on admission (years)"),
     
+    # Fixing following paeds work.
+    # Remove negative ages. And where months specified and age > 2 y, these are an error and are adults.  
+    age = case_when(
+      age < 0 ~ NA_real_,
+      age_estimateyearsu == "Months" & age > 2 ~ age * 12,
+      TRUE ~ age
+    ),
+    
     age.factor = case_when(
       age < 50 ~ "<50",
       age < 70 ~ "50-69", 
