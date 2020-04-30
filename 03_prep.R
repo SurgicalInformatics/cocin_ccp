@@ -292,7 +292,7 @@ ccp_data = ccp_data %>%
   ) %>% 
   ungroup() %>% 
   mutate(any_icu = factor(any_icu)) %>% 
-  ff_relabel(vlabels)
+  ff_relabel_df(ccp_data)
 
 # Topline is Day 1 data -----------------------------------------------------------------------------
 topline = ccp_data %>% 
@@ -300,7 +300,7 @@ topline = ccp_data %>%
            redcap_event_name == "Day 1 Hospital&ICU Admission (Arm 2: TIER 1)" |
            redcap_event_name == "Day 1 (Arm 3: TIER 2)") %>% 
   filter(is.na(redcap_repeat_instrument)) %>%
-  ff_relabel(vlabels)
+  ff_relabel_df(ccp_data)
 
 
 # Define subsets --------------------------------------------------------------------------------
