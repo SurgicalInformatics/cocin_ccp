@@ -224,6 +224,6 @@ surv_data = ccp_data %>%
 # Take time to event data above and join to day 1 data to predict outcome from day 1 findings. 
 ## Note this does not include variable from other days.
 surv_data = surv_data %>% 
-  select(subjid, status, time, mort) %>% 
+  select(subjid, status, status_crr, time, time_crr, mort) %>% 
   left_join(topline, by = "subjid") %>% 
   ff_relabel(vlabels)
