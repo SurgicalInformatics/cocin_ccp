@@ -179,6 +179,15 @@ surv_data = ccp_data %>%
       dsterm == "Palliative discharge" ~ 1,
       TRUE ~ 0),
     
+    # Status when using competing risks
+    status_crr = case_when(
+      dsterm == "Death" ~ 1,
+      dsterm == "Palliative discharge" ~ 1,
+      dsterm == "Discharged alive" ~ 2, 
+      dsterm == "Hospitalization" ~ 2, 
+      dsterm == "Transfer to other facility" ~ 2,
+      TRUE ~ 0),
+    
     # And make status with missing for no one completed for logreg models. 
     mort = case_when(
       dsterm == "Death" ~ 1,
@@ -191,14 +200,17 @@ surv_data = ccp_data %>%
     # Make time
     time = (daily_dsstdat - cestdat) %>% as.numeric(),
     
-    # Need to think about informative censoring given patients with good outcomes get censored early
-    # THIS IS IMPORTANT
-    # For now:
+    # Need to think about competing risks given patients with good outcomes get censored early
+    # For now don't censor discharges for duration of follow-up.
     time = case_when(
       dsterm == "Discharged alive" | 
         dsterm == "Hospitalization" |
         dsterm == "Transfer to other facility" ~ 30,
-      TRUE ~ time)
+      TRUE ~ time),
+    
+    # Time for crr
+    time_crr = (daily_dsstdat - cestdat) %>% as.numeric()
+    
   ) %>% 
   
   # And then filter patients with no status date as nothing can be said. 
