@@ -157,12 +157,19 @@ surv_data = ccp_data %>%
   mutate(
     hostdat = hostdat[1],
     cestdat = cestdat[1],
-    sex = sex[1]
+    sex = sex[1] # Remove this from here as not required anymore. Check. 
   ) %>%
   
-  # Now filter last row in each patient which is status date
-  filter(row_number()==n()) %>% 
+  # Corrections introduced due to Additional days forms which were introduced
+  # Order with subject. 
+  # Bring those with discharge status to top.
+  # Then reverse order by status date so most recent date for those with no discharge also at top
+  # Then filter for first row in patient
+  arrange(subjid, dsterm, desc(daily_dsstdat)) %>%
+  
+  filter(row_number() == 1) %>% 
   ungroup() %>% 
+  
   # Now hostdat is copied through, use that if available but no other status date. 
   mutate(
     daily_dsstdat = case_when(
@@ -201,11 +208,11 @@ surv_data = ccp_data %>%
     time = (daily_dsstdat - cestdat) %>% as.numeric(),
     
     # Need to think about competing risks given patients with good outcomes get censored early
-    # For now don't censor discharges for duration of follow-up.
+    # For now don't censor discharges for duration of follow-up, equivalent immortal time in Fine and Gray
     time = case_when(
       dsterm == "Discharged alive" | 
         dsterm == "Hospitalization" |
-        dsterm == "Transfer to other facility" ~ 30,
+        dsterm == "Transfer to other facility" ~ 90,
       TRUE ~ time),
     
     # Time for crr
