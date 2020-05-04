@@ -222,8 +222,8 @@ surv_data = ccp_data %>%
   
   # And then filter patients with no status date as nothing can be said. 
   filter(!is.na(time)) %>% 
-  # And time = 0
-  filter(time > 0) 
+  # And those with a negative time. Date correction procedures on-going. 
+  filter(time >= 0) 
 # # Check
 # select(subjid, cestdat, hostdat, daily_dsstdat, dsstdtc, dsterm, status, time) %>%
 # data.frame()
