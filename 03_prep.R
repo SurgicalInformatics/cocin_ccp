@@ -67,6 +67,14 @@ definite_no_subjid = ccp_data %>%
 ccp_data = ccp_data %>% 
   filter(!subjid %in% definite_no_subjid)
 
+# In patients who appear in more than one tier, keep the data from the highest tier ----------------
+ccp_data = ccp_data %>% 
+  mutate(arm = str_extract(redcap_event_name, "Arm \\d")) %>% 
+  mutate(arm_n = str_extract(arm, "\\d")) %>% 
+  # these two lines keep the highest arm n
+  group_by(subjid) %>% 
+  filter(arm_n == max(arm_n))
+
 
 # Dataset and variable definitions -----------------------------------------------------------------
 ## Main cleaning applied here
