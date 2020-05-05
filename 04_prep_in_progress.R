@@ -120,7 +120,7 @@ topline = topline %>%
       ff_label("Death")
     
   ) %>% 
-  ff_relabel(vlabels)
+  ff_relabel_df(topline)
 
 
 # Survival data object --------------------------------------------------------------------------------
@@ -222,7 +222,7 @@ surv_data = ccp_data %>%
   
   # And then filter patients with no status date as nothing can be said. 
   filter(!is.na(time)) %>% 
-  # And those with a negative time. Date correction procedures on-going. 
+  # And time = 0
   filter(time >= 0) 
 # # Check
 # select(subjid, cestdat, hostdat, daily_dsstdat, dsstdtc, dsterm, status, time) %>%

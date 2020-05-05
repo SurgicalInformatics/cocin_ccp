@@ -292,7 +292,7 @@ ccp_data = ccp_data %>%
   ) %>% 
   ungroup() %>% 
   mutate(any_icu = factor(any_icu)) %>% 
-  ff_relabel_df(ccp_data)
+  ff_relabel(vlabels)
 
 # Topline is Day 1 data -----------------------------------------------------------------------------
 topline = ccp_data %>% 
