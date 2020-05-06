@@ -296,10 +296,16 @@ ccp_data = ccp_data %>%
     any_icu = case_when(
       any(daily_hoterm  == "Yes") | any(icu_hoterm == "Yes") ~ "Yes",
       all(is.na(daily_hoterm), is.na(icu_hoterm)) ~ NA_character_,
+      TRUE ~ "No"),
+    any_invasive = case_when(
+      any(daily_invasive_prtrt  == "Yes") | any(invasive_proccur == "Yes") ~ "Yes",
+      all(is.na(daily_invasive_prtrt), is.na(invasive_proccur )) ~ NA_character_,
       TRUE ~ "No")
   ) %>% 
   ungroup() %>% 
-  mutate(any_icu = factor(any_icu)) %>% 
+  # Make factor outwith group_by for speed
+  mutate(any_icu = factor(any_icu),
+         any_invasive = factor(any_invasive)) %>% 
   ff_relabel(vlabels)
 
 # Topline is Day 1 data -----------------------------------------------------------------------------
