@@ -298,9 +298,9 @@ ccp_data = ccp_data %>%
       all(is.na(daily_hoterm), is.na(icu_hoterm)) ~ NA_character_,
       TRUE ~ "No"),
     any_invasive = case_when(
-      any(daily_invasive_prtrt  == "Yes") | any(invasive_proccur == "Yes") ~ "Yes",
+      any(daily_invasive_prtrt  == "YES") | any(invasive_proccur == "YES") ~ "Yes",
       all(is.na(daily_invasive_prtrt), is.na(invasive_proccur )) ~ NA_character_,
-      TRUE ~ "No")
+      TRUE ~ "NO")
   ) %>% 
   ungroup() %>% 
   # Make factor outwith group_by for speed
