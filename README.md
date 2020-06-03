@@ -6,6 +6,9 @@ COVID19 Clinical Information Network (CO-CIN) / ISARIC-4C data pull and preparat
 
 These are scripts to pull and prepare data from the above REDCap database. This is an active project and scripts will change, so please always update to the latest version.
 
+## Change log
+* 03/06/2020: COVID19 PCR negative patients are no longer removed from `ccp_data` in the script. This can be done manually by anyone who still wishes to do that. 
+
 ## Caution
 ### Data security
 

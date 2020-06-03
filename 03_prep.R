@@ -60,12 +60,15 @@ ccp_data = ccp_data %>%
 ## Note also "probable" level here, these are not excluded. 
 ## Need to check daily infectious disease diagnosis forms to ensure no positives. 
 ## Small number removed here. 
+
+## 03/06/2020 Number removed here has jumped up to >550. 
+## Keep the helper object definite_no_subjid but now don't apply.
 definite_no_subjid = ccp_data %>% 
   filter(corna_mbcat == "NO") %>% 
   pull(subjid)
 
-ccp_data = ccp_data %>% 
-  filter(!subjid %in% definite_no_subjid)
+# ccp_data = ccp_data %>% 
+#   filter(!subjid %in% definite_no_subjid)
 
 # In patients who appear in more than one tier, keep the data from the highest tier ----------------
 ccp_data = ccp_data %>% 
