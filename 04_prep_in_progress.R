@@ -103,7 +103,7 @@ outcome = ccp_data %>%
       factor(levels = c("Died", "On-going care", "Discharged alive"))
   ) %>% 
   # Bring in variables from other events like this.
-  select(-c(age, sex, any_icu)) %>% 
+  select(-c(age, sex, any_icu, any_invasive)) %>% 
   left_join(topline %>% select(subjid, age, sex), by = "subjid") %>% 
   left_join(treatment %>% select(-age), by = "subjid")
 
