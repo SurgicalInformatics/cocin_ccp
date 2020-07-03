@@ -20,10 +20,10 @@ library(tidyverse)
 ## The API call fail randomly due to traffic
 ## Try 5 times then stop
 tries = 0
-data = NA
+data_pull = NA
 
-while (tries == 0 | (tries < 5 & inherits(data, "try-error"))){
-  data = try(postForm(
+while (tries == 0 | (tries < 1 & inherits(data_pull, "try-error"))){
+  data_pull = try(postForm(
     uri='https://ncov.medsci.ox.ac.uk/api/',
     token=Sys.getenv("ccp_token"),
     content='record',
@@ -40,7 +40,10 @@ while (tries == 0 | (tries < 5 & inherits(data, "try-error"))){
   # let's wait a second letting the API cool off
   Sys.sleep(1)
 }
-data = read_csv(data, na = "", guess_max = 20000)
+data = read_csv(data_pull, na = "", col_types = cols(.default = col_character())) %>% 
+  type_convert()
+#write_rds(data_pull, path = "data_pull_2020-06-29_1632.rds")
+
 
 # Formating
 source("CCPUKSARI_R_2020-06-26_1323.r")
