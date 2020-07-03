@@ -22,7 +22,7 @@ library(tidyverse)
 tries = 0
 data_pull = NA
 
-while (tries == 0 | (tries < 1 & inherits(data_pull, "try-error"))){
+while (tries == 0 | (tries < 5 & inherits(data_pull, "try-error"))){
   data_pull = try(postForm(
     uri='https://ncov.medsci.ox.ac.uk/api/',
     token=Sys.getenv("ccp_token"),
