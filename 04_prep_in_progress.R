@@ -80,7 +80,7 @@ treatment = ccp_data %>%
       TRUE ~ "No"),
     any_trach = case_when(
         any(daily_trach_prperf  == "YES") ~ "Yes",
-        vany(daily_trach_prperf  == "NO") ~ "No",
+        any(daily_trach_prperf  == "NO") ~ "No",
         TRUE ~ NA_character_),
     # Example continuous variable extraction
     age = median(age, na.rm = TRUE) # Trick to get single age entry out
