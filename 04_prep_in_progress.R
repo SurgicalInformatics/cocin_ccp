@@ -78,7 +78,10 @@ treatment = ccp_data %>%
       daily_invasive_prtrt  == "Yes" | invasive_proccur == "Yes" ~ "Yes",
       is.na(daily_invasive_prtrt) & is.na(invasive_proccur) ~ NA_character_,
       TRUE ~ "No"),
-    
+    any_trach = case_when(
+        any(daily_trach_prperf  == "YES") ~ "Yes",
+        vany(daily_trach_prperf  == "NO") ~ "No",
+        TRUE ~ NA_character_),
     # Example continuous variable extraction
     age = median(age, na.rm = TRUE) # Trick to get single age entry out
   )
