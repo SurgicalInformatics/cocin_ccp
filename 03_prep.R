@@ -303,12 +303,17 @@ ccp_data = ccp_data %>%
     any_invasive = case_when(
       any(daily_invasive_prtrt  == "YES") | any(invasive_proccur == "YES") ~ "Yes",
       all(is.na(daily_invasive_prtrt), is.na(invasive_proccur )) ~ NA_character_,
-      TRUE ~ "NO")
+      TRUE ~ "NO"),
+    any_trach = case_when(
+      any(daily_trach_prperf  == "YES") ~ "Yes",
+      any(daily_trach_prperf  == "NO") ~ "No",
+      TRUE ~ NA_character_),
   ) %>% 
   ungroup() %>% 
   # Make factor outwith group_by for speed
   mutate(any_icu = factor(any_icu),
-         any_invasive = factor(any_invasive)) %>% 
+         any_invasive = factor(any_invasive),
+         any_trach = factor(any_trach)) %>% 
   ff_relabel(vlabels)
 
 # Topline is Day 1 data -----------------------------------------------------------------------------
