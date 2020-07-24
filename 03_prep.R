@@ -8,7 +8,28 @@ library(tidyverse)
 library(lubridate)
 library(finalfit)
 
-# Labels -----------------------------------------------------------------------------------------
+# Add location data---------------------------------------------------------------------------------
+ccp_data = ccp_data %>% 
+  mutate(dag_id = gsub("\\-.*","", subjid)) %>% 
+  mutate(dag_id = str_replace_all(dag_id, 'O', '0')) %>% 
+  mutate(dag_id = ifelse(dag_id == 'RGT02', 'RTG02', dag_id)) %>% 
+  mutate(dag_id = ifelse(dag_id == 'RLB14', 'RBL14', dag_id)) %>% 
+  select(subjid, dag_id, everything())
+
+# Area
+areas = read_csv('https://raw.githubusercontent.com/SurgicalInformatics/population_profiles_health_authorities_uk/master/data_out_ccp_lookup_with_population_level_estimate/ccp_ethnicity_lite_out.csv') %>% 
+  tbl_df() %>% 
+  rename(postcode_e = postcode) %>% 
+  distinct(dag_id, .keep_all = TRUE) %>% 
+  select(-imd_average_postcodes_new, - city, -postcode_start, -tds_mean)
+
+# Add to ccp_data
+ccp_data = ccp_data %>% 
+  left_join(areas, by = c('dag_id' = 'dag_id_e')) %>% 
+  ff_relabel_df(ccp_data)
+rm(areas)
+
+# Labels -------------------------------------------------------------------------------------------
 ## Tidyverse functions deal inconsistenly with variable label attributes. 
 ## Extract them here as object vlabels. 
 ## Apply at any time labels needed using: ff_relabel(vlabels)
