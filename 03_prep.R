@@ -16,17 +16,15 @@ ccp_data = ccp_data %>%
   mutate(dag_id = ifelse(dag_id == 'RLB14', 'RBL14', dag_id)) %>% 
   select(subjid, dag_id, everything())
 
-# Area
-areas = read_csv('https://raw.githubusercontent.com/SurgicalInformatics/population_profiles_health_authorities_uk/master/data_out_ccp_lookup_with_population_level_estimate/ccp_ethnicity_lite_out.csv') %>% 
+areas = read_csv('https://raw.githubusercontent.com/SurgicalInformatics/ccp_location_lookups/master/data_out_ccp_lookups/ccp_dag_id_lookup.csv') %>% 
   tbl_df() %>% 
-  rename(postcode_e = postcode) %>% 
+  rename(postcode_e = postcode,
+         redcap_data_access_group_e  = redcap_data_access_group) %>% 
   distinct(dag_id, .keep_all = TRUE) %>% 
   select(-imd_average_postcodes_new, - city, -postcode_start, -tds_mean)
 
-# Add to ccp_data
 ccp_data = ccp_data %>% 
-  left_join(areas, by = c('dag_id' = 'dag_id_e')) %>% 
-  ff_relabel_df(ccp_data)
+  left_join(areas, by = c('dag_id' = 'dag_id'))
 rm(areas)
 
 # Labels -------------------------------------------------------------------------------------------
