@@ -50,11 +50,19 @@ subjid = read_csv(subjid) %>%
 
 # split into two pulls, 35k first, then the rest
 subjid1 = subjid %>% 
-  slice(1:35000) %>% 
+  slice(1:20000) %>% 
   pull(subjid)
 
 subjid2 = subjid %>% 
-  slice(35001:n()) %>% 
+  slice(20001:40000) %>% 
+  pull(subjid)
+
+subjid3 = subjid %>% 
+  slice(40001:60000) %>% 
+  pull(subjid)
+
+subjid4 = subjid %>% 
+  slice(60001:n()) %>% 
   pull(subjid)
 
 # using guess_type = FALSE so all columns get read in as characters
@@ -76,11 +84,27 @@ batch2 = redcap_read(
   guess_type = FALSE
 )$data
 
-data_pull = bind_rows(batch1, batch2)
+batch3 = redcap_read(
+  redcap_uri = "https://ncov.medsci.ox.ac.uk/api/",
+  export_data_access_groups = TRUE,
+  token = Sys.getenv("ccp_token"),
+  records = subjid3,
+  guess_type = FALSE
+)$data
+
+batch4 = redcap_read(
+  redcap_uri = "https://ncov.medsci.ox.ac.uk/api/",
+  export_data_access_groups = TRUE,
+  token = Sys.getenv("ccp_token"),
+  records = subjid4,
+  guess_type = FALSE
+)$data
+
+data_pull = bind_rows(batch1, batch2, batch3, batch4)
 data = type_convert(data_pull)
 #write_rds(data_pull, path = "subjids_2020-07-24.rds")
 
-rm(batch1, batch2, data_pull, subjid, subjid1, subjid2)
+rm(batch1, batch2, batch3, data_pull, subjid, subjid1, subjid2, subjid3, subjid4)
 # Formating
 source("CCPUKSARI_R_2020-06-26_1323.r")
 
