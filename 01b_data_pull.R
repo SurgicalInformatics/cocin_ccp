@@ -104,7 +104,7 @@ data_pull = bind_rows(batch1, batch2, batch3, batch4)
 data = type_convert(data_pull)
 #write_rds(data_pull, path = "subjids_2020-07-24.rds")
 
-rm(batch1, batch2, batch3, data_pull, subjid, subjid1, subjid2, subjid3, subjid4)
+rm(batch1, batch2, batch3, batch4, data_pull, subjid, subjid1, subjid2, subjid3, subjid4)
 # Formating
 source("CCPUKSARI_R_2020-06-26_1323.r")
 
