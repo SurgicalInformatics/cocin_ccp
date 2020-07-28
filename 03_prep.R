@@ -17,7 +17,7 @@ ccp_data = ccp_data %>%
   select(subjid, dag_id, everything())
 
 areas = read_csv('https://raw.githubusercontent.com/SurgicalInformatics/ccp_location_lookups/master/data_out_ccp_lookups/ccp_dag_id_lookup.csv') %>% 
-  tbl_df() %>% 
+  as_tibble() %>% 
   rename(postcode_e = postcode,
          redcap_data_access_group_e  = redcap_data_access_group) %>% 
   distinct(dag_id, .keep_all = TRUE) %>% 
