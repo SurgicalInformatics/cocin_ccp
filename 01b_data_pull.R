@@ -17,97 +17,49 @@ library(RCurl)
 library(tidyverse)
 library(REDCapR)
 
-# API pull
-## The API call can fail randomly due to traffic
-## Try 5 times then stop
-tries = 0
-subjid = NA
-
-while (tries == 0 | (tries < 5 & inherits(subjid, "try-error"))){
-  subjid = try(postForm(
-    uri='https://ncov.medsci.ox.ac.uk/api/',
-    token=Sys.getenv("ccp_token"),
-    content='record',
-    #report_id='297',
-    'fields[0]'='subjid',
-    format='csv',
-    type='flat',
-    rawOrLabel='raw',
-    rawOrLabelHeaders='raw',
-    exportCheckboxLabel='false',
-    exportSurveyFields='false',
-    exportDataAccessGroups='false',
-    returnFormat='json'
-  ))
-  tries = tries + 1
-  # let's wait a second letting the API cool off
-  Sys.sleep(1)
+# Functions for safe api pull
+rate = rate_backoff(max_times = 10)
+insistent_postForm = purrr::insistently(postForm, rate)
+insistent_redcap_read = purrr::insistently(redcap_read, rate)
+batch = function(.vector, .n = 200){
+  split(.vector, ceiling(seq_along(.vector)/.n))
 }
 
-#subjid = read_rds("subjids_2020-07-24.rds")
-subjid = read_csv(subjid) %>% 
-  distinct(subjid)
-
-# split into two pulls, 35k first, then the rest
-subjid1 = subjid %>% 
-  slice(1:20000) %>% 
+# Get subjid
+subjid = insistent_postForm(
+  uri='https://ncov.medsci.ox.ac.uk/api/',
+  token=Sys.getenv("ccp_token"),
+  content='record',
+  #report_id='297',
+  'fields[0]'='subjid',
+  format='csv',
+  type='flat',
+  rawOrLabel='raw',
+  rawOrLabelHeaders='raw',
+  exportCheckboxLabel='false',
+  exportSurveyFields='false',
+  exportDataAccessGroups='false',
+  returnFormat='json'
+) %>% 
+  read_csv() %>% 
+  distinct(subjid) %>% 
   pull(subjid)
 
-subjid2 = subjid %>% 
-  slice(20001:40000) %>% 
-  pull(subjid)
+# Get data in batches
+data = batch(subjid) %>% 
+  map_df(~ insistent_redcap_read(
+    redcap_uri = "https://ncov.medsci.ox.ac.uk/api/",
+    export_data_access_groups = TRUE,
+    token = Sys.getenv("ccp_token"),
+    records = .x,
+    guess_type = FALSE)$data
+  ) %>% 
+  type_convert() %>% 
+  as_tibble()
 
-subjid3 = subjid %>% 
-  slice(40001:60000) %>% 
-  pull(subjid)
-
-subjid4 = subjid %>% 
-  slice(60001:n()) %>% 
-  pull(subjid)
-
-# using guess_type = FALSE so all columns get read in as characters
-# otherwise batch1 and batch2 may end up with different column types
-# will parse all once combined
-batch1 = redcap_read(
-  redcap_uri = "https://ncov.medsci.ox.ac.uk/api/",
-  export_data_access_groups = TRUE,
-  token = Sys.getenv("ccp_token"),
-  records = subjid1,
-  guess_type = FALSE
-)$data
-
-batch2 = redcap_read(
-  redcap_uri = "https://ncov.medsci.ox.ac.uk/api/",
-  export_data_access_groups = TRUE,
-  token = Sys.getenv("ccp_token"),
-  records = subjid2,
-  guess_type = FALSE
-)$data
-
-batch3 = redcap_read(
-  redcap_uri = "https://ncov.medsci.ox.ac.uk/api/",
-  export_data_access_groups = TRUE,
-  token = Sys.getenv("ccp_token"),
-  records = subjid3,
-  guess_type = FALSE
-)$data
-
-batch4 = redcap_read(
-  redcap_uri = "https://ncov.medsci.ox.ac.uk/api/",
-  export_data_access_groups = TRUE,
-  token = Sys.getenv("ccp_token"),
-  records = subjid4,
-  guess_type = FALSE
-)$data
-
-data_pull = bind_rows(batch1, batch2, batch3, batch4)
-data = type_convert(data_pull)
-#write_rds(data_pull, path = "subjids_2020-07-24.rds")
-
-rm(batch1, batch2, batch3, batch4, data_pull, subjid, subjid1, subjid2, subjid3, subjid4)
 # Formating
 source("CCPUKSARI_R_2020-06-26_1323.r")
 
 # Out object and clean
 ccp_data = data
-rm(data, tries)
+rm(data, subjid, batch, rate, insistent_postform, insistent_redcap_read)
