@@ -18,7 +18,7 @@ library(tidyverse)
 library(REDCapR)
 
 # Functions for safe api pull
-rate = rate_backoff(max_times = 10)
+rate = rate_backoff(pause_cap = 60*5, max_times = 10)
 insistent_postForm = purrr::insistently(postForm, rate)
 insistent_redcap_read = purrr::insistently(redcap_read, rate)
 batch = function(.vector, .n = 200){
