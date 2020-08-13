@@ -14,6 +14,7 @@ ccp_data = ccp_data %>%
   mutate(dag_id = str_replace_all(dag_id, 'O', '0')) %>% 
   mutate(dag_id = ifelse(dag_id == 'RGT02', 'RTG02', dag_id)) %>% 
   mutate(dag_id = ifelse(dag_id == 'RLB14', 'RBL14', dag_id)) %>% 
+  mutate(dag_id = ifelse(dag_id == 'G405H', 'G450H', dag_id)) %>% 
   select(subjid, dag_id, everything())
 
 areas = read_csv('https://raw.githubusercontent.com/SurgicalInformatics/ccp_location_lookups/master/data_out_ccp_lookups/ccp_dag_id_lookup.csv') %>% 
