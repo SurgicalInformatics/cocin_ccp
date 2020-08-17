@@ -184,4 +184,7 @@ These are all run with the single command above. They can be run separately if d
 * `treatment` (data frame/tibble): Various treatment variables which are aggregated across events. One patient per row
 * `surv_data` (data frame/tibble): `status` for death and `time` is symptom onset to event or censored time
 
+### Update 17/08/2020
 
+* `daily_fio2_combined` created: FiO2 (0 to 1.0) from `daily_fio2_lborres`, `daily_fio2b_lborres`, `daily_fio2c_lborres`.
+* `daily_fio2_lborres`, `daily_fio2b_lborres`, `daily_fio2c_lborres` further cleaned. 

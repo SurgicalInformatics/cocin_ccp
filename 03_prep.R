@@ -169,7 +169,7 @@ ccp_data = ccp_data %>%
     
     vars(temp_vsorres, hr_vsorres, rr_vsorres, 
          sysbp_vsorres, admission_diabp_vsorres, 
-         oxy_vsorres, daily_fio2_lborres, daily_sao2_lborres,
+         oxy_vsorres, daily_fio2_lborres, daily_fio2b_lborres, daily_fio2c_lborres, daily_sao2_lborres,
          daily_pao2_lborres, daily_pco2_lborres, daily_ph_lborres, daily_hco3_lborres, daily_baseex_lborres, 
          daily_gcs_vsorres, 
          systolic_vsorres,  diastolic_vsorres, daily_meanart_vsorres, 
@@ -249,6 +249,8 @@ ccp_data = ccp_data %>%
     # Some very high numbers removed. Patient at 47 died and left in, presumed real.
     daily_lactate_lborres = ifelse(daily_lactate_lborres > 100, NA_real_, daily_lactate_lborres),
     
+    
+    # FiO2 - updated 17/08/2020
     # This may need looked at by hand. L/min have been included by the look of it. 
     daily_fio2_lborres = case_when(
       daily_fio2_lborres <= 1 ~ daily_fio2_lborres, # Presume FiO2
@@ -259,7 +261,38 @@ ccp_data = ccp_data %>%
       daily_fio2_lborres <= 6 ~ 0.40,
       daily_fio2_lborres <= 10 ~ 0.50,
       daily_fio2_lborres <= 15 ~ 0.70,
+      daily_fio2_lborres > 15 ~ daily_fio2_lborres / 100, # Presume % rather than fraction
       TRUE ~ daily_fio2_lborres),
+    
+    # These should all be FiO2%
+    daily_fio2b_lborres = case_when(
+      daily_fio2b_lborres == 0 ~ 0,
+      daily_fio2b_lborres <= 2 ~ 24,               # Presume everything <=15 is actually L/min
+      daily_fio2b_lborres <= 3 ~ 28,
+      daily_fio2b_lborres <= 4 ~ 32,
+      daily_fio2b_lborres <= 5 ~ 36,
+      daily_fio2b_lborres <= 6 ~ 40,
+      daily_fio2b_lborres <= 10 ~ 50,
+      daily_fio2b_lborres <= 15 ~ 70,
+      TRUE ~ daily_fio2b_lborres),                   # Presume FiO2%
+    
+    # These should all be L/min
+    daily_fio2c_lborres_converted = case_when(
+      daily_fio2c_lborres == 0 ~ 0,
+      daily_fio2c_lborres <= 2 ~ 0.24,               # Presume these are all L/min
+      daily_fio2c_lborres <= 3 ~ 0.28,
+      daily_fio2c_lborres <= 4 ~ 0.32,
+      daily_fio2c_lborres <= 5 ~ 0.36,
+      daily_fio2c_lborres <= 6 ~ 0.40,
+      daily_fio2c_lborres <= 10 ~ 0.50,
+      daily_fio2c_lborres <= 15 ~ 0.70,
+      TRUE ~ daily_fio2c_lborres / 100),             # Presume FiO2%
+    
+    daily_fio2_combined = case_when(
+     !is.na(daily_fio2_lborres) ~ daily_fio2_lborres,
+     is.na(daily_fio2_lborres) & !is.na(daily_fio2b_lborres) ~ daily_fio2b_lborres / 100,
+     is.na(daily_fio2_lborres) & !is.na(daily_fio2c_lborres) ~ daily_fio2c_lborres_converted),
+    
     
     ## Checkbox recodes here ---------------------------------------------
     ethnicity = case_when(
