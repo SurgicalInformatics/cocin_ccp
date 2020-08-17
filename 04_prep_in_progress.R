@@ -36,13 +36,13 @@ treatment = ccp_data %>%
       TRUE ~ NA_character_),                                   
     
     daily_fio2_21 = case_when(
-      any(daily_fio2_lborres > 0.21) ~ "Yes",
-      any(daily_fio2_lborres <= 0.21) ~ "No",
+      any(daily_fio2_combined > 0.21) ~ "Yes",
+      any(daily_fio2_combined <= 0.21) ~ "No",
       TRUE ~ NA_character_),
     
     daily_fio2_28 = case_when(
-      any(daily_fio2_lborres > 0.28) ~ "Yes",
-      any(daily_fio2_lborres <= 0.28) ~ "No",
+      any(daily_fio2_combined > 0.28) ~ "Yes",
+      any(daily_fio2_combined <= 0.28) ~ "No",
       TRUE ~ NA_character_),
     
     icu_hoterm = case_when(
@@ -67,7 +67,7 @@ treatment = ccp_data %>%
       is.na(daily_hoterm) & is.na(icu_hoterm) ~ NA_character_,
       TRUE ~ "No"),
     any_oxygen = case_when(
-      daily_nasaloxy_cmtrt  == "Yes" | oxygen_cmoccur == "Yes" ~ "Yes",
+      daily_nasaloxy_cmtrt  == "Yes" | oxygen_cmoccur == "Yes" | daily_fio2_21 == "Yes" ~ "Yes",
       is.na(daily_nasaloxy_cmtrt ) & is.na(oxygen_cmoccur) ~ NA_character_,
       TRUE ~ "No"),
     any_noninvasive = case_when(
