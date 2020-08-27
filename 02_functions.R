@@ -62,7 +62,7 @@ mytable = function(x, caption = "", longtable = TRUE, ...){
   
   # if not latex or html then else is Word
   if (knitr::is_latex_output() | knitr::is_html_output()){
-    knitr::kable(x, row.names = FALSE, align = c("l", "l", "r", "r", "r", "r", "r", "r", "r"), 
+    knitr::kable(x, row.names = FALSE, align = c("l", "l", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r"), 
                  booktabs = TRUE, caption = caption, longtable = longtable,
                  linesep = "", ...) %>%
       kableExtra::kable_styling(latex_options = c("scale_down", "hold_position"))
