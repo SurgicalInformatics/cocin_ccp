@@ -331,8 +331,9 @@ ccp_data = ccp_data %>%
     
     # Collapse smoking to active smokers
     smoking_mhyn_2levels = fct_collapse(smoking_mhyn,
-                                        NO = c("Never Smoked", "Former Smoker"),
-                                        YES = "Yes") %>% 
+                                        "NO" = c("Never Smoked", "Former Smoker"),
+                                        "YES" = "Yes",
+                                        "N/K" = "Unknown") %>% 
       factor() %>% 
       ff_label("Smoking"),
     
