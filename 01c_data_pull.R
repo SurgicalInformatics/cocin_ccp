@@ -41,7 +41,6 @@ token_names = c(
 
 data_collect = tibble()
 for (project in token_names){
-  print(project)
   # Get subjid
   subjid = insistent_postForm(
     uri='https://ncov.medsci.ox.ac.uk/api/',
