@@ -290,9 +290,9 @@ ccp_data = ccp_data %>%
       TRUE ~ daily_fio2c_lborres / 100),             # Presume FiO2%
     
     daily_fio2_combined = case_when(
-     !is.na(daily_fio2_lborres) ~ daily_fio2_lborres,
-     is.na(daily_fio2_lborres) & !is.na(daily_fio2b_lborres) ~ daily_fio2b_lborres / 100,
-     is.na(daily_fio2_lborres) & !is.na(daily_fio2c_lborres) ~ daily_fio2c_lborres_converted),
+      !is.na(daily_fio2_lborres) ~ daily_fio2_lborres,
+      is.na(daily_fio2_lborres) & !is.na(daily_fio2b_lborres) ~ daily_fio2b_lborres / 100,
+      is.na(daily_fio2_lborres) & !is.na(daily_fio2c_lborres) ~ daily_fio2c_lborres_converted),
     
     
     ## Checkbox recodes here ---------------------------------------------

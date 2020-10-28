@@ -81,6 +81,7 @@ for (project in token_names){
 data = data_collect %>% 
   type_convert() %>% 
   as_tibble()
+rm(data_collect)
 
 # Formating
 source("CCPUKSARI_R_2020-06-26_1323.r")
