@@ -62,6 +62,7 @@ for (project in token_names){
     distinct(subjid) %>% 
     pull(subjid)
   
+  
   # Get data in batches
   data = batch(subjid) %>% 
     map_df(~ insistent_redcap_read(
@@ -88,5 +89,5 @@ source("CCPUKSARI_R_2020-06-26_1323.r")
 
 # Out object and clean
 ccp_data = data
-rm(data, subjid, batch, rate, insistent_postform, insistent_redcap_read)
+rm(data, subjid, batch, rate, insistent_postForm, insistent_redcap_read)
 ccp_data$subjid %>% n_distinct()
