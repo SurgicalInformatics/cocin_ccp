@@ -71,6 +71,7 @@ for (project in token_names){
       records = .x,
       guess_type = FALSE)$data
     )
+  data$project = project
   if (nrow(data_collect) == 0){
     data_collect = data
   } else {
