@@ -1291,6 +1291,9 @@ levels(data$follow_up_self_assessment_survey_complete)=c("Incomplete","Unverifie
 # I couldn't get RStudio's Regex Find-Replace to recognise \n or \\n
 # 4. Removed the : from Sex at Birth:
 
+library(finalfit)
+library(magrittr)
+
 data$subjid %>% ff_label("Participant Identification Number (PIN) specify CPMS Site code (hypen) four digit number patient number e.g Y0401-0001.")
 data$redcap_event_name %>% ff_label("Event Name")
 data$redcap_repeat_instrument %>% ff_label("Repeat Instrument")
