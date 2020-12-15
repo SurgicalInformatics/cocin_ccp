@@ -85,7 +85,7 @@ data = data_collect %>%
 rm(data_collect)
 
 # Formating
-source("CCPUKSARI_R_2020-06-26_1323.r")
+source("CCPUKSARI_R_2020-12-15_1141.r")
 
 # Out object and clean
 ccp_data = data
