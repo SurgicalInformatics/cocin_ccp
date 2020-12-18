@@ -75,6 +75,7 @@ ccp_data = ccp_data %>%
   )
 
 
+
 # Remove those patients marked definite "no" on final form-----------------------------------------
 ## This needs kept under review.
 ## Note also "probable" level here, these are not excluded. 
@@ -89,6 +90,22 @@ definite_no_subjid = ccp_data %>%
 
 # ccp_data = ccp_data %>% 
 #   filter(!subjid %in% definite_no_subjid)
+
+
+# Since we have multiple projects, it's possible that subjids are no longer unique
+# We will have to drop non-unique subjids or they will be matched with the wrong outcome etc data
+duplicates_across_projects = ccp_data %>% 
+  distinct(subjid, project) %>% 
+  add_count(subjid) %>% 
+  filter(n > 1)
+
+ccp_data = ccp_data %>% 
+  filter(! subjid %in% duplicates_across_projects) 
+
+if (nrow(duplicates_across_projects) != 0){
+  message(paste(nrow(duplicates_across_projects), "duplicate subjids across projects detected and removed."))
+  duplicates_across_projects
+}
 
 # In patients who appear in more than one tier, keep the data from the highest tier ----------------
 ccp_data = ccp_data %>% 
