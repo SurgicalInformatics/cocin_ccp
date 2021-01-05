@@ -100,7 +100,7 @@ duplicates_across_projects = ccp_data %>%
   filter(n > 1)
 
 ccp_data = ccp_data %>% 
-  filter(! subjid %in% duplicates_across_projects) 
+  filter(! subjid %in% duplicates_across_projects$subjid) 
 
 if (nrow(duplicates_across_projects) != 0){
   message(paste(nrow(duplicates_across_projects), "duplicate subjids across projects detected and removed."))
