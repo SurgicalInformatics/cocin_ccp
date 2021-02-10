@@ -311,6 +311,14 @@ ccp_data = ccp_data %>%
       is.na(daily_fio2_lborres) & !is.na(daily_fio2b_lborres) ~ daily_fio2b_lborres / 100,
       is.na(daily_fio2_lborres) & !is.na(daily_fio2c_lborres) ~ daily_fio2c_lborres_converted),
     
+    # Sa02
+    daily_sao2_lborres = case_when(
+      daily_sao2_lborres <= 1 ~ daily_sao2_lborres * 100, 
+      daily_sao2_lborres <= 5 ~ NA_real_,
+      daily_sao2_lborres <= 10 ~ daily_sao2_lborres * 10,
+      daily_sao2_lborres <= 50 ~ NA_real_,
+      daily_sao2_lborres > 500 ~ daily_sao2_lborres / 10,
+      TRUE ~ daily_sao2_lborres),
     
     ## Checkbox recodes here ---------------------------------------------
     ethnicity = case_when(
