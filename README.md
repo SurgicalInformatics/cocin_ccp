@@ -7,6 +7,8 @@ COVID19 Clinical Information Network (CO-CIN) / ISARIC-4C data pull and preparat
 These are scripts to pull and prepare data from the above REDCap database. This is an active project and scripts will change, so please always update to the latest version.
 
 ## Change log
+* 26/03/2021: treatment and outcome summary variables added to `ccp_data`
+* 21/03/2021: new object `oneline` added which combines data from `topline`, `treatment` and `outcome` objects
 * 03/06/2020: COVID19 PCR negative patients are no longer removed from `ccp_data` in the script. This can be done manually by anyone who still wishes to do that. 
 
 ## Caution
@@ -183,6 +185,18 @@ These are all run with the single command above. They can be run separately if d
 * `topline` (data frame/tibble): Outcome data added. One patient per row
 * `treatment` (data frame/tibble): Various treatment variables which are aggregated across events. One patient per row
 * `surv_data` (data frame/tibble): `status` for death and `time` is symptom onset to event or censored time
+
+### `05_oneline.R`
+
+**Description**: Joining of Day 1 and Discharge events, as well as summary variables, to create an object with one line per patient.
+
+**Use**: `source("05_oneline.R")` 
+
+1. Make `oneline` object: Day 1 and Discharge event forms.
+
+**Output**: 
+
+* `oneline` (data frame/tibble): One patient per row
 
 ### Update 17/08/2020
 

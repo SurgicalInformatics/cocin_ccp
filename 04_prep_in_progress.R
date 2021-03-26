@@ -103,27 +103,27 @@ outcome = ccp_data %>%
       dsterm == "Palliative discharge" ~ "Died",
       dsterm == "Unknown" ~ NA_character_,
       is.na(dsterm) ~ "On-going care") %>%    # Note this line. need adjusted after some time has passed
-      factor(levels = c("Died", "On-going care", "Discharged alive"))
-  ) %>% 
+      factor(levels = c("Died", "On-going care", "Discharged alive"))) %>% 
   # Bring in variables from other events like this.
-  select(-c(age, sex, any_icu, any_invasive)) %>% 
+  # remove duplicate variables now also in ccp_data before joining
+  select(-c(age, sex, any_icu, any_invasive, any_trach, any_oxygen, any_noninvasive, daily_hoterm, daily_nasaloxy_cmtrt, daily_noninvasive_prtrt, daily_invasive_prtrt, icu_hoterm, oxygen_cmoccur, noninvasive_proccur, invasive_proccur)) %>% 
   left_join(topline %>% select(subjid, age, sex), by = "subjid") %>% 
-  left_join(treatment %>% select(-age), by = "subjid")
+  purrr::discard(~all(is.na(.)))
 
 
 # Add outcome to topline ---------------------------------------------------------------------------------
 ## If this adds extra rows to topline, it is because there are patient IDs duplicated across tiers in error. 
-topline = topline %>% 
-  select(-c(dsterm, dsstdtc)) %>% 
-  left_join(outcome %>% select(subjid, dsterm, dsstdtc), by = "subjid") %>% 
+topline = topline %>%
+  left_join(outcome %>% select(subjid, dsterm, dsstdtc), by = "subjid") %>%
   mutate(
     death = ifelse(dsterm == "Death" | dsterm == "Palliative discharge", "Yes", "No"),
-    death = ifelse(dsterm == "Unknown", NA_character_, death) %>% 
-      factor() %>% 
+    death = ifelse(dsterm == "Unknown", NA_character_, death) %>%
+      factor() %>%
       ff_label("Death")
-    
-  ) %>% 
+  ) %>%
   ff_relabel_df(topline)
+
+
 
 
 # Survival data object --------------------------------------------------------------------------------
@@ -237,3 +237,4 @@ surv_data = surv_data %>%
   select(subjid, status, status_crr, time, time_crr, mort) %>% 
   left_join(topline, by = "subjid") %>% 
   ff_relabel(vlabels)
+

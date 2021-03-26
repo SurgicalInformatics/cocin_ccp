@@ -371,28 +371,103 @@ ccp_data = ccp_data %>%
 
 # Dataset and variable definitions 3 -------------------------------------------------------------
 ## Define the existence of ANY occurence across EVENTS
-## Others to be moved to here from TREATMENT object code
+## Duplicates added TREATMENT object code
+## Duplicates added OUTCOME object code
 ccp_data = ccp_data %>% 
   group_by(subjid) %>%
   mutate(
-    any_icu = case_when(
-      any(daily_hoterm  == "Yes") | any(icu_hoterm == "Yes") ~ "Yes",
-      all(is.na(daily_hoterm), is.na(icu_hoterm)) ~ NA_character_,
-      TRUE ~ "No"),
-    any_invasive = case_when(
-      any(daily_invasive_prtrt  == "YES") | any(invasive_proccur == "YES") ~ "Yes",
-      all(is.na(daily_invasive_prtrt), is.na(invasive_proccur )) ~ NA_character_,
-      TRUE ~ "No"),
+    any_daily_hoterm = case_when(
+      any(daily_hoterm == "Yes") ~ "Yes",
+      any(daily_hoterm == "No")  ~ "No", 
+      TRUE ~ NA_character_),
+    any_daily_nasaloxy_cmtrt = case_when(
+      any(daily_nasaloxy_cmtrt == "YES") ~ "Yes",
+      any(daily_nasaloxy_cmtrt == "NO")  ~ "No", 
+      TRUE ~ NA_character_),
+    any_daily_noninvasive_prtrt = case_when(
+      any(daily_noninvasive_prtrt == "YES") ~ "Yes",
+      any(daily_noninvasive_prtrt == "NO")  ~ "No", 
+      TRUE ~ NA_character_),                                   
+    any_daily_invasive_prtrt = case_when(
+      any(daily_invasive_prtrt == "YES") ~ "Yes",
+      any(daily_invasive_prtrt == "NO")  ~ "No", 
+      TRUE ~ NA_character_),                                   
+    any_daily_fio2_21 = case_when(
+      any(daily_fio2_combined > 0.21) ~ "Yes",
+      any(daily_fio2_combined <= 0.21) ~ "No",
+      TRUE ~ NA_character_),
+    any_daily_fio2_28 = case_when(
+      any(daily_fio2_combined > 0.28) ~ "Yes",
+      any(daily_fio2_combined <= 0.28) ~ "No",
+      TRUE ~ NA_character_),
+    any_icu_hoterm = case_when(
+      any(icu_hoterm == "Yes") ~ "Yes",
+      any(icu_hoterm == "No")  ~ "No", 
+      TRUE ~ NA_character_),
+    any_oxygen_cmoccur = case_when(
+      any(oxygen_cmoccur == "YES") ~ "Yes",
+      any(oxygen_cmoccur == "NO")  ~ "No", 
+      TRUE ~ NA_character_),
+    any_noninvasive_proccur = case_when(
+      any(noninvasive_proccur == "YES") ~ "Yes",
+      any(noninvasive_proccur == "NO")  ~ "No", 
+      TRUE ~ NA_character_),
+    any_invasive_proccur = case_when(
+      any(invasive_proccur == "YES") ~ "Yes",
+      any(invasive_proccur == "NO")  ~ "No", 
+      TRUE ~ NA_character_),
     any_trach = case_when(
       any(daily_trach_prperf  == "YES") ~ "Yes",
       any(daily_trach_prperf  == "NO") ~ "No",
+      TRUE ~ NA_character_), 
+    any_icu = case_when(
+      any_daily_hoterm  == "Yes" | any_icu_hoterm == "Yes" ~ "Yes",
+      any_daily_hoterm  == "No" | any_icu_hoterm == "No" ~ "No",
       TRUE ~ NA_character_),
+    any_oxygen = case_when(
+      any_daily_nasaloxy_cmtrt  == "Yes" | any_oxygen_cmoccur == "Yes" | any_daily_fio2_21 == "Yes" ~ "Yes",
+      any_daily_nasaloxy_cmtrt  == "No" | any_oxygen_cmoccur == "No" | any_daily_fio2_21 == "No" ~ "No",
+      TRUE ~ NA_character_),
+    any_noninvasive = case_when(
+      any_daily_noninvasive_prtrt  == "Yes" | any_noninvasive_proccur == "Yes" ~ "Yes",
+      any_daily_noninvasive_prtrt  == "No" | any_noninvasive_proccur == "No" ~ "No",
+      TRUE ~ NA_character_),
+    any_invasive = case_when(
+      any_daily_invasive_prtrt  == "Yes" | any_invasive_proccur == "Yes" ~ "Yes",
+      any_daily_invasive_prtrt  == "No" | any_invasive_proccur == "No" ~ "No",
+      TRUE ~ NA_character_)
   ) %>% 
-  ungroup() %>% 
+  mutate(
+    status = case_when(
+      any(dsterm == "Discharged alive") ~ "Discharged alive",
+      any(dsterm == "Hospitalization") ~ "On-going care",
+      any(dsterm == "Transfer to other facility") ~ "On-going care",
+      any(dsterm == "Death")	 ~ "Died", 
+      any(dsterm == "Palliative discharge") ~ "Died",
+      any(dsterm == "Unknown") ~ NA_character_,
+      # Only those with Discharge event are marked as "On-going care"
+      all(is.na(dsterm)) & any(grepl("Discharge/Death", redcap_event_name)) ~ "On-going care")) %>% 
+  ungroup() %>%
   # Make factor outwith group_by for speed
-  mutate(any_icu = factor(any_icu),
-         any_invasive = factor(any_invasive),
-         any_trach = factor(any_trach)) %>% 
+  mutate(
+    any_daily_hoterm = factor(any_daily_hoterm),
+    any_daily_nasaloxy_cmtrt = factor(any_daily_nasaloxy_cmtrt),
+    any_daily_noninvasive_prtrt = factor(any_daily_noninvasive_prtrt),
+    any_daily_invasive_prtrt = factor(any_daily_invasive_prtrt),
+    any_daily_fio2_21 = factor(any_daily_fio2_21),
+    any_daily_fio2_28 = factor(any_daily_fio2_28),
+    any_icu_hoterm = factor(any_icu_hoterm),
+    any_oxygen_cmoccur = factor(any_oxygen_cmoccur),
+    any_noninvasive_proccur = factor(any_noninvasive_proccur),
+    any_invasive_proccur = factor(any_invasive_proccur),
+    any_trach = factor(any_trach),
+    any_icu = factor(any_icu),
+    any_oxygen = factor(any_oxygen),
+    any_noninvasive = factor(any_noninvasive),
+    any_invasive = factor(any_invasive),
+    status = factor(status, levels = c(
+      "Died", "On-going care", "Discharged alive"))
+  ) %>%
   ff_relabel(vlabels)
 
 # Topline is Day 1 data -----------------------------------------------------------------------------
@@ -401,8 +476,8 @@ topline = ccp_data %>%
            redcap_event_name == "Day 1 Hospital&ICU Admission (Arm 2: TIER 1)" |
            redcap_event_name == "Day 1 (Arm 3: TIER 2)") %>% 
   filter(is.na(redcap_repeat_instrument)) %>%
+  purrr::discard(~all(is.na(.))) %>% 
   ff_relabel_df(ccp_data)
-
 
 # Define subsets --------------------------------------------------------------------------------
 ## These can be used via: filter(subjid %in% keep_14)
