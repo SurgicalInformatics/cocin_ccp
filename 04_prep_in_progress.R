@@ -36,13 +36,13 @@ treatment = ccp_data %>%
       TRUE ~ NA_character_),                                   
     
     daily_fio2_21 = case_when(
-      any(daily_fio2_combined > 0.21) ~ "Yes",
-      any(daily_fio2_combined <= 0.21) ~ "No",
+      any(daily_fio2_combined > 0.211) ~ "Yes", # Changed for floating point error 01/05/2021
+      any(daily_fio2_combined <= 0.211) ~ "No",
       TRUE ~ NA_character_),
     
     daily_fio2_28 = case_when(
-      any(daily_fio2_combined > 0.28) ~ "Yes",
-      any(daily_fio2_combined <= 0.28) ~ "No",
+      any(daily_fio2_combined > 0.281) ~ "Yes",
+      any(daily_fio2_combined <= 0.281) ~ "No",
       TRUE ~ NA_character_),
     
     icu_hoterm = case_when(

@@ -94,13 +94,13 @@ definite_no_subjid = ccp_data %>%
 
 # Since we have multiple projects, it's possible that subjids are no longer unique
 # We will have to drop non-unique subjids or they will be matched with the wrong outcome etc data
-duplicates_across_projects = ccp_data %>% 
-  distinct(subjid, project) %>% 
-  add_count(subjid) %>% 
+duplicates_across_projects = ccp_data %>%
+  distinct(subjid, project) %>%
+  add_count(subjid) %>%
   filter(n > 1)
 
-ccp_data = ccp_data %>% 
-  filter(! subjid %in% duplicates_across_projects$subjid) 
+ccp_data = ccp_data %>%
+  filter(! subjid %in% duplicates_across_projects$subjid)
 
 if (nrow(duplicates_across_projects) != 0){
   message(paste(nrow(duplicates_across_projects), "duplicate subjids across projects detected and removed."))
