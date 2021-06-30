@@ -106,7 +106,7 @@ outcome = ccp_data %>%
       factor(levels = c("Died", "On-going care", "Discharged alive"))) %>% 
   # Bring in variables from other events like this.
   # remove duplicate variables now also in ccp_data before joining
-  select(-c(age, sex, any_icu, any_invasive, any_trach, any_oxygen, any_noninvasive, daily_hoterm, daily_nasaloxy_cmtrt, daily_noninvasive_prtrt, daily_invasive_prtrt, icu_hoterm, oxygen_cmoccur, noninvasive_proccur, invasive_proccur)) %>% 
+  select(-c(age, sex)) %>% 
   left_join(topline %>% select(subjid, age, sex), by = "subjid") %>% 
   purrr::discard(~all(is.na(.)))
 
@@ -235,6 +235,6 @@ surv_data = ccp_data %>%
 ## Note this does not include variable from other days.
 surv_data = surv_data %>% 
   select(subjid, status, status_crr, time, time_crr, mort) %>% 
-  left_join(topline, by = "subjid") %>% 
+  left_join(topline %>% select(-status), by = "subjid") %>% 
   ff_relabel(vlabels)
 

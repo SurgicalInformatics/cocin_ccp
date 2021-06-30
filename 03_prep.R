@@ -393,12 +393,12 @@ ccp_data = ccp_data %>%
       any(daily_invasive_prtrt == "NO")  ~ "No", 
       TRUE ~ NA_character_),                                   
     any_daily_fio2_21 = case_when(
-      any(daily_fio2_combined > 0.21) ~ "Yes",
-      any(daily_fio2_combined <= 0.21) ~ "No",
+      any(daily_fio2_combined > 0.211) ~ "Yes",
+      any(daily_fio2_combined <= 0.211) ~ "No",
       TRUE ~ NA_character_),
     any_daily_fio2_28 = case_when(
-      any(daily_fio2_combined > 0.28) ~ "Yes",
-      any(daily_fio2_combined <= 0.28) ~ "No",
+      any(daily_fio2_combined > 0.281) ~ "Yes",
+      any(daily_fio2_combined <= 0.281) ~ "No",
       TRUE ~ NA_character_),
     any_icu_hoterm = case_when(
       any(icu_hoterm == "Yes") ~ "Yes",
