@@ -241,7 +241,7 @@ surv_data = surv_data %>%
 
 # Add IMD
 ## Get main lookup
-postcode_main_lookup = read_csv('/home/common/covid/lookups/NSPL_FEB_2020_UK.csv')
+postcode_main_lookup = read_csv('https://argonaut.is.ed.ac.uk/public/lookup/NSPL_FEB_2020_UK.csv')
 
 pcode_data = topline %>% 
   select(subjid, postcode) %>% 
