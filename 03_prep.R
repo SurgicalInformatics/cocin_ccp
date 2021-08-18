@@ -107,6 +107,17 @@ if (nrow(duplicates_across_projects) != 0){
   duplicates_across_projects
 }
 
+# Added 18/08/2021 to deal with follow-up patients having no assigned event and being dropped in next section. 
+# Thank you @LucyNorris
+ccp_data = ccp_data %>% 
+  mutate(
+    flw_any = select(., matches("flw_")) %>%       # Count non-missing flw_ variables for each row
+      {!is.na(.)} %>% 
+      rowSums(),
+    redcap_event_name = fct_expand(redcap_event_name, "Follow-up"),      # Add factor level
+    redcap_event_name = ifelse(flw_any > 0, "Follow-up", redcap_event_name)
+  )
+
 # In patients who appear in more than one tier, keep the data from the highest tier ----------------
 ccp_data = ccp_data %>% 
   mutate(arm = str_extract(redcap_event_name, "Arm \\d")) %>% 
