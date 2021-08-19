@@ -114,8 +114,7 @@ ccp_data = ccp_data %>%
     flw_any = select(., matches("flw_")) %>%       # Count non-missing flw_ variables for each row
       {!is.na(.)} %>% 
       rowSums(),
-    redcap_event_name = fct_expand(redcap_event_name, "Follow-up"),      # Add factor level
-    redcap_event_name = ifelse(flw_any > 0, "Follow-up", redcap_event_name)
+    redcap_event_name = ifelse(flw_any > 0, "Follow-up (Arm 3: TIER 2)", redcap_event_name)
   )
 
 # In patients who appear in more than one tier, keep the data from the highest tier ----------------
@@ -369,7 +368,7 @@ ccp_data = ccp_data %>%
     smoking_mhyn_2levels = fct_collapse(smoking_mhyn,
                                         "NO" = c("Never Smoked", "Former Smoker"),
                                         "YES" = "Yes",
-                                        "N/K" = "Unknown") %>% 
+                                        "N/K" = "N/K") %>% 
       factor() %>% 
       ff_label("Smoking"),
     
