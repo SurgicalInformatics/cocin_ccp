@@ -483,6 +483,14 @@ ccp_data = ccp_data %>%
   ) %>%
   ff_relabel(vlabels)
 
+# Topline is Day 1 data -----------------------------------------------------------------------------
+topline = ccp_data %>% 
+  filter(redcap_event_name == "Day 1 Hospital Admission (Arm 1: TIER 0)" | 
+           redcap_event_name == "Day 1 Hospital&ICU Admission (Arm 2: TIER 1)" |
+           redcap_event_name == "Day 1 (Arm 3: TIER 2)") %>% 
+  filter(is.na(redcap_repeat_instrument)) %>%
+  purrr::discard(~all(is.na(.))) %>% 
+  ff_relabel_df(ccp_data)
 
 
 # Add IMD ---------------------------------------------------------------------------------------
@@ -544,14 +552,6 @@ ccp_data = ccp_data %>%
 
 rm(postcode_main_lookup, pcode_data, postcode_supp_lookup)
 
-# Topline is Day 1 data -----------------------------------------------------------------------------
-topline = ccp_data %>% 
-  filter(redcap_event_name == "Day 1 Hospital Admission (Arm 1: TIER 0)" | 
-           redcap_event_name == "Day 1 Hospital&ICU Admission (Arm 2: TIER 1)" |
-           redcap_event_name == "Day 1 (Arm 3: TIER 2)") %>% 
-  filter(is.na(redcap_repeat_instrument)) %>%
-  purrr::discard(~all(is.na(.))) %>% 
-  ff_relabel_df(ccp_data)
 
 # Define subsets --------------------------------------------------------------------------------
 ## These can be used via: filter(subjid %in% keep_14)
