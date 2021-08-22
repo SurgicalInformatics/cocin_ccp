@@ -163,7 +163,10 @@ ccp_data = ccp_data %>%
     age_estimateyears = ifelse(age_estimateyearsu == "Months", age_estimateyears / 12, age_estimateyears),
     
     # DOB missing as no consent in some, therefore use age_estimateyears
-    age = ifelse(is.na(agedat), age_estimateyears, age) %>%  # Note age_estimateyears is float
+    age = case_when(
+      is.na(age) & !is.na(calc_age) ~ calc_age,
+      is.na(age) & !is.na(age_estimateyears) ~ age_estimateyears,
+      TRUE ~ age) %>% 
       ff_label("Age on admission (years)"),
     
     # Fixing following paeds work.
