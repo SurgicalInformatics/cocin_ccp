@@ -23,10 +23,12 @@ oneline = ccp_data %>%
       select(-c(
           # location data
           redcap_data_access_group_e:nhs_region,
+          imd, imd_quintile, w_med_imd, 
           # summary treatment variables
           any_daily_hoterm:status,
           # other duplicate variables
           dag_id, redcap_data_access_group, project, arm, arm_n)),
     by = c("subjid"),
     suffix = (c(".day1", ".disch"))) %>%
-  select(-c(redcap_event_name.day1, redcap_event_name.disch))
+  select(-c(redcap_event_name.day1, redcap_event_name.disch)) %>% 
+  purrr::discard(~all(is.na(.)))
