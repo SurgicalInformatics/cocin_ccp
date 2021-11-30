@@ -17,7 +17,11 @@ ccp_data = ccp_data %>%
   mutate(dag_id = ifelse(dag_id == 'G405H', 'G450H', dag_id)) %>% 
   select(subjid, dag_id, everything())
 
-areas = read_csv('https://raw.githubusercontent.com/SurgicalInformatics/ccp_location_lookups/master/data_out_ccp_lookups/ccp_dag_id_lookup.csv') %>% 
+# XXX abrooks changed path for safehaven
+if (!safehaven) {
+  ccp_dag_id_lookup_csv = 'https://raw.githubusercontent.com/SurgicalInformatics/ccp_location_lookups/master/data_out_ccp_lookups/ccp_dag_id_lookup.csv'
+}
+areas = read_csv(ccp_dag_id_lookup_csv) %>% 
   as_tibble() %>% 
   rename(postcode_e = postcode,
          redcap_data_access_group_e  = redcap_data_access_group) %>% 
