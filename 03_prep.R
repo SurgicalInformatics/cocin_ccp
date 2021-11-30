@@ -98,6 +98,8 @@ definite_no_subjid = ccp_data %>%
 
 # Since we have multiple projects, it's possible that subjids are no longer unique
 # We will have to drop non-unique subjids or they will be matched with the wrong outcome etc data
+# XXX abrooks wrapped in (!safehaven) because no 'projects' var
+if (!safehaven) {
 duplicates_across_projects = ccp_data %>%
   distinct(subjid, project) %>%
   add_count(subjid) %>%
@@ -109,6 +111,7 @@ ccp_data = ccp_data %>%
 if (nrow(duplicates_across_projects) != 0){
   message(paste(nrow(duplicates_across_projects), "duplicate subjids across projects detected and removed."))
   duplicates_across_projects
+}
 }
 
 # Added 18/08/2021 to deal with follow-up patients having no assigned event and being dropped in next section. 
