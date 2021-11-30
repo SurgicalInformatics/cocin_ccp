@@ -162,13 +162,13 @@ ccp_data = ccp_data %>%
       !is.na(cestdat) ~ cestdat,    # onset
       !is.na(dsstdat) ~ dsstdat),   # enrolment
     
-    age = (anydat - agedat) %>%
-      as.numeric()/365, # Changed to deal with children, need fractions
-    
+    # XXX abrooks wrapped in (!safehaven) as no 'agedat' var
+    age = ifelse(safehaven, NA_real_, as.numeric(anydat - agedat)/365), # Changed to deal with children, need fractions
+ 
     # Add infants to age variable by making months a fraction of year
     age_estimateyears = as.numeric(age_estimateyears),
     age_estimateyears = ifelse(age_estimateyearsu == "Months", age_estimateyears / 12, age_estimateyears),
-    
+ 
     # DOB missing as no consent in some, therefore use age_estimateyears
     age = case_when(
       is.na(age) & !is.na(calc_age) ~ calc_age,
