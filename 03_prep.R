@@ -3,6 +3,7 @@
 # Centre for Medical Informatics, Usher Institute, University of Edinburgh 2020
 
 # Functions require library(tidyverse), requires() nor :: not currently written in.  
+## 2021-11-25 abrooks removed purrr::discard for safehaven batching, fixed age for safehaven
 
 library(tidyverse)
 library(lubridate)
@@ -496,14 +497,16 @@ topline = ccp_data %>%
            redcap_event_name == "Day 1 Hospital&ICU Admission (Arm 2: TIER 1)" |
            redcap_event_name == "Day 1 (Arm 3: TIER 2)") %>% 
   filter(is.na(redcap_repeat_instrument)) %>%
-  purrr::discard(~all(is.na(.))) %>% 
+  #purrr::discard(~all(is.na(.))) %>% 
   ff_relabel_df(ccp_data)
 
 
 # Add IMD ---------------------------------------------------------------------------------------
 ## Get main lookup
+# XXX abrooks safehaven has different location, load data outside this script
+if (!safehaven) {
 postcode_main_lookup = read_csv('https://argonaut.is.ed.ac.uk/public/lookup/NSPL_FEB_2020_UK.csv')
-
+}
 pcode_data = topline %>% 
   select(subjid, postcode) %>% 
   mutate(length_pcode = str_length(postcode),
