@@ -11,6 +11,7 @@
 ## Note any daily_ variable comes from daily form and 
 ## _hoterm/_proccur variables from final treatment form. 
 ## These take a minute or two to run as it iterates by patient.
+### 2021-11-25 abrooks removed purrr::discard for safehaven batching
 treatment = ccp_data %>% 
   filter(redcap_repeat_instrument != "Infectious Respiratory Disease Pathogen Testing" | 
            is.na(redcap_repeat_instrument)) %>% 
@@ -107,12 +108,13 @@ outcome = ccp_data %>%
   # Bring in variables from other events like this.
   # remove duplicate variables now also in ccp_data before joining
   select(-c(age, sex)) %>% 
-  left_join(topline %>% select(subjid, age, sex), by = "subjid") %>% 
-  purrr::discard(~all(is.na(.)))
+  left_join(topline %>% select(subjid, age, sex), by = "subjid") #%>% 
+  #purrr::discard(~all(is.na(.)))
 
 
 # Add outcome to topline ---------------------------------------------------------------------------------
 ## If this adds extra rows to topline, it is because there are patient IDs duplicated across tiers in error. 
+if (safehaven) { topline$dsterm <- NULL; } # all-NA cols were not previously removed
 topline = topline %>%
   left_join(outcome %>% select(subjid, dsterm, dsstdtc), by = "subjid") %>%
   mutate(
