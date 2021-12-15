@@ -115,6 +115,7 @@ outcome = ccp_data %>%
 # Add outcome to topline ---------------------------------------------------------------------------------
 ## If this adds extra rows to topline, it is because there are patient IDs duplicated across tiers in error. 
 if (safehaven) { topline$dsterm <- NULL; } # all-NA cols were not previously removed
+if (safehaven) { topline$dsstdtc <- NULL; } # all-NA cols were not previously removed
 topline = topline %>%
   left_join(outcome %>% select(subjid, dsterm, dsstdtc), by = "subjid") %>%
   mutate(
