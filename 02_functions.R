@@ -73,17 +73,3 @@ mytable = function(x, caption = "", longtable = TRUE, ...){
       flextable::height(i = 1, height = 0.5, part = "header")
   }
 }
-
-
-# Relabel from data frame when attributes stripped by tidyverse ---------------------------------
-ff_relabel_df <- function(.data, .df){
-  .labels = extract_variable_label(.df)
-  .labels = .labels[names(.labels) %in% names(.data)]
-  .data %>% 
-    dplyr::mutate_at(names(.labels), # Apply only to variables for which labels
-                     dplyr::funs({
-                       label = .labels[[dplyr::quo_name(dplyr::quo(.))]]
-                       ff_label(., label)
-                     })
-    )
-}
