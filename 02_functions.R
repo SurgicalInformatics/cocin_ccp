@@ -1251,7 +1251,6 @@ psi <- function(.data, rr, sbp, gcs, temp, hr,
   }
 }
 
-
 # flucp -----------------------------------------------------
 flucp <- function(.data, rr, sbp, spo2, gcs, infiltrates,
                   output = c("vector", "components", "df_vector", "df_components"), 
@@ -1323,21 +1322,6 @@ flucp <- function(.data, rr, sbp, spo2, gcs, infiltrates,
   } else if(output == "df_components"){
     out
   }
-}
-
-
-
-# Relabel from data frame when attributes stripped by tidyverse ---------------------------------
-ff_relabel_df <- function(.data, .df){
-  .labels = extract_variable_label(.df)
-  .labels = .labels[names(.labels) %in% names(.data)]
-  .data %>% 
-    dplyr::mutate_at(names(.labels), # Apply only to variables for which labels
-                     dplyr::funs({
-                       label = .labels[[dplyr::quo_name(dplyr::quo(.))]]
-                       ff_label(., label)
-                     })
-    )
 }
 
 
@@ -1571,5 +1555,4 @@ balance <- function(matchit_out, var_strata, threshold_smd = 0.2){
     dplyr::mutate(level = ifelse(class=="numeric", "(SD)", level))
   
   return(tab_bal_final)}
-
 
