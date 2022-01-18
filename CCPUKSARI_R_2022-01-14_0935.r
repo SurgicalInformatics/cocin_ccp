@@ -1,912 +1,924 @@
-label(data$subjid)="Participant Identification Number (PIN) specify CPMS Site code (hyphen) four to six digit number patient number e.g. Y0401-0001."
-label(data$redcap_event_name)="Event Name"
-label(data$redcap_repeat_instrument)="Repeat Instrument"
-label(data$redcap_repeat_instance)="Repeat Instance"
-label(data$participant_identification_number_pin_complete)="Complete?"
-label(data$arm_participant)="Arm participant is in"
-label(data$tiers_faorres___1)="Please acknowledge that you have understood the consent taking process for the Tier(s) for which you are entering data. (choice=TIER 0 (data collection only); no consent required.)"
-label(data$tiers_faorres___2)="Please acknowledge that you have understood the consent taking process for the Tier(s) for which you are entering data. (choice=TIER 1 (single point sample collection); consent required.)"
-label(data$tiers_faorres___3)="Please acknowledge that you have understood the consent taking process for the Tier(s) for which you are entering data. (choice=TIER 2 (multiple point sample collection); consent required.)"
-label(data$tiers_consent_complete)="Complete?"
-label(data$covid19_new)="SELECT THIS FIELD if you are entering data for a COVID-19 participant where data has been collected via the new short CRF first issued April 2020. If you select this field for a participant with data entered on the older/long CRF, some fields could be cleared. If you do not select this fields for a participant with data entered on the new shorter CRF, the fields shown will not match it."
-label(data$version_9_7)="Are you completing details for CRF v9.7 or later? "
-label(data$ni_site)="Northern Ireland? If entering data for Northern Ireland, PLEASE SELECT:"
-label(data$dsstdat)="Date of Enrolment"
-label(data$sitename)="Site name"
-label(data$corona_ieorres)="Suspected or proven infection with pathogen of Public Health Interest"
-label(data$coriona_ieorres2)="Proven or high likelihood of infection with pathogen of Public Health Interest  "
-label(data$coriona_ieorres3)="Proven infection with pathogen of Public Health Interest N.B. For acute covid-19, please only collect data from proven (laboratory test-positive) people."
-label(data$fever)="A history of self reported feverishness or measured fever of ≥ 38°C"
-label(data$cough)="Cough "
-label(data$dyspnoe)="Dyspnoea (shortness of breath) OR Tachypnoea*"
-label(data$ari)="Clinical suspicion of ARI despite not meeting criteria above"
-label(data$inflammatory_mss)="Adult or child who meets Case Definition for Inflammatory Multi-system Syndrome (MIS-C/MIS-A)"
-label(data$noncorona_expphi)="High suspicion of exposure of Public Health Interest: N.B. This does not relate to covid-19 exposure."
-label(data$symptoms_epi_travel)="2.A history of travel to an area with documented cases of novel coronavirus infection"
-label(data$symptoms_epi_physical)="3.Close contact* with a confirmed or probable case of nCoV infection, while that patient was symptomatic"
-label(data$symptoms_epi_healthfac)="4.Presence in a healthcare facility where nCoV infections have been managed"
-label(data$symptoms_epi_lab)="5. Presence in a laboratory handling samples suspected or confirmed of having the respiratory pathogen of public health interest present"
-label(data$symptoms_epi_pathogen)="6.An otherwise unexplained respiratory illness in the context of an outbreak, suspected outbreak or incident of a respiratory pathogen of public health interest"
-label(data$symptoms_epi_animal)="7.Direct contact with animals in countries where the nCoV is known to be circulating in animal populations or where human infections have occurred as a result of presumed zoonotic transmission"
-label(data$inclusion_criteria_complete)="Complete?"
-label(data$sex)="Sex at Birth:"
-label(data$agedatyn)="Is birth date known"
-label(data$agedat)="Birth date (has approval for entry)"
-label(data$calc_age)="Calculated Age (comparing Date of birth with Date of enrolment)  May be inaccurate if a date of February 29 is used"
-label(data$age_estimateyears)="Age/Estimated age"
-label(data$age_estimateyearsu)="Age/Estimated age Unit"
-label(data$postcode)="Postcode (has approval for entry)"
-label(data$nhs_chi)="England & Wales NHS number, Scotland CHI number (has approval for entry) NB Northern Ireland Health & Care Number is not being collected at this time"
-label(data$ethnic___1)="Ethnic group (check all that apply) (choice=Arab)"
-label(data$ethnic___2)="Ethnic group (check all that apply) (choice=Black)"
-label(data$ethnic___3)="Ethnic group (check all that apply) (choice=East Asian)"
-label(data$ethnic___4)="Ethnic group (check all that apply) (choice=South Asian)"
-label(data$ethnic___5)="Ethnic group (check all that apply) (choice=West Asian)"
-label(data$ethnic___6)="Ethnic group (check all that apply) (choice=Latin American)"
-label(data$ethnic___7)="Ethnic group (check all that apply) (choice=White)"
-label(data$ethnic___8)="Ethnic group (check all that apply) (choice=Aboriginal/First Nations)"
-label(data$ethnic___9)="Ethnic group (check all that apply) (choice=Other)"
-label(data$ethnic___10)="Ethnic group (check all that apply) (choice=N/A)"
-label(data$other_ethnic)="If Other: Specify"
-label(data$healthwork_erterm)="Employed as a healthcare worker?"
-label(data$labwork_erterm)="Employed in a microbiology laboratory?"
-label(data$pregyn_rptestcd)="Pregnant ?"
-label(data$egestage_rptestcd)="If YES: Gestational weeks assessment:"
-label(data$postpart_rptestcd)="Post Partum (within six weeks of delivery)"
-label(data$pregout_rptestcd)="Pregnancy Outcome"
-label(data$dlvrdtc_rptestcd)="Delivery date"
-label(data$aplb_lbperf)="Baby tested for mothers ARI infection"
-label(data$aplb_lborres)=" If YES"
-label(data$aplb_lbmethod)="Method"
-label(data$aplb_lbmethodoth)="If OTHER method; Specify"
-label(data$apdm_age)="INFANT - Less than 1 year old?"
-label(data$apvs_weight)="Birth weight"
-label(data$apvs_weightu)="Birth weight unit"
-label(data$apvs_weightnk)="Birth weight N/K"
-label(data$apsc_gestout)="Gestational outcome"
-label(data$estgest)="If < 37wk  confirm estimated gestation   "
-label(data$apsc_brfedind)="Breastfed"
-label(data$apsc_brfedindy)="If  YES"
-label(data$apsc_brdisdat)="Discontinued breastfeeding at "
-label(data$apsc_dvageind)="Appropriate development for age?"
-label(data$apsc_vcageind)="Vaccinations appropriate for age/country?"
-label(data$covid19_vaccine)="Has the patient received a Covid-19 vaccine (open label licenced product)"
-label(data$covid19_vaccined)="date first vaccine given (Covid-19) if known"
-label(data$covid19_vaccined_nk)="first vaccine given (Covid-19) but date not known"
-label(data$covid19_vaccine2d)="date second vaccine given (Covid-19) if known"
-label(data$covid19_vaccine2d_nk)="second vaccine given (Covid-19) but date not known"
-label(data$covid19_vaccine_type)="Vaccine type/Manufacturer"
-label(data$covid19_vaccine_other_type)="Other, Vaccine type/Manufacturer"
-label(data$vaccine_covid_trial)="Has the patient been involved in a vaccine COVID trial?"
-label(data$vaccine_covid_triald)="Date if known (first trial vaccination): (please complete study participation CRF Page 3 of outcome CRF)"
-label(data$influenza_2021_vaccine)="Has patient received a 2020/21 seasonal influenza vaccine"
-label(data$influenza_2021_vaccined)="2020/21 seasonal influenza vaccine date if known"
-label(data$influenza_2021_vaccined_nk)="2020/21 seasonal influenza vaccine date N/K "
-label(data$demographics_complete)="Complete?"
-label(data$asymptomatic)="Asymptomatic"
-label(data$cestdat)="Onset date of first/earliest symptom"
-label(data$hostdat)="Admission date at this facility"
-label(data$hosttim)="Admission time at this facility"
-label(data$readm_cov19)="Is the patient being readmitted with Covid-19? (Please only add re-admission episodes for COVID patients remaining or new positive COVID test- Please assign new subject ID) "
-label(data$prev_subjid)="Previous participant ID "
-label(data$prev_subjid_nk)="Previous participant ID NK"
-label(data$readminreas)="Please provide reason for readmission: "
-label(data$readminreasnk)="Reason for readmission N/K"
-label(data$susp_reinf)="Is this a suspected re-infection with COVID-19? Defined as proven (PCR or antibody test) or highly probable (clinical case definition met) more than 28 days prior to this new laboratory proven covid-19 infection"
-label(data$surgefacil)="Is this a NIGHTINGALE or other SURGE FACILITY?"
-label(data$hooccur)="Transfer from other facility?"
-label(data$siteid_transfer)="If YES: Name of transfer facility:"
-label(data$siteid_transfernk)="If YES: Name of transfer facility N/K"
-label(data$hostdat_transfer)="If YES: Admission date at previous facility "
-label(data$hostdat_transfernk)="If YES: Admission date at previous facility N/K"
-label(data$subjidcat_transfer)="If YES - Study Site: Participant ID # at transfer facility"
-label(data$subjid_transfer)="If DIFFERENT; Participant number Specify CPMS Site code (hypen) four or five digit number patient number e.g Y0401-0001."
-label(data$travel_erterm)="Travel in the 14 days prior to first symptom onset?"
-label(data$supper_trcntry)="If YES, state location: Country"
-label(data$supper_trcity)="2.6.2 If YES, state location: City/Geographic Area:"
-label(data$erendat)="If YES, return date:"
-label(data$travel_erterm_2)="Travelled to another country in the 14 days prior to first symptom onset?"
-label(data$supper_trcntry_2)="If YES, state location: Country"
-label(data$supper_trcity_2)="If YES, state location: City/Geographic Area:"
-label(data$erendat_2)="If YES, return date:"
-label(data$animal_eryn)="Contact with animals, raw meat or insect bites in the 14 days prior to symptom onset?"
-label(data$animal_erterm)="If YES, specify the animal/insect"
-label(data$animal_erdat)="If YES, specify the animal/insect date of exposure "
-label(data$animal_eryn_2)="Contact with another animals, raw meat or insect bites in the 14 days prior to symptom onset?"
-label(data$animal_erterm_2)="If YES, specify the animal/insect"
-label(data$animal_erdat_2)="If YES, specify the animal/insect date of exposure "
-label(data$onset_and_admission_complete)="Complete?"
-label(data$temp_vsyn)="Temperature on admission available?"
-label(data$temp_vsorres)="Temperature"
-label(data$temp_vsorresu)="Temperature Units"
-label(data$hr_vsyn)="Heart rate on admission available?"
-label(data$hr_vsorres)="Heart Rate"
-label(data$rr_vsyn)="Respiratory rate on admission available?"
-label(data$rr_vsorres)="Respiratory Rate"
-label(data$sysbp_vsyn)="Systolic blood pressure on admission available? "
-label(data$sysbp_vsorres)="Systolic blood pressure"
-label(data$diabp_vsyn)="Diastolic blood pressure on admission available?"
-label(data$admission_diabp_vsorres)="Diastolic blood pressure"
-label(data$dehydration_vsorres)="Severe dehydration: "
-label(data$stercap_vsyn)="Sternal capillary refill time  on admission available?"
-label(data$stercap_vsorres)="Sternal capillary refill time >2 seconds ?"
-label(data$oxy_vsyn)="Oxygen saturation on admission available: "
-label(data$oxy_vsorres)="Oxygen saturation"
-label(data$oxy_vsorresu)="Oxygen saturation on:"
-label(data$adm_no_symp)="None (asymptomatic)"
-label(data$fever_ceoccur_v2)="History of fever"
-label(data$cough_ceoccur_v2)="Cough"
-label(data$coughsput_ceoccur_v2)="Cough: with sputum production"
-label(data$coughhb_ceoccur_v2)="Cough: bloody sputum / haemoptysis"
-label(data$sorethroat_ceoccur_v2)="Sore throat"
-label(data$runnynose_ceoccur_v2)="Runny nose (Rhinorrhoea)"
-label(data$earpain_ceoccur_v2)="Ear pain"
-label(data$wheeze_ceoccur_v2)="Wheezing"
-label(data$chestpain_ceoccur_v2)="Chest pain"
-label(data$myalgia_ceoccur_v2)="Muscle aches (Myalgia)"
-label(data$jointpain_ceoccur_v2)="Joint pain (Arthralgia)"
-label(data$fatigue_ceoccur_v2)="Fatigue / Malaise"
-label(data$shortbreath_ceoccur_v2)="Shortness of breath (Dyspnea)"
-label(data$ageusia_ceoccur_v2)="Disturbance or loss of taste (Ageusia )"
-label(data$lowerchest_ceoccur_v2)="Lower chest wall indrawing"
-label(data$headache_ceoccur_v2)="Headache"
-label(data$confusion_ceoccur_v2)="Altered consciousness / confusion"
-label(data$seizures_cecoccur_v2)="Seizures"
-label(data$abdopain_ceoccur_v2)="Abdominal pain"
-label(data$vomit_ceoccur_v2)="Vomiting / Nausea"
-label(data$diarrhoea_ceoccur_v2)="Diarrhoea"
-label(data$conjunct_ceoccur_v2)="Conjunctivitis"
-label(data$rash_ceoccur_v2)="Skin rash"
-label(data$skinulcers_ceoccur_v2)="Skin ulcers"
-label(data$lymp_ceoccur_v2)="Lymphadenopathy"
-label(data$bleed_ceoccur_v2)="Bleeding (Haemorrhage)"
-label(data$bleed_ceterm_v2)="If Bleeding (others)"
-label(data$anosmia_ceoccur_v2)="Disturbance or loss of smell (Anosmia)"
-label(data$no_symptoms)="None"
-label(data$bleed_cetermy_v2)="If Yes to Bleeding, specify site(s)"
-label(data$admission_signs_and_symptoms_complete)="Complete?"
-label(data$comorb_none)="No comorbidities"
-label(data$chrincard)="Chronic cardiac disease, including congenital heart disease (not hypertension)"
-label(data$hypertension_mhyn)="Hypertension (physician diagnosed)"
-label(data$chronicpul_mhyn)="Chronic pulmonary disease (not asthma)"
-label(data$asthma_mhyn)="Asthma (physician diagnosed) "
-label(data$renal_mhyn)="Chronic kidney disease"
-label(data$modliv)="Moderate or severe liver disease"
-label(data$mildliver)="Mild Liver disease "
-label(data$chronicneu_mhyn)="Chronic neurological disorder "
-label(data$malignantneo_mhyn)="Malignant neoplasm "
-label(data$chronichaemo_mhyn)="Chronic hematologic disease "
-label(data$aidshiv_mhyn)="AIDS/HIV "
-label(data$obesity_mhyn)="Obesity (as defined by clinical staff)"
-label(data$diabetes_type_mhyn)="Diabetes and Type"
-label(data$diabetescom_mhyn)="Diabetes with complications"
-label(data$diabetes_mhyn)="Diabetes without complications "
-label(data$rheumatologic_mhyn)="Rheumatologic disorder "
-label(data$dementia_mhyn)="Dementia"
-label(data$malnutrition_mhyn)="Malnutrition"
-label(data$smoking_mhyn)="Smoking"
-label(data$other_mhyn)="Other relevant risk factors?"
-label(data$otherrisktext)="Other  relevant risk factor; Specify"
-label(data$vulnerable_no_nk)="Clinically extremely vulnerable No or Not known"
-label(data$vulnerable_transplant)="Solid organ transplant recipients:   "
-label(data$vulnerable_cancers)="People with specific cancers: • people with cancer who are undergoing active chemotherapy • people with lung cancer who are undergoing radical radiotherapy • people with cancers of the blood or bone marrow such as leukaemia, lymphoma or myeloma who are at any stage of treatment • people having immunotherapy or other continuing antibody treatments for cancer • people having other targeted cancer treatments which can affect the immune system, such as protein kinase inhibitors or PARP inhibitors • people who have had bone marrow or stem cell transplants in the last 6 months, or who are still taking immunosuppression drugs "
-label(data$vulnerable_copd)="People with severe respiratory conditions including all cystic fibrosis, severe asthma requiring daily oral steroid or injectable maintenance therapy and severe chronic obstructive pulmonary requiring oxygen (COPD):"
-label(data$vulnerable_scid)="People with rare diseases and inborn errors of metabolism that significantly increase the risk of infections (such as Severe combined immunodeficiency (SCID), homozygous sickle cell):   "
-label(data$vulnerable_immuno)="People on immunosuppression therapies sufficient to significantly increase risk of infection: "
-label(data$vulnerable_preg)="Women who are pregnant with significant heart disease, congenital or acquired:"
-label(data$comorbidities_complete)="Complete?"
-label(data$immno_cmtrt)="Treated with immunosuppressants, including oral (not inhaled) corticosteroids prior to admission / Immunosuppressant e.g. oral (not inhaled) corticosteroids (not low dose hydrocortisone)                             "
-label(data$infect_cmtrt)="Treated with anti-infectives  for illness episode prior to admission?"
-label(data$infect)="If yes,  please specify anti infectives"
-label(data$chronic_ace_cmoccur)="Angiotensin converting enzyme inhibitors (ACEI)?"
-label(data$chronic_arb_cmoccur)="Angiotensin II receptor blockers (ARBs)?"
-label(data$chronic_nsaid_cmoccur)="Non-steroidal anti-inflammatory (NSAID)?"
-label(data$clinical_frailty)="Clinical frailty score"
-label(data$preadmission_treatment_complete)="Complete?"
-label(data$no_medication)="No medication currently or within the last 14 days"
-label(data$cmtrt)="Medication name (generic name preferred)  "
-label(data$cmdose)="Dose"
-label(data$cmdose_unit)="Dose unit"
-label(data$cmdose_unitoth)="Specify other Dose unit"
-label(data$cmdosfrq)="Dose Frequency"
-label(data$cmdosfrqoth)="Specify other dose frequency"
-label(data$cmroute)="Route"
-label(data$cmrouteoth)="Specify other route"
-label(data$preadmission_medication_complete)="Complete?"
-label(data$reinf_prev_enrol)="Was the patient previously enrolled?"
-label(data$reinf_pcr)="Did the patient have a positive PCR (virus) test for SARS-CoV-2?  "
-label(data$reinf_pcrd)="If yes (to positive PCR (virus) test for SARS-CoV-2), enter date of positive test: "
-label(data$reinf_antigen)="Did the patient have a positive antigen (virus) test for SARS-CoV-2?   "
-label(data$reinf_antigend)="If yes (to positive antigen (virus) test for SARS-CoV-2), enter date of positive test: "
-label(data$reinf_serology)="Did the patient have a positive serology (antibody) test for SARS-CoV-2?  "
-label(data$reinf_serologyd)="If yes (to positive serology (antibody) test for SARS-CoV-2), enter date of positive test: "
-label(data$reinf_cestdat)="Symptom onset date of first/earliest symptom for previous infection: "
-label(data$reinf_asymptomatic)="Asymptomatic"
-label(data$fever_ceoccur_v3)="History of fever"
-label(data$cough_ceoccur_v3)="Cough"
-label(data$coughsput_ceoccur_v3)="Cough: with sputum production"
-label(data$coughhb_ceoccur_v3)="Cough: bloody sputum / haemoptysis"
-label(data$sorethroat_ceoccur_v3)="Sore throat"
-label(data$runnynose_ceoccur_v3)="Runny nose (Rhinorrhoea)"
-label(data$earpain_ceoccur_v3)="Ear pain"
-label(data$wheeze_ceoccur_v3)="Wheezing"
-label(data$chestpain_ceoccur_v3)="Chest pain"
-label(data$myalgia_ceoccur_v3)="Muscle aches (Myalgia)"
-label(data$jointpain_ceoccur_v3)="Joint pain (Arthralgia)"
-label(data$fatigue_ceoccur_v3)="Fatigue / Malaise"
-label(data$shortbreath_ceoccur_v3)="Shortness of breath (Dyspnoea)"
-label(data$ageusia_ceoccur_v3)="Disturbance or loss of taste (Ageusia )"
-label(data$lowerchest_ceoccur_v3)="Lower chest wall indrawing"
-label(data$headache_ceoccur_v3)="Headache"
-label(data$confusion_ceoccur_v3)="Altered consciousness / confusion"
-label(data$seizures_cecoccur_v3)="Seizures"
-label(data$abdopain_ceoccur_v3)="Abdominal pain"
-label(data$vomit_ceoccur_v3)="Vomiting / Nausea"
-label(data$diarrhoea_ceoccur_v3)="Diarrhoea"
-label(data$conjunct_ceoccur_v3)="Conjunctivitis"
-label(data$rash_ceoccur_v3)="Skin rash"
-label(data$skinulcers_ceoccur_v3)="Skin ulcers"
-label(data$lymp_ceoccur_v3)="Lymphadenopathy"
-label(data$bleed_ceoccur_v3)="Bleeding (Haemorrhage)"
-label(data$anosmia_ceoccur_v3)="Disturbance or loss of smell (Anosmia)"
-label(data$no_symptoms_v3)="None"
-label(data$bleed_cetermy_v3)="If Yes to Bleeding, specify site(s)"
-label(data$reinf_treat_none)="Treatment None"
-label(data$reinf_pre_adm_hosp)="Admitted to hospital"
-label(data$reinf_pre_oxygen)="Treated with oxygen"
-label(data$reinf_pre_hdu_icu)="Admitted to HDU/ICU"
-label(data$reinf_pre_inv_vent)="Receive invasive ventilation"
-label(data$reinf_pre_ecmo)="Receive extracorporeal membrane oxygenation (ECMO)"
-label(data$reinf_pre_dexameth)="Treated with: Dexamethasone"
-label(data$reinf_pre_steroid)="Any other steroid"
-label(data$reinf_pre_tociliz)="Tocilizumab"
-label(data$reinf_pre_remdesivir)="Remdesivir"
-label(data$reinf_pre_conv_plasma)="Convalescent plasma"
-label(data$reinf_pre_lopin_riton)="Lopinavir/Ritonavir"
-label(data$reinf_pre_interferon)="Interferon"
-label(data$reinf_pre_chloro_hchlo)="Chloroquine/Hydroxychloroquine"
-label(data$reinf_pre_casiriv)="Casirivimab/Imdevimab"
-label(data$reinfection_form_complete)="Complete?"
-label(data$daily_dsstdat)="DATE OF ASSESSMENT "
-label(data$daily_hoterm)="Current admission to ICU/ITU/IMC/HDU"
-label(data$daily_temp_vsorres)="Highest Temperature"
-label(data$daily_temp_vsorresu)="Highest Temperature Unit"
-label(data$daily_temp_vsorresnk)="Highest Temperature N/K"
-label(data$daily_fi02_lbyn)="FiO2  available / Any supplemental oxygen?"
-label(data$daily_fio2_lborres)="FiO2 (0.21-1.0)"
-label(data$daily_fio2b_lborres)="FiO2 %"
-label(data$daily_fio2c_lborres)="FiO2 L/min (highest)"
-label(data$daily_sa02_lbyn)="SaO2 (Oxygen saturation in newer CRF) available?"
-label(data$daily_sao2_lborres)="SaO2 (SpO2 on the newer CRF)"
-label(data$daily_pao2_lbyn)="PaO2 available?"
-label(data$daily_pao2_lborres)="PaO2:"
-label(data$daily_pao2_lborresu)="PaO2 unit:"
-label(data$daily_pao2_lbspec)="PaO2 sample type"
-label(data$daily_pco2_lbyn)="PCO2 available?"
-label(data$daily_pco2_lborres)="PCO2 "
-label(data$daily_pco2_lborresu)="PCO2 Unit"
-label(data$daily_ph_lbyn)="pH available"
-label(data$daily_ph_lborres)="pH"
-label(data$daily_hco3_lbyn)="HCO3-  available"
-label(data$daily_hco3_lborres)="HCO3- "
-label(data$daily_hco3_lborresu)="HCO3- Unit"
-label(data$daily_baseex_lbyn)="Base excess available"
-label(data$daily_baseex_lborres)="Base excess"
-label(data$daily_rr)="RR breaths per minute (highest)"
-label(data$daily_rr_nk)="RR breaths per minute N/K "
-label(data$avpu_vsorres)="AVPU"
-label(data$daily_gcs_lbyn)="Glasgow Coma Score available?"
-label(data$daily_gcs_vsorres)="Glasgow Coma Score:"
-label(data$systolic_vsyn)="Systolic Blood Pressure available?"
-label(data$systolic_vsorres)="Systolic Pressure"
-label(data$diastolic_vsyn)="Diastolic Blood Pressure available?"
-label(data$diastolic_vsorres)="Diastolic Pressure"
-label(data$daily_meanart_lbyn)="Mean Arterial Pressure available?"
-label(data$daily_meanart_vsorres)="Mean Arterial Pressure:"
-label(data$daily_urine_lbyn)="Urine flow rate available?"
-label(data$daily_urine_lborres)="Urine flow rate:"
-label(data$daily_noninvasive_prtrt)="Non-invasive ventilation (e.g. NIV (if shorter CRF), BIPAP, CPAP)?"
-label(data$daily_invasive_prtrt)="Invasive ventilation?"
-label(data$daily_nasaloxy_cmtrt)="High-flow nasal canula?"
-label(data$daily_ecmo_prtrt)="ECLS/ECMO"
-label(data$daily_rrt_cmtrt)="Dialysis / Hemofiltration?"
-label(data$daily_inotrope_cmyn)="Any vasopressor / inotropic support?"
-label(data$daily_dopless5_cmtrt)="Dopamine <  5 µg/min OR Dobutamine OR Milrinone OR Levosimendan:"
-label(data$daily_dop5to15_cmtrt)="Dopamine 5-15 µg/min OR Epinephrine/Norepinephrine <  0.1 µg/kg/min OR Vasopressin OR Phenylephrine:"
-label(data$daily_dopgr15_cmtrt)="Dopamine > 15 µg/min OR Epinephrine/Norepinephrine > 0.1 µg/kg/min:"
-label(data$daily_neuro_cmtrt)="Neuromuscular blocking agents?"
-label(data$daily_nitritc_cmtrt)="Inhaled Nitric Oxide ?"
-label(data$daily_prone_cmtrt)="Prone Positioning"
-label(data$daily_trach_prperf)="Tracheostomy inserted?"
-label(data$daily_prperf)="Other intervention or procedure?"
-label(data$daily_other_prtrt)="If YES other intervention, Specify,"
-label(data$remdesivir)="Is patient receiving Remdesivir through EAMS (Early Access to Medicine Scheme) criteria?     "
-label(data$remdesivir_day)="Which day of Remdesivir therapy is this: (number)         "
-label(data$remdesivir_last_dose)="Is this the intended last dose?"
-label(data$daily_lbperf)="Results available for sample taken on the date in section 1 above ?"
-label(data$daily_lbdat)="Date of  assessment"
-label(data$daily_hb_lbyn)="Haemoglobin available"
-label(data$daily_hbop_lborres)="Haemoglobin < or > (optional)"
-label(data$daily_hb_lborres)="Haemoglobin"
-label(data$daily_hb_lborresu)="Haemoglobin Unit"
-label(data$daily_wbc_lbyn)="WBC count available"
-label(data$daily_wbcop_lborres)="WBC count < or > (optional)"
-label(data$daily_wbc_lborres)="WBC count"
-label(data$daily_wbc_lborresu)="WBC Unit"
-label(data$daily_lymp_lbyn)="Lymphocyte count available"
-label(data$daily_lympop_lbyn)="Lymphocyte count < or > (optional)"
-label(data$daily_lymp_lborres)="Lymphocyte count"
-label(data$daily_lymp_lborresu)="Lymphocyte count Unit"
-label(data$daily_neutro_lbyn)="Neutrophil count available"
-label(data$daily_neutroop_lbyn)="Neutrophil count < or > (optional)"
-label(data$daily_neutro_lborres)="Neutrophil count"
-label(data$daily_neutro_lborresu)="Neutrophil count Unit"
-label(data$daily_haematocrit_lbyn)="Haematocrit available"
-label(data$daily_haematocrit_lborres)="Haematocrit"
-label(data$daily_haematocrit_lborresu)="Haematocrit Unit"
-label(data$daily_plt_lbyn)="Platelets available"
-label(data$daily_pltop_lborres)="Platelet count < or > (optional)"
-label(data$daily_plt_lborres)="Platelet Count"
-label(data$daily_plt_lborresu)="Platelets Unit"
-label(data$daily_aptt_lbyn)="APTT/APTR available"
-label(data$daily_apttop_lborres)="APTT/APTR < or > (optional)"
-label(data$daily_aptt_lborres)="APTT/APTR"
-label(data$daily_pt_inr_lbyn)="PT or INR available"
-label(data$daily_ptop_lborres)="PT < or > (optional)"
-label(data$daily_pt_lborres)="PT "
-label(data$daily_inrop_lborres)="INR < or > (optional)"
-label(data$daily_inr_lborres)="INR"
-label(data$daily_esr_lbyn)="ESR available"
-label(data$daily_esrop_lbyn)="ESR < or > (optional)"
-label(data$daily_esr_lborres)="ESR"
-label(data$daily_ferr_lbyn)="Ferritin available"
-label(data$daily_ferrop_lbyn)="Ferritin < or > (optional)"
-label(data$daily_ferr_lborres)="Ferritin"
-label(data$daily_ferr_lborresu)="Ferritin Unit"
-label(data$daily_alt_lbyn)="ALT / SGPT available"
-label(data$daily_altop_lbyn)="ALT / SGPT < or > (optional)"
-label(data$daily_alt_lborres)="ALT / SGPT"
-label(data$daily_bil_lbyn)="Total Bilirubin available"
-label(data$daily_bilop_lborres)="Total Bilirubin < or > (optional)"
-label(data$daily_bil_lborres)="Total Bilirubin"
-label(data$daily_bil_lborresu)="Total Bilirubin Unit"
-label(data$daily_ast_lbyn)="AST/SGOT available"
-label(data$daily_astop_lborres)="AST/SGOT < or > (optional)"
-label(data$daily_ast_lborres)="AST/SGOT"
-label(data$daily_glucose_lbyn)="Glucose available"
-label(data$daily_glucoseop_lborres)="Glucose < or > (optional)"
-label(data$daily_glucose_lborres)="Glucose"
-label(data$daily_glucose_lborresu)="Glucose Unit "
-label(data$daily_bun_lbyn)="Blood Urea Nitrogen (urea) available"
-label(data$daily_bunop_lborres)="Blood Urea Nitrogen (urea) < or > (optional)"
-label(data$daily_bun_lborres)="Blood Urea Nitrogen (urea)"
-label(data$daily_bun_lborresu)="Blood Urea Nitrogen (urea) Unit"
-label(data$daily_lactate_lbyn)="Lactate available"
-label(data$daily_lactateop_lbyn)="Lactate < or > (optional)"
-label(data$daily_lactate_lborres)="Lactate"
-label(data$daily_lactate_lborresu)="Lactate Unit"
-label(data$daily_ldh_lbyn)="Lactate dehydrogenase (LDH) available?"
-label(data$daily_ldhop_lborres)="LDH < or > (optional)"
-label(data$daily_ldh_lborres)="Lactate dehydrogenase (LDH) "
-label(data$daily_cpk_lby)="Creatine Phosphokinase (CPK) available?"
-label(data$daily_cpkop_lbyn_2)="Creatine Phosphokinase (CPK)  < or > (optional)"
-label(data$daily_cpk_lbyn_2)="Creatine Phosphokinase (CPK) "
-label(data$daily_creat_lbyn)="Creatinine available"
-label(data$daily_creatop_lborres)="Creatinine  < or > (optional)"
-label(data$daily_creat_lborres)="Creatinine"
-label(data$daily_creat_lborresu)="Creatinine Unit"
-label(data$daily_sodium_lbyn)="Sodium  available "
-label(data$daily_sodiumop_lborres)="Sodium < or > (optional)"
-label(data$daily_sodium_lborres)="Sodium"
-label(data$daily_sodium_lborresu)="Sodium Unit"
-label(data$daily_potassium_lbyn)="Potassium available "
-label(data$daily_potassiumop_lborres)="Potassium < or > (optional)"
-label(data$daily_potassium_lborres)="Potassium"
-label(data$daily_potassium_lborresu)="Potassium Unit"
-label(data$daily_procal_lbyn)="Procalcitonin available"
-label(data$daily_procalop_lborres)="Procalcitonin < or > (optional)"
-label(data$daily_procal_lborres)="Procalcitonin"
-label(data$daily_crp_lbyn)="C-reactive protein (CRP) available"
-label(data$daily_crpop_lborres)="C-reactive protein (CRP) < or > (optional)"
-label(data$daily_crp_lborres)="C-reactive protein (CRP)"
-label(data$daily_crp_lborresu)="C-reactive protein (CRP) Unit"
-label(data$daily_egfr_lbyn)="eGFR available"
-label(data$daily_egfrop_lborres)="eGFR < or > (optional)"
-label(data$daily_egfr_lborres)="eGFR"
-label(data$daily_egfr_equation___1)="eGFR equation/formula (choice=CKD-EPI)"
-label(data$daily_egfr_equation___2)="eGFR equation/formula (choice=MDRD)"
-label(data$daily_egfr_equation___3)="eGFR equation/formula (choice=CG)"
-label(data$daily_egfr_equation___4)="eGFR equation/formula (choice=N/K)"
-label(data$daily_hba1cop_lborres)="Most recent HbA1c < or > (optional)"
-label(data$daily_hba1c_lborres)="Most recent HbA1c"
-label(data$daily_hba1c_lborresu)="Most recent HbA1c Unit"
-label(data$daily_hba1c_lborresnk)="Most recent HbA1c N/K"
-label(data$daily_hba1c_lborresd)="Date of HbA1c"
-label(data$xray_prperf)="X-Ray/CT performed (this is chest X-ray if shorter CRF)?"
-label(data$infiltrates_faorres)="If yes, were infiltrates present?"
-label(data$daily_samples)="Was a biological sample taken for research on this day?"
-label(data$daily_samples_kitno)="If yes, please record the KIT number"
-label(data$daily_form_complete)="Complete?"
-label(data$mbperf)="Was pathogen testing done during this illness episode?"
-label(data$cov19sars_mbyn_v2)="COVID-19 / SARS-CoV-2"
-label(data$influ_mbyn)="Influenza: "
-label(data$influ_mbyn_v2)="Influenza"
-label(data$influ_mbcat)="If Yes to Influenza"
-label(data$influothera_mborres)="Other influenza A, specify:"
-label(data$influother_mborres)="Other influenza, specify:"
-label(data$corna_mbcat)="Coronavirus: "
-label(data$corna_mbcaty)="If Yes to Coronavirus:"
-label(data$coronaother_mborres)="IF Other coronavirus; Specify:"
-label(data$rsv_mbcat)="RSV"
-label(data$rsv_mbcat_v2)="Respiratory syncytial virus (RSV)"
-label(data$adeno_mbcat)="Adenovirus"
-label(data$adeno_mbcat_v2)="Adenovirus"
-label(data$bact_mborres)="Bacteria"
-label(data$bacteria_mborres)="If yes, specify bacteria (list all below)"
-label(data$clinicalpneu_mborres)="Clinical pneumonia: "
-label(data$infectuk_mborres)="IF NONE OF THE ABOVE: Suspected Non-infective:"
-label(data$pcr_path_diag___0)="Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=None positive)"
-label(data$pcr_path_diag___1)="Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Mycoplasma pneumoniae positive)"
-label(data$pcr_path_diag___2)="Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Legionella species (L. pneumophila or L. longbeachae) positive)"
-label(data$pcr_path_diag___3)="Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Metapneumovirus positive)"
-label(data$pcr_path_diag___4)="Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Parainfluenza virus positive)"
-label(data$pcr_path_diag___5)="Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Coronavirus HKU1/OC43/229E/NL63 (**NOT COVID-19**) positive)"
-label(data$pcr_path_diag___6)="Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Bocavirus positive)"
-label(data$pcr_path_diag___10)="Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Other - please specify)"
-label(data$pcr_path_diago)="If selected Yes for Other respiratory PCR-diagnosed pathogen, specify"
-label(data$other_mbyn)="Other Infectious Respiratory Diagnosis:  (complete for PRE_v9.7 CRF only)"
-label(data$other_mborres)=" If YES: Other infectious respiratory diagnosis, specify:"
-label(data$infectious_respiratory_disease_pathogen_diagnosis_complete)="Complete?"
-label(data$daily_mbperf)="Pathogen testing done"
-label(data$llimsno_bnum)="LIMS number"
-label(data$mbdat)="Collection Date"
-label(data$mbspec)="Bio specimen type"
-label(data$other_mbspec)="If  OTHER; Specify"
-label(data$mbmethod)="Laboratory Test Method"
-label(data$other_mbmethod)="If Other Laboratory test method; Specify"
-label(data$mborres)="Result"
-label(data$mbtestcd)="Pathogen Detected (full name without abbreviations)"
-label(data$mbspec_v2)="Type of test (for V9.9 CRF onwards there is no need to record Urine, CSF or Faeces (stool))"
-label(data$mborres_v2)="Test result, select one:"
-label(data$mbtestcd_nsth)="Organism - Nasal and / or throat swab"
-label(data$mbtestcd_nstho)="Other Nasal and / or throat swab organism - specify"
-label(data$mbtestcd_bc)="Organism - Blood culture"
-label(data$mbtestcd_bco)="Other Blood Culture organism"
-label(data$mbtestcd_sp)="Organism - Sputum"
-label(data$mbtestcd_spo)="Other Sputum organism"
-label(data$mbtestcd_drs)="Organism - Deep respiratory sample"
-label(data$mbtestcd_drso)="Other Deep respiratory sample organism"
-label(data$mbtestcd_ur)="Organism - Urine"
-label(data$mbtestcd_uro)="Other Urine organism"
-label(data$mbtestcd_csf)="Organism - Cerebrospinal fluid (CSF)"
-label(data$mbtestcd_csfo)="Other Cerebrospinal fluid (CSF) organism"
-label(data$mbtestcd_fst)="Organism - Faeces (stool)"
-label(data$mbtestcd_fsto)="Other Faeces (stool) organism"
-label(data$mbdat_v2)="Date sample obtained"
-label(data$mbspec_v3)="Other sample type with Positive results: Sample type This does not need to be recorded for V9.9 of the CRF onwards"
-label(data$mbtestcd_v3)="Other sample type with Positive results: Organism"
-label(data$mbdat_v3)="Other sample type with Positive results : Date sample obtained"
-label(data$infectious_respiratory_disease_pathogen_testing_complete)="Complete?"
-label(data$antiviral_cmyn)="Antiviral agent?"
-label(data$antiviral_cmtrt___1)="IF YES to antiviral agent (choice=Ribavirin)"
-label(data$antiviral_cmtrt___2)="IF YES to antiviral agent (choice=Lopinavir/Ritonvir)"
-label(data$antiviral_cmtrt___3)="IF YES to antiviral agent (choice=Interferon alpha)"
-label(data$antiviral_cmtrt___4)="IF YES to antiviral agent (choice=Interferon beta)"
-label(data$antiviral_cmtrt___7)="IF YES to antiviral agent (choice=Chloroquine / Hydroxychloroquine)"
-label(data$antiviral_cmtrt___10)="IF YES to antiviral agent (choice=Oseltamivir (Tamiflu))"
-label(data$antiviral_cmtrt___11)="IF YES to antiviral agent (choice=Zanamivir)"
-label(data$antiviral_cmtrt___12)="IF YES to antiviral agent (choice=Casirivimab /Imdevimab)"
-label(data$antiviral_cmtrt___8)="IF YES to antiviral agent (choice=Remdesivir)"
-label(data$antiviral_cmtrt___9)="IF YES to antiviral agent (choice=IL6 inhibitor)"
-label(data$antiviral_cmtrt___5)="IF YES to antiviral agent (choice=Neuraminidase inhibitors)"
-label(data$antiviral_cmtrt___6)="IF YES to antiviral agent (choice=Other or novel antiviral)"
-label(data$casiriv_cmtrt_first)="If  YES to Casirivimab/Imdevimab: first dose"
-label(data$remdes_cmtrt_first)="If  YES to Remdesivir: first dose"
-label(data$remdes_cmtrt_last)="If  YES to Remdesivir: last dose"
-label(data$il6_cmtrt)="If  YES to IL6 inhibitor: which"
-label(data$il6_cmtrt_other)="Specify other IL6 inhibitor:"
-label(data$il6_cmtrt_first)="If  YES to  IL6 inhibitor: first dose"
-label(data$il6_cmtrt_last)="If  YES to IL6 inhibitor: last dose"
-label(data$neuro_cmtrt)="If  Neuraminidase inhibitors; Specify which"
-label(data$othantiviral_cmtrt)="If  Other antiviral agent; Specify type"
-label(data$othantiviral2_cmyn)="Would you like to add another antiviral?"
-label(data$othhantiviral2_cmtrt)="If  Other antiviral agent; Specify type"
-label(data$othantiviral3_cmyn)="Would you like to add another antiviral?"
-label(data$othantiviral3_cmtrt)="If  Other antiviral agent; Specify type"
-label(data$othantiviral4_cmyn)="Would you like to add another antiviral?"
-label(data$othantiviral4_cmtrt)="If  Other antiviral agent; Specify type"
-label(data$othantiviral5_cmyn)="Would you like to add another antiviral?"
-label(data$othantiviral5_cmtrt)="If  Other antiviral agent; Specify type"
-label(data$antibiotic_cmyn)="Antibiotic agent?"
-label(data$antibiotic_cmtrt)="IF YES to antibiotic agent; Specify type"
-label(data$antibiotic2_cmyn)="Would you like to add another antibiotic?"
-label(data$antibiotic2_cmtrt)="IF YES to antibiotic agent; Specify type"
-label(data$antibiotic3_cmyn)="Would you like to add another antibiotic?"
-label(data$antibiotic3_cmtrt)="IF YES to antibiotic agent; Specify type"
-label(data$antibiotic4_cmyn)="Would you like to add another antibiotic?"
-label(data$antibiotic4_cmtrt)="IF YES to antibiotic agent; Specify type"
-label(data$antibiotic5_cmyn)="Would you like to add another antibiotic?"
-label(data$antibiotic5_cmtrt)="IF YES to antibiotic agent; Specify type"
-label(data$antibiotic6_cmyn)="Would you like to add another antibiotic?"
-label(data$antibiotic6_cmtrt)="IF YES to antibiotic agent; Specify type"
-label(data$antibiotic7_cmyn)="Would you like to add another antibiotic?"
-label(data$antibiotic7_cmtrt)="IF YES to antibiotic agent; Specify type"
-label(data$corticost_cmyn)="Corticosteroid agent?"
-label(data$corticost_cmtrt_type)="If YES to Corticosteroid, please confirm type: "
-label(data$corticost_cmtrt)="If YES to Corticosteroid, specify type/name or details of Other corticosteroid:"
-label(data$corticost_cmroute)="If YES to Corticosteroid, specify Route"
-label(data$corticost_cmdose)="If YES to Corticosteroid, specify dose"
-label(data$corticost2_cmyn)="Would you like to add another Corticosteroid agent?"
-label(data$corticost2_cmtrt_type)="If YES to Corticosteroid, please confirm type: "
-label(data$corticost2_cmtrt)="If YES to Corticosteroid, specify type/name or details of Other corticosteroid:"
-label(data$corticost2_cmroute)="If YES to Corticosteroid, specify Route"
-label(data$corticost2_cmdose)="If YES to Corticosteroid, specify dose"
-label(data$corticost3_cmyn)="Would you like to add another Corticosteroid agent?"
-label(data$corticost3_cmtrt_type)="If YES to Corticosteroid, please confirm type: "
-label(data$corticost3_cmtrt)="If YES to Corticosteroid, specify type/name or details of Other corticosteroid:"
-label(data$corticost3_cmroute)="If YES to Corticosteroid, specify Route"
-label(data$corticost3_cmdose)="If YES to Corticosteroid, specify dose"
-label(data$corticost4_cmyn)="Would you like to add another Corticosteroid agent?"
-label(data$corticost4_cmtrt_type)="If YES to Corticosteroid, please confirm type: "
-label(data$corticost4_cmtrt)="If YES to Corticosteroid, specify type/name or details of Other corticosteroid:"
-label(data$corticost4_cmroute)="If YES to Corticosteroid, specify Route"
-label(data$corticost4_cmdose)="If YES to Corticosteroid, specify dose"
-label(data$corticost5_cmyn)="Would you like to add another Corticosteroid agent?"
-label(data$corticost5_cmtrt_type)="If YES to Corticosteroid, please confirm type: "
-label(data$corticost5_cmtrt)="If YES to Corticosteroid, specify type/name or details of Other corticosteroid:"
-label(data$corticost5_cmroute)="If YES to Corticosteroid, specify Route"
-label(data$corticost5_cmdose)="If YES to Corticosteroid, specify dose"
-label(data$dexamethasone)="Dexamethasone 6mg once per day?"
-label(data$dexamethasone_days)="Dexamethasone, for how many days"
-label(data$dexamethasone_dose)="Dexamethasone Dose in milligrams (mg)"
-label(data$dexamethasone_freq)="Dexamethasone Frequency "
-label(data$dexamethasone_other_freq)="Dexamethasone, specify Other frequency "
-label(data$dexamethasone_route)="If Yes to Dexamethasone, specify Route:"
-label(data$dexamethasone2)="Second dose of Dexamethasone given? "
-label(data$dexamethasone2_dose)="Dexamethasone 2  Dose in milligrams (mg)"
-label(data$dexamethasone2_freq)="Dexamethasone 2 Frequency "
-label(data$dexamethasone2_other_freq)="Dexamethasone 2, specify Other frequency "
-label(data$dexamethasone2_route)="Dexamethasone 2 Route"
-label(data$dexamethasone2_days)="Dexamethasone 2, number of days given"
-label(data$dexamethasone3)="Third dose of Dexamethasone given? "
-label(data$dexamethasone3_dose)="Dexamethasone 3  Dose in milligrams (mg)"
-label(data$dexamethasone3_freq)="Dexamethasone 3 Frequency "
-label(data$dexamethasone3_other_freq)="Dexamethasone 3, specify Other frequency "
-label(data$dexamethasone3_route)="Dexamethasone 3 Route"
-label(data$dexamethasone3_days)="Dexamethasone 3, number of days given"
-label(data$dexamethasone4)="Fourth dose of Dexamethasone given? "
-label(data$dexamethasone4_dose)="Dexamethasone 4  Dose in milligrams (mg)"
-label(data$dexamethasone4_freq)="Dexamethasone 4 Frequency "
-label(data$dexamethasone4_other_freq)="Dexamethasone 4, specify Other frequency "
-label(data$dexamethasone4_route)="Dexamethasone 4 Route"
-label(data$dexamethasone4_days)="Dexamethasone 4, number of days given"
-label(data$dexamethasone5)="Fifth dose of Dexamethasone given? "
-label(data$dexamethasone5_dose)="Dexamethasone 5  Dose in milligrams (mg)"
-label(data$dexamethasone5_freq)="Dexamethasone 5 Frequency "
-label(data$dexamethasone5_other_freq)="Dexamethasone 5, specify Other frequency "
-label(data$dexamethasone5_route)="Dexamethasone 5 Route"
-label(data$dexamethasone5_days)="Dexamethasone 5, number of days given"
-label(data$antifung_cmyn)="Antifungal agent?"
-label(data$antifungal_cmtrt)="IF YES to antifungal agent; Specify which"
-label(data$offlabel_cmyn)="Off-label / Compassionate Use medications?  "
-label(data$offlabel_cmtrt)="IF YES to Off-label / Compassionate Use medications; Specify which"
-label(data$interleukin_cmyn)="Interleukin inhibitors"
-label(data$interleukin_cmtrt)="IF YES to Interleukin inhibitors; Specify which"
-label(data$conv_plasma_cmyn)="Convalescent plasma"
-label(data$icu_hoterm)="ICU or High Dependency admission"
-label(data$icu_no)="If No to ICU or High Dependency Unit admission:"
-label(data$icu_hostdat)="Date of ICU/HDU admission:"
-label(data$icu_hostdatnk)="Date of ICU/HDU admission N/K"
-label(data$icu_hoendat)="Date of ICU/HDU discharge:"
-label(data$icu_hoendatnk)="Date of discharge N/K"
-label(data$icu_hostdat2)="Date of ICU/HDU admission 2:"
-label(data$icu_hostdat2_nk)="Date of ICU/HDU admission 2 N/K"
-label(data$icu_hoendat2)="Date of ICU/HDU discharge 2:"
-label(data$icu_hoendat2_nk)="Date of ICU/HDU discharge 2 N/K"
-label(data$icu_hostdat3)="Date of ICU/HDU admission 3:"
-label(data$icu_hostdat3_nk)="Date of ICU/HDU admission 3 N/K"
-label(data$icu_hoendat3)="Date of ICU/HDU discharge 3:"
-label(data$icu_hoendat3_nk)="Date of ICU/HDU discharge 3 N/K"
-label(data$icu_hostillin)="Still in ICU/HDU"
-label(data$hodur)="If YES, total duration (days)"
-label(data$oxygen_cmoccur)="Oxygen therapy"
-label(data$oxygenhf_cmoccur)="High-flow nasal canula?"
-label(data$noninvasive_proccur)="Non-invasive ventilation ? (e.g. BIPAP, CPAP)"
-label(data$invasive_proccur)="Invasive ventilation (Any intubation) ?"
-label(data$pronevent_prtrt)="Prone ventilation"
-label(data$inhalednit_cmtrt)="Inhaled Nitric Oxide"
-label(data$tracheo_prtrt)="Tracheostomy inserted"
-label(data$extracorp_prtrt)="Extracorporeal (ECMO) support"
-label(data$rrt_prtrt)="Renal replacement therapy (RRT) or dialysis"
-label(data$inotrop_cmtrt)="Inotropes / vasopressors"
-label(data$invasive_prdur)="If yes to Invasive ventilation; confirm duration "
-label(data$invasive_still_on)="If yes to Invasive ventilation - still on it"
-label(data$excorp_prdur)="If YES to Extracorporeal (ECMO) support; confirm duration"
-label(data$excorp_still_on)="If yes to Extracorporeal (ECMO) support - still on it"
-label(data$rrt_totdur)="If YES to RRT or dialysis, total duration"
-label(data$rrt_still_on)="If YES to RRT or dialysis - still on it"
-label(data$inotrope_cmdur)="If YES to Inotropes/vasopressors; confirm duration"
-label(data$inotrope_still_on)="If YES to Inotropes/vasopressors - still on them"
-label(data$other_cmyn)="OTHER intervention or procedure"
-label(data$other_cm)="IF  YES OTHER intervention or procedure; Specify"
-label(data$bloodgroup)="Blood Group (please check past as well as current medical record)"
-label(data$treatment_complete)="Complete?"
-label(data$complications_none)="No complications"
-label(data$vrialpneu_ceoccur)="Viral Pneumonia"
-label(data$bactpneu_ceoccur)="Bacterial pneumonia"
-label(data$ards_ceoccur)="Acute Respiratory Distress Syndrome"
-label(data$cryptogenic_ceterm)="Cryptogenic organizing pneumonia (COP)"
-label(data$pneumothorax_ceterm)="Pneumothorax"
-label(data$pleuraleff_ceterm)="Pleural effusion"
-label(data$bronchio_ceterm)="Bronchiolitis"
-label(data$meningitis_ceterm)="Meningitis / Encephalitis"
-label(data$seizure_ceterm)="Seizure"
-label(data$stroke_ceterm)="Stroke / Cerebrovascular accident"
-label(data$neuro_comp)="Other neurological complication"
-label(data$heartfailure_ceterm)="Congestive heart failure"
-label(data$endocarditis_aeterm)="Endocarditis / Myocarditis Pericarditis (for newer CRF this option covers Endocarditis only)"
-label(data$myocarditis_ceterm)="Myocarditis / Pericarditis"
-label(data$cardiomyopathy_ceterm)="Cardiomyopathy"
-label(data$arrhythmia_ceterm)="Cardiac arrhythmia"
-label(data$ischaemia_ceterm)="Cardiac ischemia"
-label(data$cardiacarrest_ceterm)="Cardiac arrest"
-label(data$bacteraemia_ceterm)="Bacteraemia"
-label(data$coagulo_ceterm)="Coagulation disorder / Disseminated intravascular coagulation"
-label(data$dvt_ceterm)="Deep vein thrombosis"
-label(data$pulmthromb_ceterm)="Pulmonary thromboembolism"
-label(data$aneamia_ceterm)="Anaemia"
-label(data$rhabdomyolsis_ceterm)="Rhabdomyolysis / Myositis"
-label(data$renalinjury_ceterm)="Acute renal injury / Acute renal failure"
-label(data$gastro_ceterm)="Gastrointestinal hemorrhage"
-label(data$pancreat_ceterm)="Pancreatitis"
-label(data$liverdysfunction_ceterm)="Liver dysfunction"
-label(data$hyperglycemia_aeterm)="Hyperglycaemia"
-label(data$hypoglycemia_ceterm)="Hypoglycaemia"
-label(data$other_ceoccur)="Other"
-label(data$other_ceterm)="If  Other; Specify"
-label(data$complications_complete)="Complete?"
-label(data$recruitment)="Is/Has the participant being recruited to a trial or multi-centre study during the period of their current illness (including initiation in the community and hospital)?"
-label(data$study_1_name)="If YES, specify name of study:   "
-label(data$study_1_id)="Study Participant ID:   "
-label(data$study_2)="Add another study?"
-label(data$study_2_name)="If YES, specify name of study: "
-label(data$study_2_id)="Study Participant ID: "
-label(data$study_3)="Add another study? "
-label(data$study_3_name)="If YES, specify name of study: "
-label(data$study_3_id)="Study Participant ID: "
-label(data$study_participation_complete)="Complete?"
-label(data$postpart_rptestcd_out)="PREGNANCY OUTCOME: If delivered during admission, please confirm: POST PARTUM (within six weeks of delivery)"
-label(data$pregout_rptestcd_out)="Pregnancy Outcome"
-label(data$dlvrdtc_rptestcd_out)="Delivery Date"
-label(data$aplb_lbperf_out)="Has infant(s) been tested for Mothers infection?"
-label(data$aplb_lborres_out)="If YES (to Has infant been tested for Mothers infection):"
-label(data$dsterm)="Outcome:"
-label(data$dshosp)="If hospitalised:"
-label(data$dsstdtcyn)="Is the Outcome date known"
-label(data$dsstdtc)="Outcome date"
-label(data$suppds_qval)="If Discharged alive: Ability to self-care at discharge versus before illness"
-label(data$oxygen_proccur)="Oxygen therapy"
-label(data$renal_proccur)="Dialysis / renal treatment?"
-label(data$other_cmoccur)="Other intervention or procedure?"
-label(data$other_cmtrt)="If YES: Specify (multiple permitted)"
-label(data$siteid)="If Transferred: Facility name"
-label(data$siteidnk)="If Transferred: Facility name N/K"
-label(data$siteyn)="If Transferred: Is the transfer facility a study site?"
-label(data$subjidcat)="If a Study Site: Participant number at new facility"
-label(data$transfer_subjid)="If Different, Participant number at the new facility (CPMS Site code (hypen) four or five digit number patient number e.g Y0401-0001)."
-label(data$outcome_complete)="Complete?"
-label(data$dsterm_v2)="Outcome"
-label(data$dsstdtc_v2)="Outcome date"
-label(data$dsstdtc_v2_nk)="Outcome date N/K"
-label(data$suppds_qval_v2)="Ability to self-care at discharge versus before illness:  "
-label(data$oxygen_proccur_v2)="Post-discharge treatment: Oxygen therapy"
-label(data$siteid_v2)="If Transferred: Facility name"
-label(data$siteid_v2_nk)="If Transferred: Facility name N/K"
-label(data$siteyn_v2)="If transferred, is the transfer facility a study site? "
-label(data$siteyn_v3)=" If a Study Site: Participant number at new facility "
-label(data$subjidcat_v2)=" If a Study Site: Participant # at new facility "
-label(data$final_outcome_complete)="Complete?"
-label(data$sample_obtained)="Was a convalescent sample obtained?"
-label(data$sample_kit)="If yes, please record the KIT number:"
-label(data$sample_date)="Date sample obtained:"
-label(data$research_samples_complete)="Complete?"
-label(data$core_addinfo)="Additional Information"
-label(data$core_additional_information_complete)="Complete?"
-label(data$withddat)="Date of withdrawal:"
-label(data$withdtype)="Type of withdrawal:"
-label(data$withdreas)="Other type of withdrawal:"
-label(data$reason_for_withdrawal)="Reason for withdrawal:"
-label(data$withdrawal_form_complete)="Complete?"
-label(data$consent_given)="Any mode of Consent or Assent Given : "
-label(data$consent_daterec)="Date received:"
-label(data$consent_mode___1)="Mode of consent (check all that apply):  (choice=Adult)"
-label(data$consent_mode___2)="Mode of consent (check all that apply):  (choice=Adult Extra Convalescent Sampling)"
-label(data$consent_mode___3)="Mode of consent (check all that apply):  (choice=Adult BioAID)"
-label(data$consent_mode___4)="Mode of consent (check all that apply):  (choice=Consultee)"
-label(data$consent_mode___5)="Mode of consent (check all that apply):  (choice=Witnessed)"
-label(data$consent_mode___6)="Mode of consent (check all that apply):  (choice=Telephone)"
-label(data$consent_mode___7)="Mode of consent (check all that apply):  (choice=Next of Kin (Scotland only))"
-label(data$consent_mode___8)="Mode of consent (check all that apply):  (choice=Adult Regained Capacity  (Scotland only))"
-label(data$consent_mode___9)="Mode of consent (check all that apply):  (choice=Young Person 12-18y)"
-label(data$consent_mode___10)="Mode of consent (check all that apply):  (choice=Child under 12y)"
-label(data$consent_mode___11)="Mode of consent (check all that apply):  (choice=Parent/Guardian)"
-label(data$consent_optcondit___1)="Agreement to optional conditions of consent (check all that apply):  (choice=Other unrelated use)"
-label(data$consent_optcondit___2)="Agreement to optional conditions of consent (check all that apply):  (choice=Manufacture and Commercial lack)"
-label(data$consent_optcondit___3)="Agreement to optional conditions of consent (check all that apply):  (choice=DNA RNA sequence sharing)"
-label(data$consent_optcondit___4)="Agreement to optional conditions of consent (check all that apply):  (choice=Future contact by mobile phone text message (SMS))"
-label(data$consent_phone)="If yes to future contact by mobile phone, enter UK mobile phone number: "
-label(data$consent_ctu_dms_complete)="Complete?"
-label(data$confirmed_negative_pcr)="Confirmed negative PCR on direct DM enquiry"
-label(data$confirmed_negative_pcr_complete)="Complete?"
-label(data$flw_consent_init)="I give my consent for the information I provide in this study to be used as advised"
-label(data$flw_consent_verbal)="Verbal consent given?"
-label(data$flw_consent_3_6m)="I give my consent for this survey to be sent to me in 3 to 6 months time, and over the course of the next 3 years. "
-label(data$flw_consent_phone)="I would like the possibility to be contacted by a nurse, doctor or researcher to discuss my COVID-19 illness further"
-label(data$flw_phone)="If yes, please enter your telephone numbers below: Telephone:"
-label(data$flw_mobile)="Mobile phone:"
-label(data$flw_consent_signed)="Patient / Adults signature provided?"
-label(data$flw_consent_date)="Date consent provided"
-label(data$follow_up_consent_complete)="Complete?"
-label(data$flw_survey_completed_by)="Survey completed by:"
-label(data$flw_desceased_lost)="Participant deceased or lost to follow-up?"
-label(data$flw_date_death)="Date of death"
-label(data$flw_date_deathnk)="Date of death unknown"
-label(data$flw_date_lost_flw)="Date lost to follow-up"
-label(data$flw_date_lost_flwnk)="Date lost to follow-up unknown"
-label(data$flw_survey_date)="Date you did the survey (DD/MM/YYYY): "
-label(data$flw_date_symptoms)="Roughly what day did you first experience symptoms of COVID-19? "
-label(data$flw_covid19_adm)="Were you admitted to hospital due to COVID-19? "
-label(data$flw_date_adm)="Roughly at what date were you first admitted to hospital? "
-label(data$flw_date_disch)="Roughly at what date were you first discharged from hospital?  "
-label(data$flw_covid19_readm)="Have you been re-admitted to hospital due to COVID-19? "
-label(data$flw_icu)="If admitted to hospital, were you ever admitted to intensive care (ICU/ITU)?  "
-label(data$flw_hospitals)="Name of hospital/s"
-label(data$flw_recovered)="Do you feel fully recovered from COVID-19?    "
-label(data$flw_fever)="Have you felt feverish recently?  "
-label(data$flw_last_fever)="If yes roughly when did you last feel feverish?"
-label(data$flw_illness_cause___1)="If yes, what was the cause of your recent feverish illness? (choice=COVID-19)"
-label(data$flw_illness_cause___2)="If yes, what was the cause of your recent feverish illness? (choice=Other respiratory infection (cough/cold/sore throat))"
-label(data$flw_illness_cause___3)="If yes, what was the cause of your recent feverish illness? (choice=Stomach infection (diarrhoea/vomiting))"
-label(data$flw_illness_cause___4)="If yes, what was the cause of your recent feverish illness? (choice=Urinary infection)"
-label(data$flw_illness_cause___5)="If yes, what was the cause of your recent feverish illness? (choice=Other:)"
-label(data$flw_illness_cause___6)="If yes, what was the cause of your recent feverish illness? (choice=Unknown)"
-label(data$flw_illness_cause___7)="If yes, what was the cause of your recent feverish illness? (choice=Prefer not to say)"
-label(data$flw_illness_other_cause)="specify (other cause of recent illness):"
-label(data$flw_diag_dvt)="Deep vein thrombosis (DVT, Clot in leg)"
-label(data$flw_diag_stroke)="Stroke or mini stroke/TIA"
-label(data$flw_diag_pe)="Pulmonary embolism (PE, Clot in lung)"
-label(data$flw_diag_heart_attack)="Heart attack"
-label(data$flw_diag_kidney)="Kidney problems"
-label(data$flw_diag_other)="Other condition (please specify)?  "
-label(data$flw_headache)="Headache"
-label(data$flw_balance)="Problems with balance"
-label(data$flw_cough)="Persistent cough"
-label(data$flw_limb_weakness)="Weakness in limbs"
-label(data$flw_loss_smell)="Loss of smell"
-label(data$flw_pain_breathing)="Pain on breathing"
-label(data$flw_loss_taste)="Loss of taste"
-label(data$flw_chest_pains)="Chest pains"
-label(data$flw_breathless)="Shortness of breath/breathlessness"
-label(data$flw_palpitations)="Palpitations (heart racing)"
-label(data$flw_muscle_pain)="Persistent muscle pain"
-label(data$flw_weight_loss)="Weight loss"
-label(data$flw_joint_pain)="Joint pain or swelling"
-label(data$flw_appetite)="Loss of appetite"
-label(data$flw_swollen_ankle)="Swollen ankle(s)"
-label(data$flw_stomach_pain)="Stomach pain"
-label(data$flw_nausea)="Nausea/vomiting"
-label(data$flw_sleeping)="Problems sleeping"
-label(data$flw_constipation)="Constipation"
-label(data$flw_diarrhoea)="Diarrhoea"
-label(data$flw_lesions_toes)="Lumpy lesions (purple/pink/bluish) on toes/COVID-toes?"
-label(data$flw_urine)="Problems passing urine"
-label(data$flw_skin_rash)="Skin rash"
-label(data$flw_one_side)="Cant fully move and / or feel one side of your body or face?"
-label(data$flw_dizziness)="Dizziness/light headedness"
-label(data$flw_swallow)="Problems swallowing or chewing"
-label(data$flw_seeing)="Problems seeing"
-label(data$flw_other_symp)="Any other NEW symptoms?"
-label(data$flw_fainting)="Fainting/ blackouts"
-label(data$flw_new_symptoms)="If yes (to any other NEW symptoms), specify:"
-label(data$flw_ed)="Erectile dysfunction"
-label(data$flw_cough_type)="If yes to Persistent cough - specify type:"
-label(data$flw_rash_area___1)="If yes to Skin rash, please tick all body areas that apply: (choice=Face)"
-label(data$flw_rash_area___2)="If yes to Skin rash, please tick all body areas that apply: (choice=Trunk (stomach or back))"
-label(data$flw_rash_area___3)="If yes to Skin rash, please tick all body areas that apply: (choice=Arms)"
-label(data$flw_rash_area___4)="If yes to Skin rash, please tick all body areas that apply: (choice=Legs)"
-label(data$flw_rash_area___5)="If yes to Skin rash, please tick all body areas that apply: (choice=Buttocks)"
-label(data$flw_rash_area___6)="If yes to Skin rash, please tick all body areas that apply: (choice=Toes)"
-label(data$flw_rash_area___7)="If yes to Skin rash, please tick all body areas that apply: (choice=Fingers)"
-label(data$flw_eq5d_mb_p)="MOBILITY"
-label(data$flw_eq5d_sc_p)="SELF-CARE"
-label(data$flw_eq5d_ua_p)="USUAL ACTIVITIES (e.g. work, study, housework, family or leisure activities)"
-label(data$flw_eq5d_pd_p)="PAIN/DISCOMFORT "
-label(data$flw_eq5d_ad_p)="ANXIETY/DEPRESSION "
-label(data$flw_eq5d_mb)="MOBILITY"
-label(data$flw_eq5d_sc)="SELF-CARE"
-label(data$flw_eq5d_ua)="USUAL ACTIVITIES (e.g. work, study, housework, family or leisure activities)"
-label(data$flw_eq5d_pd)="PAIN/DISCOMFORT "
-label(data$flw_eq5d_ad)="ANXIETY/DEPRESSION "
-label(data$flw_eq5d5l_vas)="• We would like to know how good or bad your health is TODAY. • This scale is numbered from 0 to 100. • 100 means the best health you can imagine. 0 means the worst health you can imagine. • Mark an X on the scale to indicate how your health is TODAY. • Now, please write the number you marked on the scale in the box below  YOUR HEALTH TODAY = "
-label(data$flw_breathless_now___1)="(Breathless) Within the last 24 hours (choice=Not troubled by breathlessness except on strenuous exercise)"
-label(data$flw_breathless_now___2)="(Breathless) Within the last 24 hours (choice=Short of breath when hurrying or when walking up a slight hill)"
-label(data$flw_breathless_now___3)="(Breathless) Within the last 24 hours (choice=Walks slower than most people of my age because of breathlessness, or have to stop for breath when walking at own pace)"
-label(data$flw_breathless_now___4)="(Breathless) Within the last 24 hours (choice=Stops for breath after walking 100 yards/ 90-100 metres, or after a few minutes on level ground)"
-label(data$flw_breathless_now___5)="(Breathless) Within the last 24 hours (choice=Too breathless to leave the house, or breathless when dressing/undressing)"
-label(data$flw_breathless_pre_c19___1)="(Breathless) Before your Covid 19 illness (choice=Not troubled by breathlessness except on strenuous exercise)"
-label(data$flw_breathless_pre_c19___2)="(Breathless) Before your Covid 19 illness (choice=Short of breath when hurrying or when walking up a slight hill)"
-label(data$flw_breathless_pre_c19___3)="(Breathless) Before your Covid 19 illness (choice=Walks slower than most people of my age because of breathlessness, or have to stop for breath when walking at own pace)"
-label(data$flw_breathless_pre_c19___4)="(Breathless) Before your Covid 19 illness (choice=Stops for breath after walking 100 yards/ 90-100 metres, or after a few minutes on level ground)"
-label(data$flw_breathless_pre_c19___5)="(Breathless) Before your Covid 19 illness (choice=Too breathless to leave the house, or breathless when dressing/undressing)"
-label(data$flw_fatigue)="Please rate the intensity of your fatigue on average over the last 24 hours, on a scale from 0 - 10. Where: 0 = No fatigue 10 = Fatigue as bad as you can imagine"
-label(data$flw_seeing_today)="Do you have difficulty seeing, even if wearing glasses? Today"
-label(data$flw_seeing_pre_c19)="Do you have difficulty seeing, even if wearing glasses? Before your Covid 19 illness"
-label(data$flw_hearing_today)="Do you have difficulty hearing, even if using a hearing aid? Today"
-label(data$flw_hearing_pre_c19)="Do you have difficulty hearing, even if using a hearing aid? Before your Covid 19 illness"
-label(data$flw_walking_today)="Do you have difficulty walking or climbing steps? Today"
-label(data$flw_walking_pre_c19)="Do you have difficulty walking or climbing steps? Before your Covid 19 illness"
-label(data$flw_remember_today)="Do you have difficulty remembering or concentrating? Today"
-label(data$flw_remember_pre_c19)="Do you have difficulty remembering or concentrating? Before your Covid 19 illness"
-label(data$flw_washing_today)="Do you have difficulty (with self-care such as) washing all over or dressing? Today"
-label(data$flw_washing_pre_c19)="Do you have difficulty (with self-care such as) washing all over or dressing? Before your Covid 19 illness"
-label(data$flw_comm_today)="Using your usual (customary) language, do you have difficulty communicating, for example understanding or being understood? Today"
-label(data$flw_comm_pre_c19)="Using your usual (customary) language, do you have difficulty communicating, for example understanding or being understood? Before your Covid 19 illness"
-label(data$flw_smoking)="Smoking"
-label(data$flw_alcohol)="Drinking alcohol"
-label(data$flw_healthy_eating)="Eating healthy food"
-label(data$flw_phys_activ)="Physical activity (including walking & cycling)"
-label(data$flw_walking_cycling)="Walking or cycling to work or school/college"
-label(data$flw_employ_pre_c19___1)="Before you got COVID-19 what was your employment status?   (choice=Full-time employment)"
-label(data$flw_employ_pre_c19___2)="Before you got COVID-19 what was your employment status?   (choice=Part time employment)"
-label(data$flw_employ_pre_c19___3)="Before you got COVID-19 what was your employment status?   (choice=Furloughed)"
-label(data$flw_employ_pre_c19___4)="Before you got COVID-19 what was your employment status?   (choice=Full time carer (children or other))"
-label(data$flw_employ_pre_c19___5)="Before you got COVID-19 what was your employment status?   (choice=Unemployed)"
-label(data$flw_employ_pre_c19___6)="Before you got COVID-19 what was your employment status?   (choice=Unable to work due to chronic illness)"
-label(data$flw_employ_pre_c19___7)="Before you got COVID-19 what was your employment status?   (choice=Student)"
-label(data$flw_employ_pre_c19___8)="Before you got COVID-19 what was your employment status?   (choice=Retired)"
-label(data$flw_employ_pre_c19___9)="Before you got COVID-19 what was your employment status?   (choice=Medically retired)"
-label(data$flw_employ_pre_c19___10)="Before you got COVID-19 what was your employment status?   (choice=Prefer not to say)"
-label(data$flw_employ_chg)="What is your employment status today?          "
-label(data$flw_employ_today___1)="If different, please describe your employment status today?  (choice=Full-time employment)"
-label(data$flw_employ_today___2)="If different, please describe your employment status today?  (choice=Part time employment)"
-label(data$flw_employ_today___3)="If different, please describe your employment status today?  (choice=Furloughed)"
-label(data$flw_employ_today___4)="If different, please describe your employment status today?  (choice=Full time carer (children or other))"
-label(data$flw_employ_today___5)="If different, please describe your employment status today?  (choice=Unemployed)"
-label(data$flw_employ_today___6)="If different, please describe your employment status today?  (choice=Unable to work due to chronic illness)"
-label(data$flw_employ_today___7)="If different, please describe your employment status today?  (choice=Student)"
-label(data$flw_employ_today___8)="If different, please describe your employment status today?  (choice=Retired)"
-label(data$flw_employ_today___9)="If different, please describe your employment status today?  (choice=Medically retired)"
-label(data$flw_employ_today___10)="If different, please describe your employment status today?  (choice=Prefer not to say)"
-label(data$flw_employ_chg_reason___1)="If different, why did you employment status change?  (choice=Poor health)"
-label(data$flw_employ_chg_reason___2)="If different, why did you employment status change?  (choice=New caring responsibility)"
-label(data$flw_employ_chg_reason___3)="If different, why did you employment status change?  (choice=Made redundant)"
-label(data$flw_employ_chg_reason___4)="If different, why did you employment status change?  (choice=Working hours reduced by employer)"
-label(data$flw_employ_chg_reason___5)="If different, why did you employment status change?  (choice=Other)"
-label(data$flw_employ_chg_reason___6)="If different, why did you employment status change?  (choice=Prefer not to say)"
-label(data$flw_employ_chg_other)="(If employment status has changed) specify other reason:"
-label(data$flw_sex_at_birth)="Sex at Birth: "
-label(data$flw_ethinicity___1)="Ethnicity (tick all that apply): (choice=White)"
-label(data$flw_ethinicity___2)="Ethnicity (tick all that apply): (choice=Arab)"
-label(data$flw_ethinicity___3)="Ethnicity (tick all that apply): (choice=Black)"
-label(data$flw_ethinicity___4)="Ethnicity (tick all that apply): (choice=East Asian)"
-label(data$flw_ethinicity___5)="Ethnicity (tick all that apply): (choice=South Asian)"
-label(data$flw_ethinicity___6)="Ethnicity (tick all that apply): (choice=West Asian)"
-label(data$flw_ethinicity___7)="Ethnicity (tick all that apply): (choice=Latin American)"
-label(data$flw_ethinicity___8)="Ethnicity (tick all that apply): (choice=Other)"
-label(data$flw_ethinicity___9)="Ethnicity (tick all that apply): (choice=Prefer not to say)"
-label(data$flw_ethinicity_oth)="Other ethnicity"
-label(data$flw_height)="What is your estimated height:"
-label(data$flw_height_unit)="Height: Indicate unit measured in:"
-label(data$flw_height_na)="What is your estimated height - prefer not to say"
-label(data$flw_weight)="What is your current estimated weight:"
-label(data$flw_weight_unit)="Weight: Indicate unit measured in:"
-label(data$flw_weight_na)="What is your estimated weight - prefer not to say"
-label(data$flw_c19_effects)="Please let us know if you feel COVID-19 has affected your health or wellbeing in a way not described above?"
-label(data$follow_up_self_assessment_survey_complete)="Complete?"
-#Setting Units
+# Setting Labels ----
+# RP changed Hmisc::label code to finalfit::ff_label
+# 1. Remove `label(` (beginning of each line) - make sure not to remove from these instructions but selection only
+# 2. Replace  `)=` with ` %<>% ff_label(`
+# 3. Copy to Notepad++ or Atom and replace `\n` with `)\n` or `$` with `\)`
+# (so to add `)` to each line closing the ff_...
+# I couldn't get RStudio's Regex Find-Replace to recognise \n or \\n
+# 4. Removed the : from Sex at Birth:
+
+library(finalfit)
+library(magrittr)
+
+data$subjid %<>% ff_label("Participant Identification Number (PIN) specify CPMS Site code (hyphen) four to six digit number patient number e.g. Y0401-0001.")
+data$redcap_event_name %<>% ff_label("Event Name")
+data$redcap_repeat_instrument %<>% ff_label("Repeat Instrument")
+data$redcap_repeat_instance %<>% ff_label("Repeat Instance")
+data$participant_identification_number_pin_complete %<>% ff_label("Complete?")
+data$arm_participant %<>% ff_label("Arm participant is in")
+data$tiers_faorres___1 %<>% ff_label("Please acknowledge that you have understood the consent taking process for the Tier(s) for which you are entering data. (choice=TIER 0 (data collection only); no consent required.)")
+data$tiers_faorres___2 %<>% ff_label("Please acknowledge that you have understood the consent taking process for the Tier(s) for which you are entering data. (choice=TIER 1 (single point sample collection); consent required.)")
+data$tiers_faorres___3 %<>% ff_label("Please acknowledge that you have understood the consent taking process for the Tier(s) for which you are entering data. (choice=TIER 2 (multiple point sample collection); consent required.)")
+data$tiers_consent_complete %<>% ff_label("Complete?")
+data$covid19_new %<>% ff_label("SELECT THIS FIELD if you are entering data for a COVID-19 participant where data has been collected via the new short CRF first issued April 2020. If you select this field for a participant with data entered on the older/long CRF, some fields could be cleared. If you do not select this fields for a participant with data entered on the new shorter CRF, the fields shown will not match it.")
+data$version_9_7 %<>% ff_label("Are you completing details for CRF v9.7 or later? ")
+data$ni_site %<>% ff_label("Northern Ireland? If entering data for Northern Ireland, PLEASE SELECT:")
+data$dsstdat %<>% ff_label("Date of Enrolment")
+data$sitename %<>% ff_label("Site name")
+data$corona_ieorres %<>% ff_label("Suspected or proven infection with pathogen of Public Health Interest")
+data$coriona_ieorres2 %<>% ff_label("Proven or high likelihood of infection with pathogen of Public Health Interest  ")
+data$coriona_ieorres3 %<>% ff_label("Proven infection with pathogen of Public Health Interest N.B. For acute covid-19, please only collect data from proven (laboratory test-positive) people.")
+data$fever %<>% ff_label("A history of self reported feverishness or measured fever of ≥ 38°C")
+data$cough %<>% ff_label("Cough ")
+data$dyspnoe %<>% ff_label("Dyspnoea (shortness of breath) OR Tachypnoea*")
+data$ari %<>% ff_label("Clinical suspicion of ARI despite not meeting criteria above")
+data$inflammatory_mss %<>% ff_label("Adult or child who meets Case Definition for Inflammatory Multi-system Syndrome (MIS-C/MIS-A)")
+data$noncorona_expphi %<>% ff_label("High suspicion of exposure of Public Health Interest: N.B. This does not relate to covid-19 exposure.")
+data$symptoms_epi_travel %<>% ff_label("2.A history of travel to an area with documented cases of novel coronavirus infection")
+data$symptoms_epi_physical %<>% ff_label("3.Close contact* with a confirmed or probable case of nCoV infection, while that patient was symptomatic")
+data$symptoms_epi_healthfac %<>% ff_label("4.Presence in a healthcare facility where nCoV infections have been managed")
+data$symptoms_epi_lab %<>% ff_label("5. Presence in a laboratory handling samples suspected or confirmed of having the respiratory pathogen of public health interest present")
+data$symptoms_epi_pathogen %<>% ff_label("6.An otherwise unexplained respiratory illness in the context of an outbreak, suspected outbreak or incident of a respiratory pathogen of public health interest")
+data$symptoms_epi_animal %<>% ff_label("7.Direct contact with animals in countries where the nCoV is known to be circulating in animal populations or where human infections have occurred as a result of presumed zoonotic transmission")
+data$inclusion_criteria_complete %<>% ff_label("Complete?")
+data$sex %<>% ff_label("Sex at Birth")
+data$agedatyn %<>% ff_label("Is birth date known")
+data$agedat %<>% ff_label("Birth date (has approval for entry)")
+data$calc_age %<>% ff_label("Calculated Age (comparing Date of birth with Date of enrolment)  May be inaccurate if a date of February 29 is used")
+data$age_estimateyears %<>% ff_label("Age/Estimated age")
+data$age_estimateyearsu %<>% ff_label("Age/Estimated age Unit")
+data$postcode %<>% ff_label("Postcode (has approval for entry)")
+data$nhs_chi %<>% ff_label("England & Wales NHS number, Scotland CHI number (has approval for entry) NB Northern Ireland Health & Care Number is not being collected at this time")
+data$ethnic___1 %<>% ff_label("Ethnic group (check all that apply) (choice=Arab)")
+data$ethnic___2 %<>% ff_label("Ethnic group (check all that apply) (choice=Black)")
+data$ethnic___3 %<>% ff_label("Ethnic group (check all that apply) (choice=East Asian)")
+data$ethnic___4 %<>% ff_label("Ethnic group (check all that apply) (choice=South Asian)")
+data$ethnic___5 %<>% ff_label("Ethnic group (check all that apply) (choice=West Asian)")
+data$ethnic___6 %<>% ff_label("Ethnic group (check all that apply) (choice=Latin American)")
+data$ethnic___7 %<>% ff_label("Ethnic group (check all that apply) (choice=White)")
+data$ethnic___8 %<>% ff_label("Ethnic group (check all that apply) (choice=Aboriginal/First Nations)")
+data$ethnic___9 %<>% ff_label("Ethnic group (check all that apply) (choice=Other)")
+data$ethnic___10 %<>% ff_label("Ethnic group (check all that apply) (choice=N/A)")
+data$other_ethnic %<>% ff_label("If Other: Specify")
+data$healthwork_erterm %<>% ff_label("Employed as a healthcare worker?")
+data$labwork_erterm %<>% ff_label("Employed in a microbiology laboratory?")
+data$pregyn_rptestcd %<>% ff_label("Pregnant ?")
+data$egestage_rptestcd %<>% ff_label("If YES: Gestational weeks assessment:")
+data$postpart_rptestcd %<>% ff_label("Post Partum (within six weeks of delivery)")
+data$pregout_rptestcd %<>% ff_label("Pregnancy Outcome")
+data$dlvrdtc_rptestcd %<>% ff_label("Delivery date")
+data$aplb_lbperf %<>% ff_label("Baby tested for mothers ARI infection")
+data$aplb_lborres %<>% ff_label(" If YES")
+data$aplb_lbmethod %<>% ff_label("Method")
+data$aplb_lbmethodoth %<>% ff_label("If OTHER method; Specify")
+data$apdm_age %<>% ff_label("INFANT - Less than 1 year old?")
+data$apvs_weight %<>% ff_label("Birth weight")
+data$apvs_weightu %<>% ff_label("Birth weight unit")
+data$apvs_weightnk %<>% ff_label("Birth weight N/K")
+data$apsc_gestout %<>% ff_label("Gestational outcome")
+data$estgest %<>% ff_label("If < 37wk  confirm estimated gestation   ")
+data$apsc_brfedind %<>% ff_label("Breastfed")
+data$apsc_brfedindy %<>% ff_label("If  YES")
+data$apsc_brdisdat %<>% ff_label("Discontinued breastfeeding at ")
+data$apsc_dvageind %<>% ff_label("Appropriate development for age?")
+data$apsc_vcageind %<>% ff_label("Vaccinations appropriate for age/country?")
+data$covid19_vaccine %<>% ff_label("Has the patient received a Covid-19 vaccine (open label licenced product)")
+data$covid19_vaccined %<>% ff_label("date first vaccine given (Covid-19) if known")
+data$covid19_vaccined_nk %<>% ff_label("first vaccine given (Covid-19) but date not known")
+data$covid19_vaccine2d %<>% ff_label("date second vaccine given (Covid-19) if known")
+data$covid19_vaccine2d_nk %<>% ff_label("second vaccine given (Covid-19) but date not known")
+data$covid19_vaccine_type %<>% ff_label("Vaccine type/Manufacturer")
+data$covid19_vaccine_other_type %<>% ff_label("Other, Vaccine type/Manufacturer")
+data$vaccine_covid_trial %<>% ff_label("Has the patient been involved in a vaccine COVID trial?")
+data$vaccine_covid_triald %<>% ff_label("Date if known (first trial vaccination): (please complete study participation CRF Page 3 of outcome CRF)")
+data$influenza_2021_vaccine %<>% ff_label("Has patient received a 2020/21 seasonal influenza vaccine")
+data$influenza_2021_vaccined %<>% ff_label("2020/21 seasonal influenza vaccine date if known")
+data$influenza_2021_vaccined_nk %<>% ff_label("2020/21 seasonal influenza vaccine date N/K ")
+data$demographics_complete %<>% ff_label("Complete?")
+data$asymptomatic %<>% ff_label("Asymptomatic")
+data$cestdat %<>% ff_label("Onset date of first/earliest symptom")
+data$hostdat %<>% ff_label("Admission date at this facility")
+data$hosttim %<>% ff_label("Admission time at this facility")
+data$readm_cov19 %<>% ff_label("Is the patient being readmitted with Covid-19? (Please only add re-admission episodes for COVID patients remaining or new positive COVID test- Please assign new subject ID) ")
+data$prev_subjid %<>% ff_label("Previous participant ID ")
+data$prev_subjid_nk %<>% ff_label("Previous participant ID NK")
+data$readminreas %<>% ff_label("Please provide reason for readmission: ")
+data$readminreasnk %<>% ff_label("Reason for readmission N/K")
+data$susp_reinf %<>% ff_label("Is this a suspected re-infection with COVID-19? Defined as proven (PCR or antibody test) or highly probable (clinical case definition met) more than 28 days prior to this new laboratory proven covid-19 infection")
+data$surgefacil %<>% ff_label("Is this a NIGHTINGALE or other SURGE FACILITY?")
+data$hooccur %<>% ff_label("Transfer from other facility?")
+data$siteid_transfer %<>% ff_label("If YES: Name of transfer facility:")
+data$siteid_transfernk %<>% ff_label("If YES: Name of transfer facility N/K")
+data$hostdat_transfer %<>% ff_label("If YES: Admission date at previous facility ")
+data$hostdat_transfernk %<>% ff_label("If YES: Admission date at previous facility N/K")
+data$subjidcat_transfer %<>% ff_label("If YES - Study Site: Participant ID # at transfer facility")
+data$subjid_transfer %<>% ff_label("If DIFFERENT; Participant number Specify CPMS Site code (hypen) four or five digit number patient number e.g Y0401-0001.")
+data$travel_erterm %<>% ff_label("Travel in the 14 days prior to first symptom onset?")
+data$supper_trcntry %<>% ff_label("If YES, state location: Country")
+data$supper_trcity %<>% ff_label("2.6.2 If YES, state location: City/Geographic Area:")
+data$erendat %<>% ff_label("If YES, return date:")
+data$travel_erterm_2 %<>% ff_label("Travelled to another country in the 14 days prior to first symptom onset?")
+data$supper_trcntry_2 %<>% ff_label("If YES, state location: Country")
+data$supper_trcity_2 %<>% ff_label("If YES, state location: City/Geographic Area:")
+data$erendat_2 %<>% ff_label("If YES, return date:")
+data$animal_eryn %<>% ff_label("Contact with animals, raw meat or insect bites in the 14 days prior to symptom onset?")
+data$animal_erterm %<>% ff_label("If YES, specify the animal/insect")
+data$animal_erdat %<>% ff_label("If YES, specify the animal/insect date of exposure ")
+data$animal_eryn_2 %<>% ff_label("Contact with another animals, raw meat or insect bites in the 14 days prior to symptom onset?")
+data$animal_erterm_2 %<>% ff_label("If YES, specify the animal/insect")
+data$animal_erdat_2 %<>% ff_label("If YES, specify the animal/insect date of exposure ")
+data$onset_and_admission_complete %<>% ff_label("Complete?")
+data$temp_vsyn %<>% ff_label("Temperature on admission available?")
+data$temp_vsorres %<>% ff_label("Temperature")
+data$temp_vsorresu %<>% ff_label("Temperature Units")
+data$hr_vsyn %<>% ff_label("Heart rate on admission available?")
+data$hr_vsorres %<>% ff_label("Heart Rate")
+data$rr_vsyn %<>% ff_label("Respiratory rate on admission available?")
+data$rr_vsorres %<>% ff_label("Respiratory Rate")
+data$sysbp_vsyn %<>% ff_label("Systolic blood pressure on admission available? ")
+data$sysbp_vsorres %<>% ff_label("Systolic blood pressure")
+data$diabp_vsyn %<>% ff_label("Diastolic blood pressure on admission available?")
+data$admission_diabp_vsorres %<>% ff_label("Diastolic blood pressure")
+data$dehydration_vsorres %<>% ff_label("Severe dehydration: ")
+data$stercap_vsyn %<>% ff_label("Sternal capillary refill time  on admission available?")
+data$stercap_vsorres %<>% ff_label("Sternal capillary refill time >2 seconds ?")
+data$oxy_vsyn %<>% ff_label("Oxygen saturation on admission available: ")
+data$oxy_vsorres %<>% ff_label("Oxygen saturation")
+data$oxy_vsorresu %<>% ff_label("Oxygen saturation on:")
+data$adm_no_symp %<>% ff_label("None (asymptomatic)")
+data$fever_ceoccur_v2 %<>% ff_label("History of fever")
+data$cough_ceoccur_v2 %<>% ff_label("Cough")
+data$coughsput_ceoccur_v2 %<>% ff_label("Cough: with sputum production")
+data$coughhb_ceoccur_v2 %<>% ff_label("Cough: bloody sputum / haemoptysis")
+data$sorethroat_ceoccur_v2 %<>% ff_label("Sore throat")
+data$runnynose_ceoccur_v2 %<>% ff_label("Runny nose (Rhinorrhoea)")
+data$earpain_ceoccur_v2 %<>% ff_label("Ear pain")
+data$wheeze_ceoccur_v2 %<>% ff_label("Wheezing")
+data$chestpain_ceoccur_v2 %<>% ff_label("Chest pain")
+data$myalgia_ceoccur_v2 %<>% ff_label("Muscle aches (Myalgia)")
+data$jointpain_ceoccur_v2 %<>% ff_label("Joint pain (Arthralgia)")
+data$fatigue_ceoccur_v2 %<>% ff_label("Fatigue / Malaise")
+data$shortbreath_ceoccur_v2 %<>% ff_label("Shortness of breath (Dyspnea)")
+data$ageusia_ceoccur_v2 %<>% ff_label("Disturbance or loss of taste (Ageusia )")
+data$lowerchest_ceoccur_v2 %<>% ff_label("Lower chest wall indrawing")
+data$headache_ceoccur_v2 %<>% ff_label("Headache")
+data$confusion_ceoccur_v2 %<>% ff_label("Altered consciousness / confusion")
+data$seizures_cecoccur_v2 %<>% ff_label("Seizures")
+data$abdopain_ceoccur_v2 %<>% ff_label("Abdominal pain")
+data$vomit_ceoccur_v2 %<>% ff_label("Vomiting / Nausea")
+data$diarrhoea_ceoccur_v2 %<>% ff_label("Diarrhoea")
+data$conjunct_ceoccur_v2 %<>% ff_label("Conjunctivitis")
+data$rash_ceoccur_v2 %<>% ff_label("Skin rash")
+data$skinulcers_ceoccur_v2 %<>% ff_label("Skin ulcers")
+data$lymp_ceoccur_v2 %<>% ff_label("Lymphadenopathy")
+data$bleed_ceoccur_v2 %<>% ff_label("Bleeding (Haemorrhage)")
+data$bleed_ceterm_v2 %<>% ff_label("If Bleeding (others)")
+data$anosmia_ceoccur_v2 %<>% ff_label("Disturbance or loss of smell (Anosmia)")
+data$no_symptoms %<>% ff_label("None")
+data$bleed_cetermy_v2 %<>% ff_label("If Yes to Bleeding, specify site(s)")
+data$admission_signs_and_symptoms_complete %<>% ff_label("Complete?")
+data$comorb_none %<>% ff_label("No comorbidities")
+data$chrincard %<>% ff_label("Chronic cardiac disease, including congenital heart disease (not hypertension)")
+data$hypertension_mhyn %<>% ff_label("Hypertension (physician diagnosed)")
+data$chronicpul_mhyn %<>% ff_label("Chronic pulmonary disease (not asthma)")
+data$asthma_mhyn %<>% ff_label("Asthma (physician diagnosed) ")
+data$renal_mhyn %<>% ff_label("Chronic kidney disease")
+data$modliv %<>% ff_label("Moderate or severe liver disease")
+data$mildliver %<>% ff_label("Mild Liver disease ")
+data$chronicneu_mhyn %<>% ff_label("Chronic neurological disorder ")
+data$malignantneo_mhyn %<>% ff_label("Malignant neoplasm ")
+data$chronichaemo_mhyn %<>% ff_label("Chronic hematologic disease ")
+data$aidshiv_mhyn %<>% ff_label("AIDS/HIV ")
+data$obesity_mhyn %<>% ff_label("Obesity (as defined by clinical staff)")
+data$diabetes_type_mhyn %<>% ff_label("Diabetes and Type")
+data$diabetescom_mhyn %<>% ff_label("Diabetes with complications")
+data$diabetes_mhyn %<>% ff_label("Diabetes without complications ")
+data$rheumatologic_mhyn %<>% ff_label("Rheumatologic disorder ")
+data$dementia_mhyn %<>% ff_label("Dementia")
+data$malnutrition_mhyn %<>% ff_label("Malnutrition")
+data$smoking_mhyn %<>% ff_label("Smoking")
+data$other_mhyn %<>% ff_label("Other relevant risk factors?")
+data$otherrisktext %<>% ff_label("Other  relevant risk factor; Specify")
+data$vulnerable_no_nk %<>% ff_label("Clinically extremely vulnerable No or Not known")
+data$vulnerable_transplant %<>% ff_label("Solid organ transplant recipients:   ")
+data$vulnerable_cancers %<>% ff_label("People with specific cancers: • people with cancer who are undergoing active chemotherapy • people with lung cancer who are undergoing radical radiotherapy • people with cancers of the blood or bone marrow such as leukaemia, lymphoma or myeloma who are at any stage of treatment • people having immunotherapy or other continuing antibody treatments for cancer • people having other targeted cancer treatments which can affect the immune system, such as protein kinase inhibitors or PARP inhibitors • people who have had bone marrow or stem cell transplants in the last 6 months, or who are still taking immunosuppression drugs ")
+data$vulnerable_copd %<>% ff_label("People with severe respiratory conditions including all cystic fibrosis, severe asthma requiring daily oral steroid or injectable maintenance therapy and severe chronic obstructive pulmonary requiring oxygen (COPD):")
+data$vulnerable_scid %<>% ff_label("People with rare diseases and inborn errors of metabolism that significantly increase the risk of infections (such as Severe combined immunodeficiency (SCID), homozygous sickle cell):   ")
+data$vulnerable_immuno %<>% ff_label("People on immunosuppression therapies sufficient to significantly increase risk of infection: ")
+data$vulnerable_preg %<>% ff_label("Women who are pregnant with significant heart disease, congenital or acquired:")
+data$comorbidities_complete %<>% ff_label("Complete?")
+data$immno_cmtrt %<>% ff_label("Treated with immunosuppressants, including oral (not inhaled) corticosteroids prior to admission / Immunosuppressant e.g. oral (not inhaled) corticosteroids (not low dose hydrocortisone)                             ")
+data$infect_cmtrt %<>% ff_label("Treated with anti-infectives  for illness episode prior to admission?")
+data$infect %<>% ff_label("If yes,  please specify anti infectives")
+data$chronic_ace_cmoccur %<>% ff_label("Angiotensin converting enzyme inhibitors (ACEI)?")
+data$chronic_arb_cmoccur %<>% ff_label("Angiotensin II receptor blockers (ARBs)?")
+data$chronic_nsaid_cmoccur %<>% ff_label("Non-steroidal anti-inflammatory (NSAID)?")
+data$clinical_frailty %<>% ff_label("Clinical frailty score")
+data$preadmission_treatment_complete %<>% ff_label("Complete?")
+data$no_medication %<>% ff_label("No medication currently or within the last 14 days")
+data$cmtrt %<>% ff_label("Medication name (generic name preferred)  ")
+data$cmdose %<>% ff_label("Dose")
+data$cmdose_unit %<>% ff_label("Dose unit")
+data$cmdose_unitoth %<>% ff_label("Specify other Dose unit")
+data$cmdosfrq %<>% ff_label("Dose Frequency")
+data$cmdosfrqoth %<>% ff_label("Specify other dose frequency")
+data$cmroute %<>% ff_label("Route")
+data$cmrouteoth %<>% ff_label("Specify other route")
+data$preadmission_medication_complete %<>% ff_label("Complete?")
+data$reinf_prev_enrol %<>% ff_label("Was the patient previously enrolled?")
+data$reinf_pcr %<>% ff_label("Did the patient have a positive PCR (virus) test for SARS-CoV-2?  ")
+data$reinf_pcrd %<>% ff_label("If yes (to positive PCR (virus) test for SARS-CoV-2), enter date of positive test: ")
+data$reinf_antigen %<>% ff_label("Did the patient have a positive antigen (virus) test for SARS-CoV-2?   ")
+data$reinf_antigend %<>% ff_label("If yes (to positive antigen (virus) test for SARS-CoV-2), enter date of positive test: ")
+data$reinf_serology %<>% ff_label("Did the patient have a positive serology (antibody) test for SARS-CoV-2?  ")
+data$reinf_serologyd %<>% ff_label("If yes (to positive serology (antibody) test for SARS-CoV-2), enter date of positive test: ")
+data$reinf_cestdat %<>% ff_label("Symptom onset date of first/earliest symptom for previous infection: ")
+data$reinf_asymptomatic %<>% ff_label("Asymptomatic")
+data$fever_ceoccur_v3 %<>% ff_label("History of fever")
+data$cough_ceoccur_v3 %<>% ff_label("Cough")
+data$coughsput_ceoccur_v3 %<>% ff_label("Cough: with sputum production")
+data$coughhb_ceoccur_v3 %<>% ff_label("Cough: bloody sputum / haemoptysis")
+data$sorethroat_ceoccur_v3 %<>% ff_label("Sore throat")
+data$runnynose_ceoccur_v3 %<>% ff_label("Runny nose (Rhinorrhoea)")
+data$earpain_ceoccur_v3 %<>% ff_label("Ear pain")
+data$wheeze_ceoccur_v3 %<>% ff_label("Wheezing")
+data$chestpain_ceoccur_v3 %<>% ff_label("Chest pain")
+data$myalgia_ceoccur_v3 %<>% ff_label("Muscle aches (Myalgia)")
+data$jointpain_ceoccur_v3 %<>% ff_label("Joint pain (Arthralgia)")
+data$fatigue_ceoccur_v3 %<>% ff_label("Fatigue / Malaise")
+data$shortbreath_ceoccur_v3 %<>% ff_label("Shortness of breath (Dyspnoea)")
+data$ageusia_ceoccur_v3 %<>% ff_label("Disturbance or loss of taste (Ageusia )")
+data$lowerchest_ceoccur_v3 %<>% ff_label("Lower chest wall indrawing")
+data$headache_ceoccur_v3 %<>% ff_label("Headache")
+data$confusion_ceoccur_v3 %<>% ff_label("Altered consciousness / confusion")
+data$seizures_cecoccur_v3 %<>% ff_label("Seizures")
+data$abdopain_ceoccur_v3 %<>% ff_label("Abdominal pain")
+data$vomit_ceoccur_v3 %<>% ff_label("Vomiting / Nausea")
+data$diarrhoea_ceoccur_v3 %<>% ff_label("Diarrhoea")
+data$conjunct_ceoccur_v3 %<>% ff_label("Conjunctivitis")
+data$rash_ceoccur_v3 %<>% ff_label("Skin rash")
+data$skinulcers_ceoccur_v3 %<>% ff_label("Skin ulcers")
+data$lymp_ceoccur_v3 %<>% ff_label("Lymphadenopathy")
+data$bleed_ceoccur_v3 %<>% ff_label("Bleeding (Haemorrhage)")
+data$anosmia_ceoccur_v3 %<>% ff_label("Disturbance or loss of smell (Anosmia)")
+data$no_symptoms_v3 %<>% ff_label("None")
+data$bleed_cetermy_v3 %<>% ff_label("If Yes to Bleeding, specify site(s)")
+data$reinf_treat_none %<>% ff_label("Treatment None")
+data$reinf_pre_adm_hosp %<>% ff_label("Admitted to hospital")
+data$reinf_pre_oxygen %<>% ff_label("Treated with oxygen")
+data$reinf_pre_hdu_icu %<>% ff_label("Admitted to HDU/ICU")
+data$reinf_pre_inv_vent %<>% ff_label("Receive invasive ventilation")
+data$reinf_pre_ecmo %<>% ff_label("Receive extracorporeal membrane oxygenation (ECMO)")
+data$reinf_pre_dexameth %<>% ff_label("Treated with: Dexamethasone")
+data$reinf_pre_steroid %<>% ff_label("Any other steroid")
+data$reinf_pre_tociliz %<>% ff_label("Tocilizumab")
+data$reinf_pre_remdesivir %<>% ff_label("Remdesivir")
+data$reinf_pre_conv_plasma %<>% ff_label("Convalescent plasma")
+data$reinf_pre_lopin_riton %<>% ff_label("Lopinavir/Ritonavir")
+data$reinf_pre_interferon %<>% ff_label("Interferon")
+data$reinf_pre_chloro_hchlo %<>% ff_label("Chloroquine/Hydroxychloroquine")
+data$reinf_pre_casiriv %<>% ff_label("Casirivimab/Imdevimab")
+data$reinfection_form_complete %<>% ff_label("Complete?")
+data$daily_dsstdat %<>% ff_label("DATE OF ASSESSMENT ")
+data$daily_hoterm %<>% ff_label("Current admission to ICU/ITU/IMC/HDU")
+data$daily_temp_vsorres %<>% ff_label("Highest Temperature")
+data$daily_temp_vsorresu %<>% ff_label("Highest Temperature Unit")
+data$daily_temp_vsorresnk %<>% ff_label("Highest Temperature N/K")
+data$daily_fi02_lbyn %<>% ff_label("FiO2  available / Any supplemental oxygen?")
+data$daily_fio2_lborres %<>% ff_label("FiO2 (0.21-1.0)")
+data$daily_fio2b_lborres %<>% ff_label("FiO2 %")
+data$daily_fio2c_lborres %<>% ff_label("FiO2 L/min (highest)")
+data$daily_sa02_lbyn %<>% ff_label("SaO2 (Oxygen saturation in newer CRF) available?")
+data$daily_sao2_lborres %<>% ff_label("SaO2 (SpO2 on the newer CRF)")
+data$daily_pao2_lbyn %<>% ff_label("PaO2 available?")
+data$daily_pao2_lborres %<>% ff_label("PaO2:")
+data$daily_pao2_lborresu %<>% ff_label("PaO2 unit:")
+data$daily_pao2_lbspec %<>% ff_label("PaO2 sample type")
+data$daily_pco2_lbyn %<>% ff_label("PCO2 available?")
+data$daily_pco2_lborres %<>% ff_label("PCO2 ")
+data$daily_pco2_lborresu %<>% ff_label("PCO2 Unit")
+data$daily_ph_lbyn %<>% ff_label("pH available")
+data$daily_ph_lborres %<>% ff_label("pH")
+data$daily_hco3_lbyn %<>% ff_label("HCO3-  available")
+data$daily_hco3_lborres %<>% ff_label("HCO3- ")
+data$daily_hco3_lborresu %<>% ff_label("HCO3- Unit")
+data$daily_baseex_lbyn %<>% ff_label("Base excess available")
+data$daily_baseex_lborres %<>% ff_label("Base excess")
+data$daily_rr %<>% ff_label("RR breaths per minute (highest)")
+data$daily_rr_nk %<>% ff_label("RR breaths per minute N/K ")
+data$avpu_vsorres %<>% ff_label("AVPU")
+data$daily_gcs_lbyn %<>% ff_label("Glasgow Coma Score available?")
+data$daily_gcs_vsorres %<>% ff_label("Glasgow Coma Score:")
+data$systolic_vsyn %<>% ff_label("Systolic Blood Pressure available?")
+data$systolic_vsorres %<>% ff_label("Systolic Pressure")
+data$diastolic_vsyn %<>% ff_label("Diastolic Blood Pressure available?")
+data$diastolic_vsorres %<>% ff_label("Diastolic Pressure")
+data$daily_meanart_lbyn %<>% ff_label("Mean Arterial Pressure available?")
+data$daily_meanart_vsorres %<>% ff_label("Mean Arterial Pressure:")
+data$daily_urine_lbyn %<>% ff_label("Urine flow rate available?")
+data$daily_urine_lborres %<>% ff_label("Urine flow rate:")
+data$daily_noninvasive_prtrt %<>% ff_label("Non-invasive ventilation (e.g. NIV (if shorter CRF), BIPAP, CPAP)?")
+data$daily_invasive_prtrt %<>% ff_label("Invasive ventilation?")
+data$daily_nasaloxy_cmtrt %<>% ff_label("High-flow nasal canula?")
+data$daily_ecmo_prtrt %<>% ff_label("ECLS/ECMO")
+data$daily_rrt_cmtrt %<>% ff_label("Dialysis / Hemofiltration?")
+data$daily_inotrope_cmyn %<>% ff_label("Any vasopressor / inotropic support?")
+data$daily_dopless5_cmtrt %<>% ff_label("Dopamine <  5 µg/min OR Dobutamine OR Milrinone OR Levosimendan:")
+data$daily_dop5to15_cmtrt %<>% ff_label("Dopamine 5-15 µg/min OR Epinephrine/Norepinephrine <  0.1 µg/kg/min OR Vasopressin OR Phenylephrine:")
+data$daily_dopgr15_cmtrt %<>% ff_label("Dopamine > 15 µg/min OR Epinephrine/Norepinephrine > 0.1 µg/kg/min:")
+data$daily_neuro_cmtrt %<>% ff_label("Neuromuscular blocking agents?")
+data$daily_nitritc_cmtrt %<>% ff_label("Inhaled Nitric Oxide ?")
+data$daily_prone_cmtrt %<>% ff_label("Prone Positioning")
+data$daily_trach_prperf %<>% ff_label("Tracheostomy inserted?")
+data$daily_prperf %<>% ff_label("Other intervention or procedure?")
+data$daily_other_prtrt %<>% ff_label("If YES other intervention, Specify,")
+data$remdesivir %<>% ff_label("Is patient receiving Remdesivir through EAMS (Early Access to Medicine Scheme) criteria?     ")
+data$remdesivir_day %<>% ff_label("Which day of Remdesivir therapy is this: (number)         ")
+data$remdesivir_last_dose %<>% ff_label("Is this the intended last dose?")
+data$daily_lbperf %<>% ff_label("Results available for sample taken on the date in section 1 above ?")
+data$daily_lbdat %<>% ff_label("Date of  assessment")
+data$daily_hb_lbyn %<>% ff_label("Haemoglobin available")
+data$daily_hbop_lborres %<>% ff_label("Haemoglobin < or > (optional)")
+data$daily_hb_lborres %<>% ff_label("Haemoglobin")
+data$daily_hb_lborresu %<>% ff_label("Haemoglobin Unit")
+data$daily_wbc_lbyn %<>% ff_label("WBC count available")
+data$daily_wbcop_lborres %<>% ff_label("WBC count < or > (optional)")
+data$daily_wbc_lborres %<>% ff_label("WBC count")
+data$daily_wbc_lborresu %<>% ff_label("WBC Unit")
+data$daily_lymp_lbyn %<>% ff_label("Lymphocyte count available")
+data$daily_lympop_lbyn %<>% ff_label("Lymphocyte count < or > (optional)")
+data$daily_lymp_lborres %<>% ff_label("Lymphocyte count")
+data$daily_lymp_lborresu %<>% ff_label("Lymphocyte count Unit")
+data$daily_neutro_lbyn %<>% ff_label("Neutrophil count available")
+data$daily_neutroop_lbyn %<>% ff_label("Neutrophil count < or > (optional)")
+data$daily_neutro_lborres %<>% ff_label("Neutrophil count")
+data$daily_neutro_lborresu %<>% ff_label("Neutrophil count Unit")
+data$daily_haematocrit_lbyn %<>% ff_label("Haematocrit available")
+data$daily_haematocrit_lborres %<>% ff_label("Haematocrit")
+data$daily_haematocrit_lborresu %<>% ff_label("Haematocrit Unit")
+data$daily_plt_lbyn %<>% ff_label("Platelets available")
+data$daily_pltop_lborres %<>% ff_label("Platelet count < or > (optional)")
+data$daily_plt_lborres %<>% ff_label("Platelet Count")
+data$daily_plt_lborresu %<>% ff_label("Platelets Unit")
+data$daily_aptt_lbyn %<>% ff_label("APTT/APTR available")
+data$daily_apttop_lborres %<>% ff_label("APTT/APTR < or > (optional)")
+data$daily_aptt_lborres %<>% ff_label("APTT/APTR")
+data$daily_pt_inr_lbyn %<>% ff_label("PT or INR available")
+data$daily_ptop_lborres %<>% ff_label("PT < or > (optional)")
+data$daily_pt_lborres %<>% ff_label("PT ")
+data$daily_inrop_lborres %<>% ff_label("INR < or > (optional)")
+data$daily_inr_lborres %<>% ff_label("INR")
+data$daily_esr_lbyn %<>% ff_label("ESR available")
+data$daily_esrop_lbyn %<>% ff_label("ESR < or > (optional)")
+data$daily_esr_lborres %<>% ff_label("ESR")
+data$daily_ferr_lbyn %<>% ff_label("Ferritin available")
+data$daily_ferrop_lbyn %<>% ff_label("Ferritin < or > (optional)")
+data$daily_ferr_lborres %<>% ff_label("Ferritin")
+data$daily_ferr_lborresu %<>% ff_label("Ferritin Unit")
+data$daily_alt_lbyn %<>% ff_label("ALT / SGPT available")
+data$daily_altop_lbyn %<>% ff_label("ALT / SGPT < or > (optional)")
+data$daily_alt_lborres %<>% ff_label("ALT / SGPT")
+data$daily_bil_lbyn %<>% ff_label("Total Bilirubin available")
+data$daily_bilop_lborres %<>% ff_label("Total Bilirubin < or > (optional)")
+data$daily_bil_lborres %<>% ff_label("Total Bilirubin")
+data$daily_bil_lborresu %<>% ff_label("Total Bilirubin Unit")
+data$daily_ast_lbyn %<>% ff_label("AST/SGOT available")
+data$daily_astop_lborres %<>% ff_label("AST/SGOT < or > (optional)")
+data$daily_ast_lborres %<>% ff_label("AST/SGOT")
+data$daily_glucose_lbyn %<>% ff_label("Glucose available")
+data$daily_glucoseop_lborres %<>% ff_label("Glucose < or > (optional)")
+data$daily_glucose_lborres %<>% ff_label("Glucose")
+data$daily_glucose_lborresu %<>% ff_label("Glucose Unit ")
+data$daily_bun_lbyn %<>% ff_label("Blood Urea Nitrogen (urea) available")
+data$daily_bunop_lborres %<>% ff_label("Blood Urea Nitrogen (urea) < or > (optional)")
+data$daily_bun_lborres %<>% ff_label("Blood Urea Nitrogen (urea)")
+data$daily_bun_lborresu %<>% ff_label("Blood Urea Nitrogen (urea) Unit")
+data$daily_lactate_lbyn %<>% ff_label("Lactate available")
+data$daily_lactateop_lbyn %<>% ff_label("Lactate < or > (optional)")
+data$daily_lactate_lborres %<>% ff_label("Lactate")
+data$daily_lactate_lborresu %<>% ff_label("Lactate Unit")
+data$daily_ldh_lbyn %<>% ff_label("Lactate dehydrogenase (LDH) available?")
+data$daily_ldhop_lborres %<>% ff_label("LDH < or > (optional)")
+data$daily_ldh_lborres %<>% ff_label("Lactate dehydrogenase (LDH) ")
+data$daily_cpk_lby %<>% ff_label("Creatine Phosphokinase (CPK) available?")
+data$daily_cpkop_lbyn_2 %<>% ff_label("Creatine Phosphokinase (CPK)  < or > (optional)")
+data$daily_cpk_lbyn_2 %<>% ff_label("Creatine Phosphokinase (CPK) ")
+data$daily_creat_lbyn %<>% ff_label("Creatinine available")
+data$daily_creatop_lborres %<>% ff_label("Creatinine  < or > (optional)")
+data$daily_creat_lborres %<>% ff_label("Creatinine")
+data$daily_creat_lborresu %<>% ff_label("Creatinine Unit")
+data$daily_sodium_lbyn %<>% ff_label("Sodium  available ")
+data$daily_sodiumop_lborres %<>% ff_label("Sodium < or > (optional)")
+data$daily_sodium_lborres %<>% ff_label("Sodium")
+data$daily_sodium_lborresu %<>% ff_label("Sodium Unit")
+data$daily_potassium_lbyn %<>% ff_label("Potassium available ")
+data$daily_potassiumop_lborres %<>% ff_label("Potassium < or > (optional)")
+data$daily_potassium_lborres %<>% ff_label("Potassium")
+data$daily_potassium_lborresu %<>% ff_label("Potassium Unit")
+data$daily_procal_lbyn %<>% ff_label("Procalcitonin available")
+data$daily_procalop_lborres %<>% ff_label("Procalcitonin < or > (optional)")
+data$daily_procal_lborres %<>% ff_label("Procalcitonin")
+data$daily_crp_lbyn %<>% ff_label("C-reactive protein (CRP) available")
+data$daily_crpop_lborres %<>% ff_label("C-reactive protein (CRP) < or > (optional)")
+data$daily_crp_lborres %<>% ff_label("C-reactive protein (CRP)")
+data$daily_crp_lborresu %<>% ff_label("C-reactive protein (CRP) Unit")
+data$daily_egfr_lbyn %<>% ff_label("eGFR available")
+data$daily_egfrop_lborres %<>% ff_label("eGFR < or > (optional)")
+data$daily_egfr_lborres %<>% ff_label("eGFR")
+data$daily_egfr_equation___1 %<>% ff_label("eGFR equation/formula (choice=CKD-EPI)")
+data$daily_egfr_equation___2 %<>% ff_label("eGFR equation/formula (choice=MDRD)")
+data$daily_egfr_equation___3 %<>% ff_label("eGFR equation/formula (choice=CG)")
+data$daily_egfr_equation___4 %<>% ff_label("eGFR equation/formula (choice=N/K)")
+data$daily_hba1cop_lborres %<>% ff_label("Most recent HbA1c < or > (optional)")
+data$daily_hba1c_lborres %<>% ff_label("Most recent HbA1c")
+data$daily_hba1c_lborresu %<>% ff_label("Most recent HbA1c Unit")
+data$daily_hba1c_lborresnk %<>% ff_label("Most recent HbA1c N/K")
+data$daily_hba1c_lborresd %<>% ff_label("Date of HbA1c")
+data$xray_prperf %<>% ff_label("X-Ray/CT performed (this is chest X-ray if shorter CRF)?")
+data$infiltrates_faorres %<>% ff_label("If yes, were infiltrates present?")
+data$daily_samples %<>% ff_label("Was a biological sample taken for research on this day?")
+data$daily_samples_kitno %<>% ff_label("If yes, please record the KIT number")
+data$daily_form_complete %<>% ff_label("Complete?")
+data$mbperf %<>% ff_label("Was pathogen testing done during this illness episode?")
+data$cov19sars_mbyn_v2 %<>% ff_label("COVID-19 / SARS-CoV-2")
+data$influ_mbyn %<>% ff_label("Influenza: ")
+data$influ_mbyn_v2 %<>% ff_label("Influenza")
+data$influ_mbcat %<>% ff_label("If Yes to Influenza")
+data$influothera_mborres %<>% ff_label("Other influenza A, specify:")
+data$influother_mborres %<>% ff_label("Other influenza, specify:")
+data$corna_mbcat %<>% ff_label("Coronavirus: ")
+data$corna_mbcaty %<>% ff_label("If Yes to Coronavirus:")
+data$coronaother_mborres %<>% ff_label("IF Other coronavirus; Specify:")
+data$rsv_mbcat %<>% ff_label("RSV")
+data$rsv_mbcat_v2 %<>% ff_label("Respiratory syncytial virus (RSV)")
+data$adeno_mbcat %<>% ff_label("Adenovirus")
+data$adeno_mbcat_v2 %<>% ff_label("Adenovirus")
+data$bact_mborres %<>% ff_label("Bacteria")
+data$bacteria_mborres %<>% ff_label("If yes, specify bacteria (list all below)")
+data$clinicalpneu_mborres %<>% ff_label("Clinical pneumonia: ")
+data$infectuk_mborres %<>% ff_label("IF NONE OF THE ABOVE: Suspected Non-infective:")
+data$pcr_path_diag___0 %<>% ff_label("Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=None positive)")
+data$pcr_path_diag___1 %<>% ff_label("Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Mycoplasma pneumoniae positive)")
+data$pcr_path_diag___2 %<>% ff_label("Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Legionella species (L. pneumophila or L. longbeachae) positive)")
+data$pcr_path_diag___3 %<>% ff_label("Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Metapneumovirus positive)")
+data$pcr_path_diag___4 %<>% ff_label("Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Parainfluenza virus positive)")
+data$pcr_path_diag___5 %<>% ff_label("Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Coronavirus HKU1/OC43/229E/NL63 (**NOT COVID-19**) positive)")
+data$pcr_path_diag___6 %<>% ff_label("Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Bocavirus positive)")
+data$pcr_path_diag___10 %<>% ff_label("Other respiratory PCR-diagnosed pathogens Tick all that apply (choice=Other - please specify)")
+data$pcr_path_diago %<>% ff_label("If selected Yes for Other respiratory PCR-diagnosed pathogen, specify")
+data$other_mbyn %<>% ff_label("Other Infectious Respiratory Diagnosis:  (complete for PRE_v9.7 CRF only)")
+data$other_mborres %<>% ff_label(" If YES: Other infectious respiratory diagnosis, specify:")
+data$infectious_respiratory_disease_pathogen_diagnosis_complete %<>% ff_label("Complete?")
+data$daily_mbperf %<>% ff_label("Pathogen testing done")
+data$llimsno_bnum %<>% ff_label("LIMS number")
+data$mbdat %<>% ff_label("Collection Date")
+data$mbspec %<>% ff_label("Bio specimen type")
+data$other_mbspec %<>% ff_label("If  OTHER; Specify")
+data$mbmethod %<>% ff_label("Laboratory Test Method")
+data$other_mbmethod %<>% ff_label("If Other Laboratory test method; Specify")
+data$mborres %<>% ff_label("Result")
+data$mbtestcd %<>% ff_label("Pathogen Detected (full name without abbreviations)")
+data$mbspec_v2 %<>% ff_label("Type of test (for V9.9 CRF onwards there is no need to record Urine, CSF or Faeces (stool))")
+data$mborres_v2 %<>% ff_label("Test result, select one:")
+data$mbtestcd_nsth %<>% ff_label("Organism - Nasal and / or throat swab")
+data$mbtestcd_nstho %<>% ff_label("Other Nasal and / or throat swab organism - specify")
+data$mbtestcd_bc %<>% ff_label("Organism - Blood culture")
+data$mbtestcd_bco %<>% ff_label("Other Blood Culture organism")
+data$mbtestcd_sp %<>% ff_label("Organism - Sputum")
+data$mbtestcd_spo %<>% ff_label("Other Sputum organism")
+data$mbtestcd_drs %<>% ff_label("Organism - Deep respiratory sample")
+data$mbtestcd_drso %<>% ff_label("Other Deep respiratory sample organism")
+data$mbtestcd_ur %<>% ff_label("Organism - Urine")
+data$mbtestcd_uro %<>% ff_label("Other Urine organism")
+data$mbtestcd_csf %<>% ff_label("Organism - Cerebrospinal fluid (CSF)")
+data$mbtestcd_csfo %<>% ff_label("Other Cerebrospinal fluid (CSF) organism")
+data$mbtestcd_fst %<>% ff_label("Organism - Faeces (stool)")
+data$mbtestcd_fsto %<>% ff_label("Other Faeces (stool) organism")
+data$mbdat_v2 %<>% ff_label("Date sample obtained")
+data$mbspec_v3 %<>% ff_label("Other sample type with Positive results: Sample type This does not need to be recorded for V9.9 of the CRF onwards")
+data$mbtestcd_v3 %<>% ff_label("Other sample type with Positive results: Organism")
+data$mbdat_v3 %<>% ff_label("Other sample type with Positive results : Date sample obtained")
+data$infectious_respiratory_disease_pathogen_testing_complete %<>% ff_label("Complete?")
+data$antiviral_cmyn %<>% ff_label("Antiviral agent?")
+data$antiviral_cmtrt___1 %<>% ff_label("IF YES to antiviral agent (choice=Ribavirin)")
+data$antiviral_cmtrt___2 %<>% ff_label("IF YES to antiviral agent (choice=Lopinavir/Ritonvir)")
+data$antiviral_cmtrt___3 %<>% ff_label("IF YES to antiviral agent (choice=Interferon alpha)")
+data$antiviral_cmtrt___4 %<>% ff_label("IF YES to antiviral agent (choice=Interferon beta)")
+data$antiviral_cmtrt___7 %<>% ff_label("IF YES to antiviral agent (choice=Chloroquine / Hydroxychloroquine)")
+data$antiviral_cmtrt___10 %<>% ff_label("IF YES to antiviral agent (choice=Oseltamivir (Tamiflu))")
+data$antiviral_cmtrt___11 %<>% ff_label("IF YES to antiviral agent (choice=Zanamivir)")
+data$antiviral_cmtrt___12 %<>% ff_label("IF YES to antiviral agent (choice=Casirivimab /Imdevimab)")
+data$antiviral_cmtrt___8 %<>% ff_label("IF YES to antiviral agent (choice=Remdesivir)")
+data$antiviral_cmtrt___9 %<>% ff_label("IF YES to antiviral agent (choice=IL6 inhibitor)")
+data$antiviral_cmtrt___5 %<>% ff_label("IF YES to antiviral agent (choice=Neuraminidase inhibitors)")
+data$antiviral_cmtrt___6 %<>% ff_label("IF YES to antiviral agent (choice=Other or novel antiviral)")
+data$casiriv_cmtrt_first %<>% ff_label("If  YES to Casirivimab/Imdevimab: first dose")
+data$remdes_cmtrt_first %<>% ff_label("If  YES to Remdesivir: first dose")
+data$remdes_cmtrt_last %<>% ff_label("If  YES to Remdesivir: last dose")
+data$il6_cmtrt %<>% ff_label("If  YES to IL6 inhibitor: which")
+data$il6_cmtrt_other %<>% ff_label("Specify other IL6 inhibitor:")
+data$il6_cmtrt_first %<>% ff_label("If  YES to  IL6 inhibitor: first dose")
+data$il6_cmtrt_last %<>% ff_label("If  YES to IL6 inhibitor: last dose")
+data$neuro_cmtrt %<>% ff_label("If  Neuraminidase inhibitors; Specify which")
+data$othantiviral_cmtrt %<>% ff_label("If  Other antiviral agent; Specify type")
+data$othantiviral2_cmyn %<>% ff_label("Would you like to add another antiviral?")
+data$othhantiviral2_cmtrt %<>% ff_label("If  Other antiviral agent; Specify type")
+data$othantiviral3_cmyn %<>% ff_label("Would you like to add another antiviral?")
+data$othantiviral3_cmtrt %<>% ff_label("If  Other antiviral agent; Specify type")
+data$othantiviral4_cmyn %<>% ff_label("Would you like to add another antiviral?")
+data$othantiviral4_cmtrt %<>% ff_label("If  Other antiviral agent; Specify type")
+data$othantiviral5_cmyn %<>% ff_label("Would you like to add another antiviral?")
+data$othantiviral5_cmtrt %<>% ff_label("If  Other antiviral agent; Specify type")
+data$antibiotic_cmyn %<>% ff_label("Antibiotic agent?")
+data$antibiotic_cmtrt %<>% ff_label("IF YES to antibiotic agent; Specify type")
+data$antibiotic2_cmyn %<>% ff_label("Would you like to add another antibiotic?")
+data$antibiotic2_cmtrt %<>% ff_label("IF YES to antibiotic agent; Specify type")
+data$antibiotic3_cmyn %<>% ff_label("Would you like to add another antibiotic?")
+data$antibiotic3_cmtrt %<>% ff_label("IF YES to antibiotic agent; Specify type")
+data$antibiotic4_cmyn %<>% ff_label("Would you like to add another antibiotic?")
+data$antibiotic4_cmtrt %<>% ff_label("IF YES to antibiotic agent; Specify type")
+data$antibiotic5_cmyn %<>% ff_label("Would you like to add another antibiotic?")
+data$antibiotic5_cmtrt %<>% ff_label("IF YES to antibiotic agent; Specify type")
+data$antibiotic6_cmyn %<>% ff_label("Would you like to add another antibiotic?")
+data$antibiotic6_cmtrt %<>% ff_label("IF YES to antibiotic agent; Specify type")
+data$antibiotic7_cmyn %<>% ff_label("Would you like to add another antibiotic?")
+data$antibiotic7_cmtrt %<>% ff_label("IF YES to antibiotic agent; Specify type")
+data$corticost_cmyn %<>% ff_label("Corticosteroid agent?")
+data$corticost_cmtrt_type %<>% ff_label("If YES to Corticosteroid, please confirm type: ")
+data$corticost_cmtrt %<>% ff_label("If YES to Corticosteroid, specify type/name or details of Other corticosteroid:")
+data$corticost_cmroute %<>% ff_label("If YES to Corticosteroid, specify Route")
+data$corticost_cmdose %<>% ff_label("If YES to Corticosteroid, specify dose")
+data$corticost2_cmyn %<>% ff_label("Would you like to add another Corticosteroid agent?")
+data$corticost2_cmtrt_type %<>% ff_label("If YES to Corticosteroid, please confirm type: ")
+data$corticost2_cmtrt %<>% ff_label("If YES to Corticosteroid, specify type/name or details of Other corticosteroid:")
+data$corticost2_cmroute %<>% ff_label("If YES to Corticosteroid, specify Route")
+data$corticost2_cmdose %<>% ff_label("If YES to Corticosteroid, specify dose")
+data$corticost3_cmyn %<>% ff_label("Would you like to add another Corticosteroid agent?")
+data$corticost3_cmtrt_type %<>% ff_label("If YES to Corticosteroid, please confirm type: ")
+data$corticost3_cmtrt %<>% ff_label("If YES to Corticosteroid, specify type/name or details of Other corticosteroid:")
+data$corticost3_cmroute %<>% ff_label("If YES to Corticosteroid, specify Route")
+data$corticost3_cmdose %<>% ff_label("If YES to Corticosteroid, specify dose")
+data$corticost4_cmyn %<>% ff_label("Would you like to add another Corticosteroid agent?")
+data$corticost4_cmtrt_type %<>% ff_label("If YES to Corticosteroid, please confirm type: ")
+data$corticost4_cmtrt %<>% ff_label("If YES to Corticosteroid, specify type/name or details of Other corticosteroid:")
+data$corticost4_cmroute %<>% ff_label("If YES to Corticosteroid, specify Route")
+data$corticost4_cmdose %<>% ff_label("If YES to Corticosteroid, specify dose")
+data$corticost5_cmyn %<>% ff_label("Would you like to add another Corticosteroid agent?")
+data$corticost5_cmtrt_type %<>% ff_label("If YES to Corticosteroid, please confirm type: ")
+data$corticost5_cmtrt %<>% ff_label("If YES to Corticosteroid, specify type/name or details of Other corticosteroid:")
+data$corticost5_cmroute %<>% ff_label("If YES to Corticosteroid, specify Route")
+data$corticost5_cmdose %<>% ff_label("If YES to Corticosteroid, specify dose")
+data$dexamethasone %<>% ff_label("Dexamethasone 6mg once per day?")
+data$dexamethasone_days %<>% ff_label("Dexamethasone, for how many days")
+data$dexamethasone_dose %<>% ff_label("Dexamethasone Dose in milligrams (mg)")
+data$dexamethasone_freq %<>% ff_label("Dexamethasone Frequency ")
+data$dexamethasone_other_freq %<>% ff_label("Dexamethasone, specify Other frequency ")
+data$dexamethasone_route %<>% ff_label("If Yes to Dexamethasone, specify Route:")
+data$dexamethasone2 %<>% ff_label("Second dose of Dexamethasone given? ")
+data$dexamethasone2_dose %<>% ff_label("Dexamethasone 2  Dose in milligrams (mg)")
+data$dexamethasone2_freq %<>% ff_label("Dexamethasone 2 Frequency ")
+data$dexamethasone2_other_freq %<>% ff_label("Dexamethasone 2, specify Other frequency ")
+data$dexamethasone2_route %<>% ff_label("Dexamethasone 2 Route")
+data$dexamethasone2_days %<>% ff_label("Dexamethasone 2, number of days given")
+data$dexamethasone3 %<>% ff_label("Third dose of Dexamethasone given? ")
+data$dexamethasone3_dose %<>% ff_label("Dexamethasone 3  Dose in milligrams (mg)")
+data$dexamethasone3_freq %<>% ff_label("Dexamethasone 3 Frequency ")
+data$dexamethasone3_other_freq %<>% ff_label("Dexamethasone 3, specify Other frequency ")
+data$dexamethasone3_route %<>% ff_label("Dexamethasone 3 Route")
+data$dexamethasone3_days %<>% ff_label("Dexamethasone 3, number of days given")
+data$dexamethasone4 %<>% ff_label("Fourth dose of Dexamethasone given? ")
+data$dexamethasone4_dose %<>% ff_label("Dexamethasone 4  Dose in milligrams (mg)")
+data$dexamethasone4_freq %<>% ff_label("Dexamethasone 4 Frequency ")
+data$dexamethasone4_other_freq %<>% ff_label("Dexamethasone 4, specify Other frequency ")
+data$dexamethasone4_route %<>% ff_label("Dexamethasone 4 Route")
+data$dexamethasone4_days %<>% ff_label("Dexamethasone 4, number of days given")
+data$dexamethasone5 %<>% ff_label("Fifth dose of Dexamethasone given? ")
+data$dexamethasone5_dose %<>% ff_label("Dexamethasone 5  Dose in milligrams (mg)")
+data$dexamethasone5_freq %<>% ff_label("Dexamethasone 5 Frequency ")
+data$dexamethasone5_other_freq %<>% ff_label("Dexamethasone 5, specify Other frequency ")
+data$dexamethasone5_route %<>% ff_label("Dexamethasone 5 Route")
+data$dexamethasone5_days %<>% ff_label("Dexamethasone 5, number of days given")
+data$antifung_cmyn %<>% ff_label("Antifungal agent?")
+data$antifungal_cmtrt %<>% ff_label("IF YES to antifungal agent; Specify which")
+data$offlabel_cmyn %<>% ff_label("Off-label / Compassionate Use medications?  ")
+data$offlabel_cmtrt %<>% ff_label("IF YES to Off-label / Compassionate Use medications; Specify which")
+data$interleukin_cmyn %<>% ff_label("Interleukin inhibitors")
+data$interleukin_cmtrt %<>% ff_label("IF YES to Interleukin inhibitors; Specify which")
+data$conv_plasma_cmyn %<>% ff_label("Convalescent plasma")
+data$icu_hoterm %<>% ff_label("ICU or High Dependency admission")
+data$icu_no %<>% ff_label("If No to ICU or High Dependency Unit admission:")
+data$icu_hostdat %<>% ff_label("Date of ICU/HDU admission:")
+data$icu_hostdatnk %<>% ff_label("Date of ICU/HDU admission N/K")
+data$icu_hoendat %<>% ff_label("Date of ICU/HDU discharge:")
+data$icu_hoendatnk %<>% ff_label("Date of discharge N/K")
+data$icu_hostdat2 %<>% ff_label("Date of ICU/HDU admission 2:")
+data$icu_hostdat2_nk %<>% ff_label("Date of ICU/HDU admission 2 N/K")
+data$icu_hoendat2 %<>% ff_label("Date of ICU/HDU discharge 2:")
+data$icu_hoendat2_nk %<>% ff_label("Date of ICU/HDU discharge 2 N/K")
+data$icu_hostdat3 %<>% ff_label("Date of ICU/HDU admission 3:")
+data$icu_hostdat3_nk %<>% ff_label("Date of ICU/HDU admission 3 N/K")
+data$icu_hoendat3 %<>% ff_label("Date of ICU/HDU discharge 3:")
+data$icu_hoendat3_nk %<>% ff_label("Date of ICU/HDU discharge 3 N/K")
+data$icu_hostillin %<>% ff_label("Still in ICU/HDU")
+data$hodur %<>% ff_label("If YES, total duration (days)")
+data$oxygen_cmoccur %<>% ff_label("Oxygen therapy")
+data$oxygenhf_cmoccur %<>% ff_label("High-flow nasal canula?")
+data$noninvasive_proccur %<>% ff_label("Non-invasive ventilation ? (e.g. BIPAP, CPAP)")
+data$invasive_proccur %<>% ff_label("Invasive ventilation (Any intubation) ?")
+data$pronevent_prtrt %<>% ff_label("Prone ventilation")
+data$inhalednit_cmtrt %<>% ff_label("Inhaled Nitric Oxide")
+data$tracheo_prtrt %<>% ff_label("Tracheostomy inserted")
+data$extracorp_prtrt %<>% ff_label("Extracorporeal (ECMO) support")
+data$rrt_prtrt %<>% ff_label("Renal replacement therapy (RRT) or dialysis")
+data$inotrop_cmtrt %<>% ff_label("Inotropes / vasopressors")
+data$invasive_prdur %<>% ff_label("If yes to Invasive ventilation; confirm duration ")
+data$invasive_still_on %<>% ff_label("If yes to Invasive ventilation - still on it")
+data$excorp_prdur %<>% ff_label("If YES to Extracorporeal (ECMO) support; confirm duration")
+data$excorp_still_on %<>% ff_label("If yes to Extracorporeal (ECMO) support - still on it")
+data$rrt_totdur %<>% ff_label("If YES to RRT or dialysis, total duration")
+data$rrt_still_on %<>% ff_label("If YES to RRT or dialysis - still on it")
+data$inotrope_cmdur %<>% ff_label("If YES to Inotropes/vasopressors; confirm duration")
+data$inotrope_still_on %<>% ff_label("If YES to Inotropes/vasopressors - still on them")
+data$other_cmyn %<>% ff_label("OTHER intervention or procedure")
+data$other_cm %<>% ff_label("IF  YES OTHER intervention or procedure; Specify")
+data$bloodgroup %<>% ff_label("Blood Group (please check past as well as current medical record)")
+data$treatment_complete %<>% ff_label("Complete?")
+data$complications_none %<>% ff_label("No complications")
+data$vrialpneu_ceoccur %<>% ff_label("Viral Pneumonia")
+data$bactpneu_ceoccur %<>% ff_label("Bacterial pneumonia")
+data$ards_ceoccur %<>% ff_label("Acute Respiratory Distress Syndrome")
+data$cryptogenic_ceterm %<>% ff_label("Cryptogenic organizing pneumonia (COP)")
+data$pneumothorax_ceterm %<>% ff_label("Pneumothorax")
+data$pleuraleff_ceterm %<>% ff_label("Pleural effusion")
+data$bronchio_ceterm %<>% ff_label("Bronchiolitis")
+data$meningitis_ceterm %<>% ff_label("Meningitis / Encephalitis")
+data$seizure_ceterm %<>% ff_label("Seizure")
+data$stroke_ceterm %<>% ff_label("Stroke / Cerebrovascular accident")
+data$neuro_comp %<>% ff_label("Other neurological complication")
+data$heartfailure_ceterm %<>% ff_label("Congestive heart failure")
+data$endocarditis_aeterm %<>% ff_label("Endocarditis / Myocarditis Pericarditis (for newer CRF this option covers Endocarditis only)")
+data$myocarditis_ceterm %<>% ff_label("Myocarditis / Pericarditis")
+data$cardiomyopathy_ceterm %<>% ff_label("Cardiomyopathy")
+data$arrhythmia_ceterm %<>% ff_label("Cardiac arrhythmia")
+data$ischaemia_ceterm %<>% ff_label("Cardiac ischemia")
+data$cardiacarrest_ceterm %<>% ff_label("Cardiac arrest")
+data$bacteraemia_ceterm %<>% ff_label("Bacteraemia")
+data$coagulo_ceterm %<>% ff_label("Coagulation disorder / Disseminated intravascular coagulation")
+data$dvt_ceterm %<>% ff_label("Deep vein thrombosis")
+data$pulmthromb_ceterm %<>% ff_label("Pulmonary thromboembolism")
+data$aneamia_ceterm %<>% ff_label("Anaemia")
+data$rhabdomyolsis_ceterm %<>% ff_label("Rhabdomyolysis / Myositis")
+data$renalinjury_ceterm %<>% ff_label("Acute renal injury / Acute renal failure")
+data$gastro_ceterm %<>% ff_label("Gastrointestinal hemorrhage")
+data$pancreat_ceterm %<>% ff_label("Pancreatitis")
+data$liverdysfunction_ceterm %<>% ff_label("Liver dysfunction")
+data$hyperglycemia_aeterm %<>% ff_label("Hyperglycaemia")
+data$hypoglycemia_ceterm %<>% ff_label("Hypoglycaemia")
+data$other_ceoccur %<>% ff_label("Other")
+data$other_ceterm %<>% ff_label("If  Other; Specify")
+data$complications_complete %<>% ff_label("Complete?")
+data$recruitment %<>% ff_label("Is/Has the participant being recruited to a trial or multi-centre study during the period of their current illness (including initiation in the community and hospital)?")
+data$study_1_name %<>% ff_label("If YES, specify name of study:   ")
+data$study_1_id %<>% ff_label("Study Participant ID:   ")
+data$study_2 %<>% ff_label("Add another study?")
+data$study_2_name %<>% ff_label("If YES, specify name of study: ")
+data$study_2_id %<>% ff_label("Study Participant ID: ")
+data$study_3 %<>% ff_label("Add another study? ")
+data$study_3_name %<>% ff_label("If YES, specify name of study: ")
+data$study_3_id %<>% ff_label("Study Participant ID: ")
+data$study_participation_complete %<>% ff_label("Complete?")
+data$postpart_rptestcd_out %<>% ff_label("PREGNANCY OUTCOME: If delivered during admission, please confirm: POST PARTUM (within six weeks of delivery)")
+data$pregout_rptestcd_out %<>% ff_label("Pregnancy Outcome")
+data$dlvrdtc_rptestcd_out %<>% ff_label("Delivery Date")
+data$aplb_lbperf_out %<>% ff_label("Has infant(s) been tested for Mothers infection?")
+data$aplb_lborres_out %<>% ff_label("If YES (to Has infant been tested for Mothers infection):")
+data$dsterm %<>% ff_label("Outcome:")
+data$dshosp %<>% ff_label("If hospitalised:")
+data$dsstdtcyn %<>% ff_label("Is the Outcome date known")
+data$dsstdtc %<>% ff_label("Outcome date")
+data$suppds_qval %<>% ff_label("If Discharged alive: Ability to self-care at discharge versus before illness")
+data$oxygen_proccur %<>% ff_label("Oxygen therapy")
+data$renal_proccur %<>% ff_label("Dialysis / renal treatment?")
+data$other_cmoccur %<>% ff_label("Other intervention or procedure?")
+data$other_cmtrt %<>% ff_label("If YES: Specify (multiple permitted)")
+data$siteid %<>% ff_label("If Transferred: Facility name")
+data$siteidnk %<>% ff_label("If Transferred: Facility name N/K")
+data$siteyn %<>% ff_label("If Transferred: Is the transfer facility a study site?")
+data$subjidcat %<>% ff_label("If a Study Site: Participant number at new facility")
+data$transfer_subjid %<>% ff_label("If Different, Participant number at the new facility (CPMS Site code (hypen) four or five digit number patient number e.g Y0401-0001).")
+data$outcome_complete %<>% ff_label("Complete?")
+data$dsterm_v2 %<>% ff_label("Outcome")
+data$dsstdtc_v2 %<>% ff_label("Outcome date")
+data$dsstdtc_v2_nk %<>% ff_label("Outcome date N/K")
+data$suppds_qval_v2 %<>% ff_label("Ability to self-care at discharge versus before illness:  ")
+data$oxygen_proccur_v2 %<>% ff_label("Post-discharge treatment: Oxygen therapy")
+data$siteid_v2 %<>% ff_label("If Transferred: Facility name")
+data$siteid_v2_nk %<>% ff_label("If Transferred: Facility name N/K")
+data$siteyn_v2 %<>% ff_label("If transferred, is the transfer facility a study site? ")
+data$siteyn_v3 %<>% ff_label(" If a Study Site: Participant number at new facility ")
+data$subjidcat_v2 %<>% ff_label(" If a Study Site: Participant # at new facility ")
+data$final_outcome_complete %<>% ff_label("Complete?")
+data$sample_obtained %<>% ff_label("Was a convalescent sample obtained?")
+data$sample_kit %<>% ff_label("If yes, please record the KIT number:")
+data$sample_date %<>% ff_label("Date sample obtained:")
+data$research_samples_complete %<>% ff_label("Complete?")
+data$core_addinfo %<>% ff_label("Additional Information")
+data$core_additional_information_complete %<>% ff_label("Complete?")
+data$withddat %<>% ff_label("Date of withdrawal:")
+data$withdtype %<>% ff_label("Type of withdrawal:")
+data$withdreas %<>% ff_label("Other type of withdrawal:")
+data$reason_for_withdrawal %<>% ff_label("Reason for withdrawal:")
+data$withdrawal_form_complete %<>% ff_label("Complete?")
+data$consent_given %<>% ff_label("Any mode of Consent or Assent Given : ")
+data$consent_daterec %<>% ff_label("Date received:")
+data$consent_mode___1 %<>% ff_label("Mode of consent (check all that apply):  (choice=Adult)")
+data$consent_mode___2 %<>% ff_label("Mode of consent (check all that apply):  (choice=Adult Extra Convalescent Sampling)")
+data$consent_mode___3 %<>% ff_label("Mode of consent (check all that apply):  (choice=Adult BioAID)")
+data$consent_mode___4 %<>% ff_label("Mode of consent (check all that apply):  (choice=Consultee)")
+data$consent_mode___5 %<>% ff_label("Mode of consent (check all that apply):  (choice=Witnessed)")
+data$consent_mode___6 %<>% ff_label("Mode of consent (check all that apply):  (choice=Telephone)")
+data$consent_mode___7 %<>% ff_label("Mode of consent (check all that apply):  (choice=Next of Kin (Scotland only))")
+data$consent_mode___8 %<>% ff_label("Mode of consent (check all that apply):  (choice=Adult Regained Capacity  (Scotland only))")
+data$consent_mode___9 %<>% ff_label("Mode of consent (check all that apply):  (choice=Young Person 12-18y)")
+data$consent_mode___10 %<>% ff_label("Mode of consent (check all that apply):  (choice=Child under 12y)")
+data$consent_mode___11 %<>% ff_label("Mode of consent (check all that apply):  (choice=Parent/Guardian)")
+data$consent_optcondit___1 %<>% ff_label("Agreement to optional conditions of consent (check all that apply):  (choice=Other unrelated use)")
+data$consent_optcondit___2 %<>% ff_label("Agreement to optional conditions of consent (check all that apply):  (choice=Manufacture and Commercial lack)")
+data$consent_optcondit___3 %<>% ff_label("Agreement to optional conditions of consent (check all that apply):  (choice=DNA RNA sequence sharing)")
+data$consent_optcondit___4 %<>% ff_label("Agreement to optional conditions of consent (check all that apply):  (choice=Future contact by mobile phone text message (SMS))")
+data$consent_phone %<>% ff_label("If yes to future contact by mobile phone, enter UK mobile phone number: ")
+data$consent_ctu_dms_complete %<>% ff_label("Complete?")
+data$confirmed_negative_pcr %<>% ff_label("Confirmed negative PCR on direct DM enquiry")
+data$confirmed_negative_pcr_complete %<>% ff_label("Complete?")
+data$flw_consent_init %<>% ff_label("I give my consent for the information I provide in this study to be used as advised")
+data$flw_consent_verbal %<>% ff_label("Verbal consent given?")
+data$flw_consent_3_6m %<>% ff_label("I give my consent for this survey to be sent to me in 3 to 6 months time, and over the course of the next 3 years. ")
+data$flw_consent_phone %<>% ff_label("I would like the possibility to be contacted by a nurse, doctor or researcher to discuss my COVID-19 illness further")
+data$flw_phone %<>% ff_label("If yes, please enter your telephone numbers below: Telephone:")
+data$flw_mobile %<>% ff_label("Mobile phone:")
+data$flw_consent_signed %<>% ff_label("Patient / Adults signature provided?")
+data$flw_consent_date %<>% ff_label("Date consent provided")
+data$follow_up_consent_complete %<>% ff_label("Complete?")
+data$flw_survey_completed_by %<>% ff_label("Survey completed by:")
+data$flw_desceased_lost %<>% ff_label("Participant deceased or lost to follow-up?")
+data$flw_date_death %<>% ff_label("Date of death")
+data$flw_date_deathnk %<>% ff_label("Date of death unknown")
+data$flw_date_lost_flw %<>% ff_label("Date lost to follow-up")
+data$flw_date_lost_flwnk %<>% ff_label("Date lost to follow-up unknown")
+data$flw_survey_date %<>% ff_label("Date you did the survey (DD/MM/YYYY): ")
+data$flw_date_symptoms %<>% ff_label("Roughly what day did you first experience symptoms of COVID-19? ")
+data$flw_covid19_adm %<>% ff_label("Were you admitted to hospital due to COVID-19? ")
+data$flw_date_adm %<>% ff_label("Roughly at what date were you first admitted to hospital? ")
+data$flw_date_disch %<>% ff_label("Roughly at what date were you first discharged from hospital?  ")
+data$flw_covid19_readm %<>% ff_label("Have you been re-admitted to hospital due to COVID-19? ")
+data$flw_icu %<>% ff_label("If admitted to hospital, were you ever admitted to intensive care (ICU/ITU)?  ")
+data$flw_hospitals %<>% ff_label("Name of hospital/s")
+data$flw_recovered %<>% ff_label("Do you feel fully recovered from COVID-19?    ")
+data$flw_fever %<>% ff_label("Have you felt feverish recently?  ")
+data$flw_last_fever %<>% ff_label("If yes roughly when did you last feel feverish?")
+data$flw_illness_cause___1 %<>% ff_label("If yes, what was the cause of your recent feverish illness? (choice=COVID-19)")
+data$flw_illness_cause___2 %<>% ff_label("If yes, what was the cause of your recent feverish illness? (choice=Other respiratory infection (cough/cold/sore throat))")
+data$flw_illness_cause___3 %<>% ff_label("If yes, what was the cause of your recent feverish illness? (choice=Stomach infection (diarrhoea/vomiting))")
+data$flw_illness_cause___4 %<>% ff_label("If yes, what was the cause of your recent feverish illness? (choice=Urinary infection)")
+data$flw_illness_cause___5 %<>% ff_label("If yes, what was the cause of your recent feverish illness? (choice=Other:)")
+data$flw_illness_cause___6 %<>% ff_label("If yes, what was the cause of your recent feverish illness? (choice=Unknown)")
+data$flw_illness_cause___7 %<>% ff_label("If yes, what was the cause of your recent feverish illness? (choice=Prefer not to say)")
+data$flw_illness_other_cause %<>% ff_label("specify (other cause of recent illness):")
+data$flw_diag_dvt %<>% ff_label("Deep vein thrombosis (DVT, Clot in leg)")
+data$flw_diag_stroke %<>% ff_label("Stroke or mini stroke/TIA")
+data$flw_diag_pe %<>% ff_label("Pulmonary embolism (PE, Clot in lung)")
+data$flw_diag_heart_attack %<>% ff_label("Heart attack")
+data$flw_diag_kidney %<>% ff_label("Kidney problems")
+data$flw_diag_other %<>% ff_label("Other condition (please specify)?  ")
+data$flw_headache %<>% ff_label("Headache")
+data$flw_balance %<>% ff_label("Problems with balance")
+data$flw_cough %<>% ff_label("Persistent cough")
+data$flw_limb_weakness %<>% ff_label("Weakness in limbs")
+data$flw_loss_smell %<>% ff_label("Loss of smell")
+data$flw_pain_breathing %<>% ff_label("Pain on breathing")
+data$flw_loss_taste %<>% ff_label("Loss of taste")
+data$flw_chest_pains %<>% ff_label("Chest pains")
+data$flw_breathless %<>% ff_label("Shortness of breath/breathlessness")
+data$flw_palpitations %<>% ff_label("Palpitations (heart racing)")
+data$flw_muscle_pain %<>% ff_label("Persistent muscle pain")
+data$flw_weight_loss %<>% ff_label("Weight loss")
+data$flw_joint_pain %<>% ff_label("Joint pain or swelling")
+data$flw_appetite %<>% ff_label("Loss of appetite")
+data$flw_swollen_ankle %<>% ff_label("Swollen ankle(s)")
+data$flw_stomach_pain %<>% ff_label("Stomach pain")
+data$flw_nausea %<>% ff_label("Nausea/vomiting")
+data$flw_sleeping %<>% ff_label("Problems sleeping")
+data$flw_constipation %<>% ff_label("Constipation")
+data$flw_diarrhoea %<>% ff_label("Diarrhoea")
+data$flw_lesions_toes %<>% ff_label("Lumpy lesions (purple/pink/bluish) on toes/COVID-toes?")
+data$flw_urine %<>% ff_label("Problems passing urine")
+data$flw_skin_rash %<>% ff_label("Skin rash")
+data$flw_one_side %<>% ff_label("Cant fully move and / or feel one side of your body or face?")
+data$flw_dizziness %<>% ff_label("Dizziness/light headedness")
+data$flw_swallow %<>% ff_label("Problems swallowing or chewing")
+data$flw_seeing %<>% ff_label("Problems seeing")
+data$flw_other_symp %<>% ff_label("Any other NEW symptoms?")
+data$flw_fainting %<>% ff_label("Fainting/ blackouts")
+data$flw_new_symptoms %<>% ff_label("If yes (to any other NEW symptoms), specify:")
+data$flw_ed %<>% ff_label("Erectile dysfunction")
+data$flw_cough_type %<>% ff_label("If yes to Persistent cough - specify type:")
+data$flw_rash_area___1 %<>% ff_label("If yes to Skin rash, please tick all body areas that apply: (choice=Face)")
+data$flw_rash_area___2 %<>% ff_label("If yes to Skin rash, please tick all body areas that apply: (choice=Trunk (stomach or back))")
+data$flw_rash_area___3 %<>% ff_label("If yes to Skin rash, please tick all body areas that apply: (choice=Arms)")
+data$flw_rash_area___4 %<>% ff_label("If yes to Skin rash, please tick all body areas that apply: (choice=Legs)")
+data$flw_rash_area___5 %<>% ff_label("If yes to Skin rash, please tick all body areas that apply: (choice=Buttocks)")
+data$flw_rash_area___6 %<>% ff_label("If yes to Skin rash, please tick all body areas that apply: (choice=Toes)")
+data$flw_rash_area___7 %<>% ff_label("If yes to Skin rash, please tick all body areas that apply: (choice=Fingers)")
+data$flw_eq5d_mb_p %<>% ff_label("MOBILITY")
+data$flw_eq5d_sc_p %<>% ff_label("SELF-CARE")
+data$flw_eq5d_ua_p %<>% ff_label("USUAL ACTIVITIES (e.g. work, study, housework, family or leisure activities)")
+data$flw_eq5d_pd_p %<>% ff_label("PAIN/DISCOMFORT ")
+data$flw_eq5d_ad_p %<>% ff_label("ANXIETY/DEPRESSION ")
+data$flw_eq5d_mb %<>% ff_label("MOBILITY")
+data$flw_eq5d_sc %<>% ff_label("SELF-CARE")
+data$flw_eq5d_ua %<>% ff_label("USUAL ACTIVITIES (e.g. work, study, housework, family or leisure activities)")
+data$flw_eq5d_pd %<>% ff_label("PAIN/DISCOMFORT ")
+data$flw_eq5d_ad %<>% ff_label("ANXIETY/DEPRESSION ")
+data$flw_eq5d5l_vas %<>% ff_label("• We would like to know how good or bad your health is TODAY. • This scale is numbered from 0 to 100. • 100 means the best health you can imagine. 0 means the worst health you can imagine. • Mark an X on the scale to indicate how your health is TODAY. • Now, please write the number you marked on the scale in the box below  YOUR HEALTH TODAY = ")
+data$flw_breathless_now___1 %<>% ff_label("(Breathless) Within the last 24 hours (choice=Not troubled by breathlessness except on strenuous exercise)")
+data$flw_breathless_now___2 %<>% ff_label("(Breathless) Within the last 24 hours (choice=Short of breath when hurrying or when walking up a slight hill)")
+data$flw_breathless_now___3 %<>% ff_label("(Breathless) Within the last 24 hours (choice=Walks slower than most people of my age because of breathlessness, or have to stop for breath when walking at own pace)")
+data$flw_breathless_now___4 %<>% ff_label("(Breathless) Within the last 24 hours (choice=Stops for breath after walking 100 yards/ 90-100 metres, or after a few minutes on level ground)")
+data$flw_breathless_now___5 %<>% ff_label("(Breathless) Within the last 24 hours (choice=Too breathless to leave the house, or breathless when dressing/undressing)")
+data$flw_breathless_pre_c19___1 %<>% ff_label("(Breathless) Before your Covid 19 illness (choice=Not troubled by breathlessness except on strenuous exercise)")
+data$flw_breathless_pre_c19___2 %<>% ff_label("(Breathless) Before your Covid 19 illness (choice=Short of breath when hurrying or when walking up a slight hill)")
+data$flw_breathless_pre_c19___3 %<>% ff_label("(Breathless) Before your Covid 19 illness (choice=Walks slower than most people of my age because of breathlessness, or have to stop for breath when walking at own pace)")
+data$flw_breathless_pre_c19___4 %<>% ff_label("(Breathless) Before your Covid 19 illness (choice=Stops for breath after walking 100 yards/ 90-100 metres, or after a few minutes on level ground)")
+data$flw_breathless_pre_c19___5 %<>% ff_label("(Breathless) Before your Covid 19 illness (choice=Too breathless to leave the house, or breathless when dressing/undressing)")
+data$flw_fatigue %<>% ff_label("Please rate the intensity of your fatigue on average over the last 24 hours, on a scale from 0 - 10. Where: 0 = No fatigue 10 = Fatigue as bad as you can imagine")
+data$flw_seeing_today %<>% ff_label("Do you have difficulty seeing, even if wearing glasses? Today")
+data$flw_seeing_pre_c19 %<>% ff_label("Do you have difficulty seeing, even if wearing glasses? Before your Covid 19 illness")
+data$flw_hearing_today %<>% ff_label("Do you have difficulty hearing, even if using a hearing aid? Today")
+data$flw_hearing_pre_c19 %<>% ff_label("Do you have difficulty hearing, even if using a hearing aid? Before your Covid 19 illness")
+data$flw_walking_today %<>% ff_label("Do you have difficulty walking or climbing steps? Today")
+data$flw_walking_pre_c19 %<>% ff_label("Do you have difficulty walking or climbing steps? Before your Covid 19 illness")
+data$flw_remember_today %<>% ff_label("Do you have difficulty remembering or concentrating? Today")
+data$flw_remember_pre_c19 %<>% ff_label("Do you have difficulty remembering or concentrating? Before your Covid 19 illness")
+data$flw_washing_today %<>% ff_label("Do you have difficulty (with self-care such as) washing all over or dressing? Today")
+data$flw_washing_pre_c19 %<>% ff_label("Do you have difficulty (with self-care such as) washing all over or dressing? Before your Covid 19 illness")
+data$flw_comm_today %<>% ff_label("Using your usual (customary) language, do you have difficulty communicating, for example understanding or being understood? Today")
+data$flw_comm_pre_c19 %<>% ff_label("Using your usual (customary) language, do you have difficulty communicating, for example understanding or being understood? Before your Covid 19 illness")
+data$flw_smoking %<>% ff_label("Smoking")
+data$flw_alcohol %<>% ff_label("Drinking alcohol")
+data$flw_healthy_eating %<>% ff_label("Eating healthy food")
+data$flw_phys_activ %<>% ff_label("Physical activity (including walking & cycling)")
+data$flw_walking_cycling %<>% ff_label("Walking or cycling to work or school/college")
+data$flw_employ_pre_c19___1 %<>% ff_label("Before you got COVID-19 what was your employment status?   (choice=Full-time employment)")
+data$flw_employ_pre_c19___2 %<>% ff_label("Before you got COVID-19 what was your employment status?   (choice=Part time employment)")
+data$flw_employ_pre_c19___3 %<>% ff_label("Before you got COVID-19 what was your employment status?   (choice=Furloughed)")
+data$flw_employ_pre_c19___4 %<>% ff_label("Before you got COVID-19 what was your employment status?   (choice=Full time carer (children or other))")
+data$flw_employ_pre_c19___5 %<>% ff_label("Before you got COVID-19 what was your employment status?   (choice=Unemployed)")
+data$flw_employ_pre_c19___6 %<>% ff_label("Before you got COVID-19 what was your employment status?   (choice=Unable to work due to chronic illness)")
+data$flw_employ_pre_c19___7 %<>% ff_label("Before you got COVID-19 what was your employment status?   (choice=Student)")
+data$flw_employ_pre_c19___8 %<>% ff_label("Before you got COVID-19 what was your employment status?   (choice=Retired)")
+data$flw_employ_pre_c19___9 %<>% ff_label("Before you got COVID-19 what was your employment status?   (choice=Medically retired)")
+data$flw_employ_pre_c19___10 %<>% ff_label("Before you got COVID-19 what was your employment status?   (choice=Prefer not to say)")
+data$flw_employ_chg %<>% ff_label("What is your employment status today?          ")
+data$flw_employ_today___1 %<>% ff_label("If different, please describe your employment status today?  (choice=Full-time employment)")
+data$flw_employ_today___2 %<>% ff_label("If different, please describe your employment status today?  (choice=Part time employment)")
+data$flw_employ_today___3 %<>% ff_label("If different, please describe your employment status today?  (choice=Furloughed)")
+data$flw_employ_today___4 %<>% ff_label("If different, please describe your employment status today?  (choice=Full time carer (children or other))")
+data$flw_employ_today___5 %<>% ff_label("If different, please describe your employment status today?  (choice=Unemployed)")
+data$flw_employ_today___6 %<>% ff_label("If different, please describe your employment status today?  (choice=Unable to work due to chronic illness)")
+data$flw_employ_today___7 %<>% ff_label("If different, please describe your employment status today?  (choice=Student)")
+data$flw_employ_today___8 %<>% ff_label("If different, please describe your employment status today?  (choice=Retired)")
+data$flw_employ_today___9 %<>% ff_label("If different, please describe your employment status today?  (choice=Medically retired)")
+data$flw_employ_today___10 %<>% ff_label("If different, please describe your employment status today?  (choice=Prefer not to say)")
+data$flw_employ_chg_reason___1 %<>% ff_label("If different, why did you employment status change?  (choice=Poor health)")
+data$flw_employ_chg_reason___2 %<>% ff_label("If different, why did you employment status change?  (choice=New caring responsibility)")
+data$flw_employ_chg_reason___3 %<>% ff_label("If different, why did you employment status change?  (choice=Made redundant)")
+data$flw_employ_chg_reason___4 %<>% ff_label("If different, why did you employment status change?  (choice=Working hours reduced by employer)")
+data$flw_employ_chg_reason___5 %<>% ff_label("If different, why did you employment status change?  (choice=Other)")
+data$flw_employ_chg_reason___6 %<>% ff_label("If different, why did you employment status change?  (choice=Prefer not to say)")
+data$flw_employ_chg_other %<>% ff_label("(If employment status has changed) specify other reason:")
+data$flw_sex_at_birth %<>% ff_label("Sex at Birth: ")
+data$flw_ethinicity___1 %<>% ff_label("Ethnicity (tick all that apply): (choice=White)")
+data$flw_ethinicity___2 %<>% ff_label("Ethnicity (tick all that apply): (choice=Arab)")
+data$flw_ethinicity___3 %<>% ff_label("Ethnicity (tick all that apply): (choice=Black)")
+data$flw_ethinicity___4 %<>% ff_label("Ethnicity (tick all that apply): (choice=East Asian)")
+data$flw_ethinicity___5 %<>% ff_label("Ethnicity (tick all that apply): (choice=South Asian)")
+data$flw_ethinicity___6 %<>% ff_label("Ethnicity (tick all that apply): (choice=West Asian)")
+data$flw_ethinicity___7 %<>% ff_label("Ethnicity (tick all that apply): (choice=Latin American)")
+data$flw_ethinicity___8 %<>% ff_label("Ethnicity (tick all that apply): (choice=Other)")
+data$flw_ethinicity___9 %<>% ff_label("Ethnicity (tick all that apply): (choice=Prefer not to say)")
+data$flw_ethinicity_oth %<>% ff_label("Other ethnicity")
+data$flw_height %<>% ff_label("What is your estimated height:")
+data$flw_height_unit %<>% ff_label("Height: Indicate unit measured in:")
+data$flw_height_na %<>% ff_label("What is your estimated height - prefer not to say")
+data$flw_weight %<>% ff_label("What is your current estimated weight:")
+data$flw_weight_unit %<>% ff_label("Weight: Indicate unit measured in:")
+data$flw_weight_na %<>% ff_label("What is your estimated weight - prefer not to say")
+data$flw_c19_effects %<>% ff_label("Please let us know if you feel COVID-19 has affected your health or wellbeing in a way not described above?")
+data$follow_up_self_assessment_survey_complete %<>% ff_label("Complete?")
 
 
-#Setting Factors(will create new variable for factors)
+
+# characters to factor() ----
 data$redcap_event_name.factor = factor(data$redcap_event_name,levels=c("day_1_hospital_adm_arm_1","day_3_arm_1","day_6_arm_1","day_9_arm_1","additional_days_arm_1","dischargedeath_arm_1","day_1_hospitalicu_arm_2","day_3_arm_2","day_6_arm_2","day_9_arm_2","additional_days_arm_2","dischargedeath_arm_2","initial_follow_up_arm_2","day_1_arm_3","day_2_arm_3","day_3_arm_3","day_4_arm_3","day_5_arm_3","day_6_arm_3","day_7_arm_3","day_8_arm_3","day_9_arm_3","day_10_arm_3","day_11_arm_3","day_12_arm_3","day_13_arm_3","day_14_arm_3","additional_days_arm_3","dischargedeath_arm_3","initial_follow_up_arm_3"))
 data$redcap_repeat_instrument.factor = factor(data$redcap_repeat_instrument,levels=c("preadmission_medication","infectious_respiratory_disease_pathogen_testing","daily_form"))
 data$participant_identification_number_pin_complete.factor = factor(data$participant_identification_number_pin_complete,levels=c("0","1","2"))
@@ -1585,6 +1597,8 @@ data$flw_weight_unit.factor = factor(data$flw_weight_unit,levels=c("1","2","3"))
 data$flw_weight_na.factor = factor(data$flw_weight_na,levels=c("1"))
 data$follow_up_self_assessment_survey_complete.factor = factor(data$follow_up_self_assessment_survey_complete,levels=c("0","1","2"))
 
+
+# set factor levels ----
 levels(data$redcap_event_name.factor)=c("Day 1 Hospital Admission (Arm 1: TIER 0)","Day 3 (Arm 1: TIER 0)","Day 6 (Arm 1: TIER 0)","Day 9 (Arm 1: TIER 0)","Additional days (Arm 1: TIER 0)","Discharge/Death (Arm 1: TIER 0)","Day 1 Hospital&ICU Admission (Arm 2: TIER 1)","Day 3 (Arm 2: TIER 1)","Day 6 (Arm 2: TIER 1)","Day 9 (Arm 2: TIER 1)","Additional days (Arm 2: TIER 1)","Discharge/Death (Arm 2: TIER 1)","Initial follow up (Arm 2: TIER 1)","Day 1 (Arm 3: TIER 2)","Day 2 (Arm 3: TIER 2)","Day 3 (Arm 3: TIER 2)","Day 4 (Arm 3: TIER 2)","Day 5 (Arm 3: TIER 2)","Day 6 (Arm 3: TIER 2)","Day 7 (Arm 3: TIER 2)","Day 8 (Arm 3: TIER 2)","Day 9 (Arm 3: TIER 2)","Day 10 (Arm 3: TIER 2)","Day 11 (Arm 3: TIER 2)","Day 12 (Arm 3: TIER 2)","Day 13 (Arm 3: TIER 2)","Day 14 (Arm 3: TIER 2)","Additional days (Arm 3: TIER 2)","Discharge/Death (Arm 3: TIER 2)","Initial follow up (Arm 3: TIER 2)")
 levels(data$redcap_repeat_instrument.factor)=c("Pre-admission medication","Infectious Respiratory Disease Pathogen Testing","Daily Form")
 levels(data$participant_identification_number_pin_complete.factor)=c("Incomplete","Unverified","Complete")
