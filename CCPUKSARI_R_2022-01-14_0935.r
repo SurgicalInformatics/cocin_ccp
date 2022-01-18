@@ -1,12 +1,3 @@
-﻿#Clear existing data and graphics
-rm(list=ls())
-graphics.off()
-#Load Hmisc library
-library(Hmisc)
-#Read Data
-data=read.csv('CCPUKSARIScotland-RFactoringScriptDown_DATA_2022-01-14_0935.csv')
-#Setting Labels
-
 label(data$subjid)="Participant Identification Number (PIN) specify CPMS Site code (hyphen) four to six digit number patient number e.g. Y0401-0001."
 label(data$redcap_event_name)="Event Name"
 label(data$redcap_repeat_instrument)="Repeat Instrument"
