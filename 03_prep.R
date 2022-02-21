@@ -417,6 +417,10 @@ ccp_data = ccp_data %>%
       any(icu_hoterm == "Yes") ~ "Yes",
       any(icu_hoterm == "No")  ~ "No", 
       TRUE ~ NA_character_),
+    any_oxygenhf_cmoccur = case_when(
+      any(oxygenhf_cmoccur == "YES") ~ "Yes",
+      any(oxygenhf_cmoccur == "NO")  ~ "No", 
+      TRUE ~ NA_character_),
     any_oxygen_cmoccur = case_when(
       any(oxygen_cmoccur == "YES") ~ "Yes",
       any(oxygen_cmoccur == "NO")  ~ "No", 
@@ -438,8 +442,10 @@ ccp_data = ccp_data %>%
       any_daily_hoterm  == "No" | any_icu_hoterm == "No" ~ "No",
       TRUE ~ NA_character_),
     any_oxygen = case_when(
-      any_daily_nasaloxy_cmtrt  == "Yes" | any_oxygen_cmoccur == "Yes" | any_daily_fio2_21 == "Yes" ~ "Yes",
-      any_daily_nasaloxy_cmtrt  == "No" | any_oxygen_cmoccur == "No" | any_daily_fio2_21 == "No" ~ "No",
+      any_daily_nasaloxy_cmtrt  == "Yes" | any_oxygen_cmoccur == "Yes" | 
+        any_daily_fio2_21 == "Yes" ~ "Yes" | any_oxygenhf_cmoccur == "Yes" ~ "Yes",
+      any_daily_nasaloxy_cmtrt  == "No" | any_oxygen_cmoccur == "No" | 
+        any_daily_fio2_21 == "No" ~ "No" | any_oxygenhf_cmoccur == "No" ~ "No",
       TRUE ~ NA_character_),
     any_noninvasive = case_when(
       any_daily_noninvasive_prtrt  == "Yes" | any_noninvasive_proccur == "Yes" ~ "Yes",
@@ -547,7 +553,13 @@ ccp_data = ccp_data %>%
   mutate(imd = ifelse(is.na(imd), w_med_imd, imd)) %>% 
   mutate(imd_quintile = case_when(is.na(imd) ~ NA_real_,
                                   is.na(country_pcds) ~ NA_real_,
-                                  TRUE ~ imd_quintile) %>% factor()) %>% 
+                                  TRUE ~ imd_quintile) %>% 
+           factor() %>% 
+           fct_recode(
+             "1 - most deprived" = "1",
+             "5 - least deprived" = "5"
+           )
+         ) %>% 
   ff_relabel(vlabels)
 
 rm(postcode_main_lookup, pcode_data, postcode_supp_lookup)
