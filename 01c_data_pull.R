@@ -9,7 +9,7 @@
 ## Restart R
 
 # 1. API pull
-# 2. Apply REDCap R formatitng, file edited.
+# 2. Apply REDCap R formatting, file edited.
 # 3. Final object created: ccp_data
 
 # Libraries
@@ -85,7 +85,7 @@ data = data_collect %>%
 rm(data_collect)
 
 # Formating
-source("CCPUKSARI_R_2020-12-15_1141.r")
+source("CCPUKSARI_R_2022-01-14_0935.r")
 
 # Out object and clean
 ccp_data = data
