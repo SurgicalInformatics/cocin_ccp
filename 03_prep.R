@@ -443,9 +443,9 @@ ccp_data = ccp_data %>%
       TRUE ~ NA_character_),
     any_oxygen = case_when(
       any_daily_nasaloxy_cmtrt  == "Yes" | any_oxygen_cmoccur == "Yes" | 
-        any_daily_fio2_21 == "Yes" ~ "Yes" | any_oxygenhf_cmoccur == "Yes" ~ "Yes",
+        any_daily_fio2_21 == "Yes" | any_oxygenhf_cmoccur == "Yes" ~ "Yes",
       any_daily_nasaloxy_cmtrt  == "No" | any_oxygen_cmoccur == "No" | 
-        any_daily_fio2_21 == "No" ~ "No" | any_oxygenhf_cmoccur == "No" ~ "No",
+        any_daily_fio2_21 == "No" | any_oxygenhf_cmoccur == "No" ~ "No",
       TRUE ~ NA_character_),
     any_noninvasive = case_when(
       any_daily_noninvasive_prtrt  == "Yes" | any_noninvasive_proccur == "Yes" ~ "Yes",
