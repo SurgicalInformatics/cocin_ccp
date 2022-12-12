@@ -3,6 +3,7 @@
 # Centre for Medical Informatics, Usher Institute, University of Edinburgh 2020
 
 # Functions require library(tidyverse), requires() nor :: not currently written in.  
+## 2021-11-25 abrooks removed purrr::discard for safehaven batching, fixed age for safehaven
 
 library(tidyverse)
 library(lubridate)
@@ -17,7 +18,11 @@ ccp_data = ccp_data %>%
   mutate(dag_id = ifelse(dag_id == 'G405H', 'G450H', dag_id)) %>% 
   select(subjid, dag_id, everything())
 
-areas = read_csv('https://raw.githubusercontent.com/SurgicalInformatics/ccp_location_lookups/master/data_out_ccp_lookups/ccp_dag_id_lookup.csv') %>% 
+# XXX abrooks changed path for safehaven
+if (!safehaven) {
+  ccp_dag_id_lookup_csv = 'https://raw.githubusercontent.com/SurgicalInformatics/ccp_location_lookups/master/data_out_ccp_lookups/ccp_dag_id_lookup.csv'
+}
+areas = read_csv(ccp_dag_id_lookup_csv) %>% 
   as_tibble() %>% 
   rename(postcode_e = postcode,
          redcap_data_access_group_e  = redcap_data_access_group) %>% 
@@ -94,6 +99,8 @@ definite_no_subjid = ccp_data %>%
 
 # Since we have multiple projects, it's possible that subjids are no longer unique
 # We will have to drop non-unique subjids or they will be matched with the wrong outcome etc data
+# XXX abrooks wrapped in (!safehaven) because no 'projects' var
+if (!safehaven) {
 duplicates_across_projects = ccp_data %>%
   distinct(subjid, project) %>%
   add_count(subjid) %>%
@@ -105,6 +112,7 @@ ccp_data = ccp_data %>%
 if (nrow(duplicates_across_projects) != 0){
   message(paste(nrow(duplicates_across_projects), "duplicate subjids across projects detected and removed."))
   duplicates_across_projects
+}
 }
 
 # Added 18/08/2021 to deal with follow-up patients having no assigned event and being dropped in next section. 
@@ -155,13 +163,13 @@ ccp_data = ccp_data %>%
       !is.na(cestdat) ~ cestdat,    # onset
       !is.na(dsstdat) ~ dsstdat),   # enrolment
     
-    age = (anydat - agedat) %>%
-      as.numeric()/365, # Changed to deal with children, need fractions
-    
+    # XXX abrooks wrapped in (!safehaven) as no 'agedat' var
+    age = ifelse(safehaven, NA_real_, as.numeric(anydat - agedat)/365), # Changed to deal with children, need fractions
+ 
     # Add infants to age variable by making months a fraction of year
     age_estimateyears = as.numeric(age_estimateyears),
     age_estimateyears = ifelse(age_estimateyearsu == "Months", age_estimateyears / 12, age_estimateyears),
-    
+ 
     # DOB missing as no consent in some, therefore use age_estimateyears
     age = case_when(
       is.na(age) & !is.na(calc_age) ~ calc_age,
@@ -495,14 +503,16 @@ topline = ccp_data %>%
            redcap_event_name == "Day 1 Hospital&ICU Admission (Arm 2: TIER 1)" |
            redcap_event_name == "Day 1 (Arm 3: TIER 2)") %>% 
   filter(is.na(redcap_repeat_instrument)) %>%
-  purrr::discard(~all(is.na(.))) %>% 
+  #purrr::discard(~all(is.na(.))) %>% 
   ff_relabel_df(ccp_data)
 
 
 # Add IMD ---------------------------------------------------------------------------------------
 ## Get main lookup
+# XXX abrooks safehaven has different location, load data outside this script
+if (!safehaven) {
 postcode_main_lookup = read_csv('https://argonaut.is.ed.ac.uk/public/lookup/NSPL_FEB_2020_UK.csv')
-
+}
 pcode_data = topline %>% 
   select(subjid, postcode) %>% 
   mutate(length_pcode = str_length(postcode),
